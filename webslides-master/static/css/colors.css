@@ -41,7 +41,7 @@ Base
 
 body {
   color: #333;
-  background-color: #f7f9fb;
+  background-color: #fafafa;
 }
 :focus {
   box-shadow: 0 0 2px rgba(150, 187, 238, 1);
@@ -128,39 +128,39 @@ Slides - Backgrounds <section class="bg-primary">
 /*3 Corp Colors*/
 
 .bg-primary {
-  background-color: #44d;
+  background-color: #336fa1;
 }
 
 .bg-secondary {
-  background-color: #67d;
+  background-color: #1c3e5d;
 }
 
 .bg-light {
-  background-color: #edf2f7;
+  background-color: #ffffff;
 }
 
 /*General Colors*/
 
 .bg-black {
-  background-color: #111;
+  background-color: #383838;
 }
 .bg-black-blue {
   background-color: #123;
 }
 .bg-blue {
-  background-color: #346;
+  background-color: #336fa1;
 }
 .bg-brown {
-  background-color: #f8f8f9;
+  background-color: #f37e56;
 }
 .bg-gray {
   background-color: #d5d9e2;
 }
 .bg-green {
-  background-color: #077;
+  background-color: #336fa1;
 }
 .bg-purple {
-  background-color: #62b;
+  background-color: #f37e56;
 }
 
 .bg-red {
