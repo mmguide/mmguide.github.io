@@ -3104,3 +3104,8 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
     display: none;
   }
 }
+
+a .underline:hover {
+    text-decoration: line-through;
+    background-color: red;
+}
