@@ -2967,7 +2967,7 @@ button {
   font-size: 1.8rem;
   font-weight: 400;
   text-align: center;
-  min-width: 16rem;
+  min-width: 12rem;
   padding: 0 1.6rem;
   cursor: pointer;
 }
