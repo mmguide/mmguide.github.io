@@ -1634,6 +1634,11 @@ background-size: cover;
     background-position: center;
     
 }
+.background-diffuse-blue {
+    background-image: url(/static/images/backgrounds/MMGuide-diffuseshadow.jpg);
+    background-position: center;
+    
+}
 .background-default-white {
     background-image: url(/static/images/backgrounds/bg-default-trans-white.png);
     background-position: center;

@@ -1640,6 +1640,13 @@ background-size: cover;
    
 }
 
+.background-diffuse {
+    background-image: url(/static/images/backgrounds/MMGuide-diffuseshadow.jpg);
+    background-position: center;
+    background-size: 100%
+   
+}
+
 
 /*===============================================================
 6. Magic blocks with flexbox (Auto-fill & Equal Height) 
