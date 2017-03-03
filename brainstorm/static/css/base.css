@@ -1633,6 +1633,10 @@ background-size: cover;
     background-image: url(/static/images/backgrounds/bg-default-blur-blue.jpg);
     background-position: center;
     
+}.background-owlin-blue {
+    background-image: url(/brainstorm/static/images/backgrounds/owlin-product.jpg);
+    background-position: center;
+    
 }
 .background-diffuse-blue {
     background-image: url(/static/images/backgrounds/MMGuide-diffuseshadow.jpg);
