@@ -3130,6 +3130,13 @@ Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
   }
 }
 
+.topcorner-mmg-logo-white {
+    position: fixed;
+    top:8%;
+    left: 5%;
+    height: auto;
+    width: 12%;
+}
 .topcornerright-mmg-logo-white {
     position: fixed;
     top:8%;
