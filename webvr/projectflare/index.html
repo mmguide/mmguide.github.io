@@ -6,6 +6,7 @@
     <meta name="description" content="MM Guide Laat meer zien">
 
     <script src="../js/aframe-master.min.js"></script>
+      <script src="https://aframe.io/releases/latest/aframe.js"></script>
     <link rel="stylesheet" href="css/style.css">
 
     
@@ -28,9 +29,9 @@
     <script src="js/components/billboard.js"></script>
     <!--This helps the text follow the camera-->
     <script src="js/components/webvr-ui.js"></script>
+    <script src="js/components/xboxgamepad.js"></script>
     
- 
- <script src="dist/aframe-gamepad-controls.js"></script>
+    
 
     <!-- URL CANONICAL -->
 <!--    <link rel="canonical" href="www.mmguide.nl">-->
@@ -326,7 +327,7 @@
         </script>
         
         <!-- Camera + cursor. -->
-                <a-entity camera="userHeight: 3.8" raycaster crawling-cursor="target: #my-cursor" look-controls gamepad-controls>
+                <a-entity camera="userHeight: 3.8" raycaster crawling-cursor="target: #my-cursor"  gamepad-controls>
                     <a-entity light="type: spot; angle: 45; decay:1; intensity:.3; distance:0; penumbra:.2;"></a-entity>
                     <a-cursor 
                               id="cursor" 
