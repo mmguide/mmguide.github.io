@@ -11,12 +11,10 @@
 
     
     <!--    A Frame Components-->
-<!--
     <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
--->
     <!--this is the sky color-->
     <script src="js/components/gradient.js"></script>
     <!--this makes the cursor follow a geomtry-->
@@ -29,7 +27,10 @@
     <script src="js/components/billboard.js"></script>
     <!--This helps the text follow the camera-->
     <script src="js/components/webvr-ui.js"></script>
+    <!--this enables the xbox controller-->
     <script src="js/components/xboxgamepad.js"></script>
+    <!--lazyload-->
+    <script src="js/components/lazyload.js"></script>
     
     
 
@@ -57,7 +58,7 @@
 <!--            <img id="mmg-logo" src="../images/logo-mmg-slack.jpg">-->
 
             <!--Audio-->
-<!--            <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>-->
+            <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
 
         </a-assets>
   
@@ -67,281 +68,273 @@
         <a-gradient-sky material="shader: gradient; topColor: 255 255 255; bottomColor: 51 111 161;"></a-gradient-sky>
         
         
-        <a-entity geometry="primitive: sphere; radius:.5;" position="0 0 0" material="color:#f26d40;" >
-            <a-entity billboard position="0 1.1wd 0" text="width: 11; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Data Engineering "></a-entity>
-            <a-entity billboard position="0 .6 0" text="width: 6; align:center; lineHeight: 5; letterSpacing: 5; color: white; value:A MM Guide Community Project "></a-entity>
+        <a-entity lazy-load="chunk: 0;" geometry="primitive: sphere; radius:.5;" position="0 0 0" material="color:#f26d40;" >
+            <a-entity class="ignore-ray" billboard position="0 1.1wd 0" text="width: 11; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Data Engineering "></a-entity>
+            <a-entity class="ignore-ray" billboard position="0 .6 0" text="width: 6; align:center; lineHeight: 5; letterSpacing: 5; color: white; value:A MM Guide Community Project "></a-entity>
         </a-entity>
 
         <!--        Resources tree-->
-        <a-entity rotation="0 45 0">
-             <a-entity meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
+        <a-entity lazy-load="chunk: 1;" rotation="0 45 0">
+             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
 
             <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -8" material="color:#f26d40;" >
-                <a-entity billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Resources "></a-entity>
-                <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Erik Verhoeven "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Resources "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Erik Verhoeven "></a-entity>
             </a-entity>
 
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: ZZP "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: ZZP "></a-entity>
                 </a-entity>
             
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, -4 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, -4 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="-4 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Studenten "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Studenten "></a-entity>
                 </a-entity> 
             
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, 4 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 4 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="4 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Medewerkers "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Medewerkers "></a-entity>
                 </a-entity>
         </a-entity> 
         
         <!--        Kennis tree-->
-        <a-entity rotation="0 90 0">
-             <a-entity meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
+        <a-entity lazy-load="chunk: 1;" rotation="0 90 0">
+             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
 
             <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -8" material="color:#f26d40;" >
-                <a-entity billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Kennis "></a-entity>
-                <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Israel Jamlean "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Kennis "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Israel Jamlean "></a-entity>
             </a-entity>
 
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Techniek "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Techniek "></a-entity>
                 </a-entity>
-                     <a-entity meshline="lineWidth: 5; path: 0 0 -16, 4 0 -32; color: #fff"></a-entity>
+                     <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, 4 0 -32; color: #fff"></a-entity>
                         <a-entity geometry="primitive: sphere; radius:.3;" position="4 0 -32" material="color:#f26d40;" >
-                            <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Horton "></a-entity>
+                            <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Horton "></a-entity>
                         </a-entity>
-                        <a-entity meshline="lineWidth: 5; path: 0 0 -16, 2 0 -32; color: #fff"></a-entity>
+                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, 2 0 -32; color: #fff"></a-entity>
                         <a-entity geometry="primitive: sphere; radius:.3;" position="2 0 -32" material="color:#f26d40;" >
-                            <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Apache "></a-entity>
+                            <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Apache "></a-entity>
                         </a-entity>
-                        <a-entity meshline="lineWidth: 5; path: 0 0 -16, 0 0 -32; color: #fff"></a-entity>
+                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, 0 0 -32; color: #fff"></a-entity>
                         <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -32" material="color:#f26d40;" >
-                            <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Machine Learning "></a-entity>
+                            <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Machine Learning "></a-entity>
                         </a-entity>
-                        <a-entity meshline="lineWidth: 5; path: 0 0 -16, -2 0 -32; color: #fff"></a-entity>
+                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, -2 0 -32; color: #fff"></a-entity>
                         <a-entity geometry="primitive: sphere; radius:.3;" position="-2 0 -32" material="color:#f26d40;" >
-                            <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Robotics "></a-entity>
+                            <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Robotics "></a-entity>
                         </a-entity>
-                        <a-entity meshline="lineWidth: 5; path: 0 0 -16, -4 0 -32; color: #fff"></a-entity>
+                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, -4 0 -32; color: #fff"></a-entity>
                         <a-entity geometry="primitive: sphere; radius:.3;" position="-4 0 -32" material="color:#f26d40;" >
-                            <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: AI "></a-entity>
+                            <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: AI "></a-entity>
                         </a-entity>
-                        <a-entity meshline="lineWidth: 5; path: 0 0 -16, -6 0 -32; color: #fff"></a-entity>
+                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, -6 0 -32; color: #fff"></a-entity>
                         <a-entity geometry="primitive: sphere; radius:.3;" position="-6 0 -32" material="color:#f26d40;" >
-                            <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Analytics "></a-entity>
+                            <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Analytics "></a-entity>
                         </a-entity>
 
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, -4 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, -4 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="-4 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Gamification "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Gamification "></a-entity>
                 </a-entity> 
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, 4 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 4 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="4 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Toepassingen "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Toepassingen "></a-entity>
                 </a-entity>
 
             
             
         </a-entity>
           <!--        TU/e tree-->
-        <a-entity rotation="0 135 0">
-             <a-entity meshline="lineWidth: 5; path: 0 0 0, 0 0 -5; color: #fff"></a-entity>
+        <a-entity lazy-load="chunk: 1;" rotation="0 135 0">
+             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -5; color: #fff"></a-entity>
 
             <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -5" material="color:#f26d40;" >
-                <a-entity billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: TU/e "></a-entity>
-                <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Erik Verhoeven "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: TU/e "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Erik Verhoeven "></a-entity>
             </a-entity>
 
            
         </a-entity>
           <!--        PMC's tree-->
-        <a-entity rotation="0 180 0">
-             <a-entity meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
+        <a-entity lazy-load="chunk: 1;" rotation="0 180 0">
+             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
 
             <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -8" material="color:#f26d40;" >
-                <a-entity billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: PMC's "></a-entity>
-                <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Patrick Vetkamp "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: PMC's "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Patrick Vetkamp "></a-entity>
             </a-entity>
 
-                 <a-entity meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
+                 <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Banken & Datalakes "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Banken & Datalakes "></a-entity>
                 </a-entity>
             
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, -4 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, -4 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="-4 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Logistiek & IOT / BI Data "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Logistiek & IOT / BI Data "></a-entity>
                 </a-entity> 
             
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, 4 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 4 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="4 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Supply Chain & IoT / Big Data "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Supply Chain & IoT / Big Data "></a-entity>
                 </a-entity>
             
         </a-entity>
           <!--        Dataviz tree-->
-        <a-entity rotation="0 225 0">
-             <a-entity meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
+        <a-entity lazy-load="chunk: 1;" rotation="0 225 0">
+             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
 
             <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -8" material="color:#f26d40;" >
-                <a-entity billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Datavisualisatie "></a-entity>
-                <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Bart Geers "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Datavisualisatie "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Bart Geers "></a-entity>
             </a-entity>
 
             
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, 6 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 6 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="6 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: D3JS "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: D3JS "></a-entity>
                 </a-entity>
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, 2 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 2 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="2 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: App Development "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: App Development "></a-entity>
                 </a-entity> 
-                    <a-entity meshline="lineWidth: 5; path: 2 0 -16, 4 0 -24; color: #fff"></a-entity>
+                    <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 2 0 -16, 4 0 -24; color: #fff"></a-entity>
                     <a-entity geometry="primitive: sphere; radius:.3;" position="4 0 -24" material="color:#f26d40;" >
-                        <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Rappit "></a-entity>
+                        <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Rappit "></a-entity>
                     </a-entity>
             
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, -2 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, -2 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="-2 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Dashboards "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Dashboards "></a-entity>
                 </a-entity> 
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, -6 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, -6 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="-6 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: WebVR "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: WebVR "></a-entity>
                 </a-entity>
-                    <a-entity meshline="lineWidth: 5; path: -6 0 -16, -10 0 -24; color: #fff"></a-entity>
+                    <a-entity class="ignore-ray" meshline="lineWidth: 5; path: -6 0 -16, -10 0 -24; color: #fff"></a-entity>
                     <a-entity geometry="primitive: sphere; radius:.3;" position="-10 0 -24" material="color:#f26d40;" >
-                        <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Dreamlake "></a-entity>
+                        <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Dreamlake "></a-entity>
                     </a-entity>
             
         </a-entity>
              <!--        why tree-->
-        <a-entity rotation="0 270 0">
-             <a-entity meshline="lineWidth: 5; path: 0 0 0, 0 0 -5; color: #fff"></a-entity>
+        <a-entity lazy-load="chunk: 1;" rotation="0 270 0">
+             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -5; color: #fff"></a-entity>
 
             <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -5" material="color:#f26d40;" >
-                <a-entity billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: WHY "></a-entity>
-                <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Patrick Vetkamp "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: WHY "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Patrick Vetkamp "></a-entity>
             </a-entity>
 
         </a-entity> 
         <!--        Verdienmodel tree-->
-        <a-entity rotation="0 315 0">
-             <a-entity meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
+        <a-entity lazy-load="chunk: 1;" rotation="0 315 0">
+             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
 
             <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -8" material="color:#f26d40;" >
-                <a-entity billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Verdienmodel "></a-entity>
-                <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Patrick Vetkamp "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Verdienmodel "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Patrick Vetkamp "></a-entity>
             </a-entity>
             
-                   <a-entity meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
+                   <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
                     <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -16" material="color:#f26d40;" >
-                        <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Kosten & baten "></a-entity>
+                        <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Kosten & baten "></a-entity>
                     </a-entity>
 
         </a-entity>
           <!--        Organisatie tree-->
         <a-entity rotation="0 360 0">
-             <a-entity meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
+             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
 
             <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -8" material="color:#f26d40;" >
-                <a-entity billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Organisatie "></a-entity>
-                <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Erik Verhoeven "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Organisatie "></a-entity>
+                <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Erik Verhoeven "></a-entity>
             </a-entity>
             
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Netwerk "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Netwerk "></a-entity>
                 </a-entity>
             
-                <a-entity meshline="lineWidth: 5; path: 0 0 -8, -4 0 -16; color: #fff"></a-entity>
+                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, -4 0 -16; color: #fff"></a-entity>
                 <a-entity geometry="primitive: sphere; radius:.3;" position="-4 0 -16" material="color:#f26d40;" >
-                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Uitstraling "></a-entity>
+                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Uitstraling "></a-entity>
                 </a-entity> 
-                        <a-entity meshline="lineWidth: 5; path: 0 0 -16, 0 0 -24; color: #fff"></a-entity>
+                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, 0 0 -24; color: #fff"></a-entity>
                         <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -24" material="color:#f26d40;" >
-                            <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Doelgroepen "></a-entity>
+                            <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Doelgroepen "></a-entity>
                         </a-entity>
             
-                            <a-entity meshline="lineWidth: 5; path: 0 0 -24, 0 0 -32; color: #fff"></a-entity>
+                            <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -24, 0 0 -32; color: #fff"></a-entity>
                             <a-entity geometry="primitive: sphere; radius:.3;" position="0 0 -32" material="color:#f26d40;" >
-                                <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Opdrachtgevers "></a-entity>
+                                <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Opdrachtgevers "></a-entity>
                             </a-entity>
 
-                            <a-entity meshline="lineWidth: 5; path: 0 0 -24, -4 0 -32; color: #fff"></a-entity>
+                            <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -24, -4 0 -32; color: #fff"></a-entity>
                             <a-entity geometry="primitive: sphere; radius:.3;" position="-4 0 -32" material="color:#f26d40;" >
-                                <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Professionals"></a-entity>
+                                <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Professionals"></a-entity>
                             </a-entity> 
 
-                            <a-entity meshline="lineWidth: 5; path: 0 0 -24, 4 0 -32; color: #fff"></a-entity>
+                            <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -24, 4 0 -32; color: #fff"></a-entity>
                             <a-entity geometry="primitive: sphere; radius:.3;" position="4 0 -32" material="color:#f26d40;" >
-                                <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Kids "></a-entity>
+                                <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Kids "></a-entity>
                             </a-entity>
 
-                        <a-entity meshline="lineWidth: 5; path: 0 0 -16, -4 0 -24; color: #fff"></a-entity>
+                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, -4 0 -24; color: #fff"></a-entity>
                         <a-entity geometry="primitive: sphere; radius:.3;" position="-4 0 -24" material="color:#f26d40;" >
-                            <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Branding"></a-entity>
+                            <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Branding"></a-entity>
                         </a-entity> 
 
-                        <a-entity meshline="lineWidth: 5; path: 0 0 -16, 4 0 -24; color: #fff"></a-entity>
+                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, 4 0 -24; color: #fff"></a-entity>
                         <a-entity geometry="primitive: sphere; radius:.3;" position="4 0 -24" material="color:#f26d40;" >
-                            <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Huisstijl "></a-entity>
+                            <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Huisstijl "></a-entity>
                         </a-entity>
-                                <a-entity meshline="lineWidth: 5; path: 4 0 -24, 8 0 -32; color: #fff"></a-entity>
+                                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 4 0 -24, 8 0 -32; color: #fff"></a-entity>
                                 <a-entity geometry="primitive: sphere; radius:.3;" position="8 0 -32" material="color:#f26d40;" >
-                                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: JIM "></a-entity>
+                                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: JIM "></a-entity>
                                 </a-entity>
 
-                                <a-entity meshline="lineWidth: 5; path: 4 0 -24, 12 0 -28; color: #fff"></a-entity>
+                                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 4 0 -24, 12 0 -28; color: #fff"></a-entity>
                                 <a-entity geometry="primitive: sphere; radius:.3;" position="12 0 -28" material="color:#f26d40;" >
-                                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Strijp-S"></a-entity>
+                                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Strijp-S"></a-entity>
                                 </a-entity> 
 
-                                <a-entity meshline="lineWidth: 5; path: 4 0 -24, 16 0 -24; color: #fff"></a-entity>
+                                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 4 0 -24, 16 0 -24; color: #fff"></a-entity>
                                 <a-entity geometry="primitive: sphere; radius:.3;" position="16 0 -24" material="color:#f26d40;" >
-                                    <a-entity billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: LivingLAS "></a-entity>
+                                    <a-entity class="ignore-ray" billboard position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: LivingLAS "></a-entity>
                                 </a-entity>
 
         </a-entity>
-        
-        
-        
 
-
-        <script id="link" type="text/html">
-            <a-entity class="link" 
-                      geometry="primitive: plane; height: 1; width: 1;" 
-                      material="shader: flat; src: ${src}; " 
-                      text="text: ${src}" 
-                      event-set__1="_event: mousedown; scale: 1 1 1; position: 0 0 .5;" 
-                      event-set__2="_event: mouseup; scale: 1 1 1; position: 0 0 .5;" 
-                      event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2; position: 0 0 .5;" 
-                      event-set__4="_event: mouseleave; scale: 1 1 1; position: 0 0 0;" 
-                      sound="on: click; src: #click-sound;">
-            </a-entity>
-        </script>
-        
         <!-- Camera + cursor. -->
-                <a-entity camera="userHeight: 3.8" raycaster crawling-cursor="target: #my-cursor"  gamepad-controls>
-                    <a-entity light="type: spot; angle: 45; decay:1; intensity:.3; distance:0; penumbra:.2;"></a-entity>
-                    <a-cursor 
-                              id="cursor" 
-                              animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150" 
-                              animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500" 
-                              event-set__1="_event: mouseenter; color: springgreen" 
-                              event-set__2="_event: mouseleave; color: black" 
-                              raycaster="objects: .link">
-                    </a-cursor>
-                    
+                <a-entity camera="userHeight: 1.8" raycaster crawling-cursor="target: #my-cursor"  gamepad-controls flyEnabled="true" debug="true"  
+                          event-set__1="_event: gamepadbuttondown:0; position: 0 2 0;" 
+                          event-set__2="_event: gamepadbuttondown:1; position: 0 10 0;" 
+                          event-set__3="_event: gamepadbuttondown:2; position: 0 20 0;" 
+                          >
+                  
                 </a-entity>
-<!--        <a-sphere color="#fff" scale= "0.1 0.1 0.1" id="my-cursor"></a-sphere>-->
+                <a-circle color="#fff" scale= "0.1 0.1 0.1" id="my-cursor"></a-circle>
 
     </a-scene>
+    
+<!--
+XBOX ONE Gampepad layout
+0: A    
+1: B
+2: X 
+3: Y
+4: LB
+5: RB
+6: LT 
+7: RT
+8: options 1
+9: Options 2
+-->
 
 
 </body>
