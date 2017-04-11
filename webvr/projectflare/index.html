@@ -30,7 +30,7 @@
     <script src="js/components/webvr-ui.js"></script>
     
  
-
+ <script src="dist/aframe-gamepad-controls.js"></script>
 
     <!-- URL CANONICAL -->
 <!--    <link rel="canonical" href="www.mmguide.nl">-->
@@ -326,7 +326,7 @@
         </script>
         
         <!-- Camera + cursor. -->
-                <a-entity camera="userHeight: 3.8" raycaster crawling-cursor="target: #my-cursor" look-controls wasd-controls>
+                <a-entity camera="userHeight: 3.8" raycaster crawling-cursor="target: #my-cursor" look-controls gamepad-controls>
                     <a-entity light="type: spot; angle: 45; decay:1; intensity:.3; distance:0; penumbra:.2;"></a-entity>
                     <a-cursor 
                               id="cursor" 
