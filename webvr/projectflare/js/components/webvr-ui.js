@@ -1524,6 +1524,7 @@ exports.default = WebVRManager;
 },{"./states":7,"eventemitter3":1,"screenfull":2}]},{},[6])(6)
 });
 
+//If you have a samsung device with ovrweb this will prompt to use gear vr
 function onClick() {
   // Replace http://ocul.us/experience with your URL
   window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
