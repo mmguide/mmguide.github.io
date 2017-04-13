@@ -53,6 +53,23 @@
 
 </head>
 
+    
+    <!-- Launch Carmel Developer Preview using standard links, replace http://ocul.us/experience with your URL -->
+    <a href="ovrweb:http://mmguide.github.io/webvr/projectflare/index.html">
+        Navigate to an HTTP experience
+    </a>
+    <a href="ovrweb:https://mmguide.github.io/webvr/projectflare/index.html">
+        Navigate to an HTTPS experience
+    </a>
+
+<script>
+// You can also navigate programmatically from script
+function onClick() {
+  // Replace http://ocul.us/experience with your URL
+  window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
+}
+</script>
+    
 <body>
     <a-scene stats outline webvr-ui>
        <a-assets>
@@ -68,6 +85,7 @@
            <a-mixin id="nodeOrange" geometry="primitive: sphere; radius: .3; segmentsHeight: 8; segmentsWidth: 16;" material="color: #f26d40"></a-mixin>
            <a-mixin billboard class="ignore-ray" id="h2"></a-mixin> 
            <a-mixin billboard class="ignore-ray" id="h3" text="width: 6; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: ${value};"></a-mixin> 
+           
            
 <!--
            material="shader: flat; value: ${value}; " 
