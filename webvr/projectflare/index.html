@@ -6,8 +6,7 @@
     <meta name="description" content=" ">
 
     <script src="../js/aframe-master.min.js"></script>
-      <script src="https://aframe.io/releases/latest/aframe.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+
 
     
     <!--    A Frame Components-->
@@ -35,6 +34,8 @@
     <!--lazyload-->
     <script src="js/components/lazyload.js"></script>
     
+    <script src="js/components/nodePosition.js"></script>
+    
     
 
     <!-- URL CANONICAL -->
@@ -50,15 +51,6 @@
     <link rel="apple-touch-icon icon" sizes="192x192" href="/images/favicon/favicon-192.png">
 
   
-
-</head>
-
-    
-    <!-- Launch Carmel Developer Preview using standard links, replace http://ocul.us/experience with your URL -->
-    <a href="ovrweb:http://mmguide.github.io/webvr/projectflare/index.html">
-        Navigate to an HTTP experience
-    </a>
-
 <script>
   
 //If you have a samsung device with ovrweb this will prompt to use gear vr
@@ -68,8 +60,27 @@ function onClick() {
     }
 </script>
     
+   
+    
+</head>
+
+    
+    <!-- Launch Carmel Developer Preview using standard links, replace http://ocul.us/experience with your URL -->
+<!--
+    <a href="ovrweb:http://mmguide.github.io/webvr/projectflare/index.html">
+        Navigate to an HTTP experience
+    </a>
+-->
+
+
+    
 <body>
-    <a-scene stats outline webvr-ui>
+     <script>
+  
+    </script>
+    <a-scene>
+<!--    <a-scene stats outline webvr-ui>-->
+         <a-entity hello-world></a-entity>
        <a-assets>
            
            <!--Colors-->
@@ -81,269 +92,275 @@ function onClick() {
             <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
 
            <a-mixin id="nodeOrange" geometry="primitive: sphere; radius: .3; segmentsHeight: 8; segmentsWidth: 16;" material="color: #f26d40"></a-mixin>
-           <a-mixin billboard class="ignore-ray" id="h2"></a-mixin> 
-           <a-mixin billboard class="ignore-ray" id="h3" text="width: 6; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: ${value};"></a-mixin> 
+           <a-mixin id="nodeLine" class="ignore-ray" meshline="lineWidth: 5; color: #fff"></a-mixin> 
            
-           
-<!--
-           material="shader: flat; value: ${value}; " 
-           template="src: #link" 
-           
--->
-           
-<!--           <a-mixin id="h2" width="11" color="white" text="width: 11; align:center; lineHeight: 5; letterSpacing: 5; color: white;"></a-mixin> -->
-           <a-mixin billboard class="ignore-ray" id="h3" text="width: 6; align:center; lineHeight: 5; letterSpacing: 5; color: white;"></a-mixin> 
+           <a-mixin id="h2" billboard class="ignore-ray" position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; "></a-mixin> 
+           <a-mixin id="h3" billboard class="ignore-ray" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white;"></a-mixin> 
+         
         </a-assets >
         
-        
+       
         <!-- Dim ambient lighting. -->
         <a-light type="ambient" light="color: #fff; intensity: .8"></a-light>
         <a-gradient-sky material="shader: gradient; topColor: 255 255 255; bottomColor: 51 111 161;"></a-gradient-sky>
 <!--        value: A MM Guide Community Project"-->
         
         <a-entity lazy-load="chunk: 0;" mixin="nodeOrange">
-            <a-entity position="0 1.1 0" mixin="h2" text="width: 6; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Data Engineering" ></a-entity>
-            <a-entity position="0 .6 0"  mixin="h3"  template="value: A MM Guide Community Project"  ></a-entity>
+            <a-entity position="0 1.1 0" mixin="h2" text="value: Data Engineering" ></a-entity>
+            <a-entity position="0 .6 0"  mixin="h3" text="value: A MM Guide Community Project"  ></a-entity>
         </a-entity>
 
         <!--        Resources tree-->
         <a-entity lazy-load="chunk: 1;" rotation="0 45 0">
-             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
+             <a-entity mixin="nodeLine" meshline="path: #position0, #position1;"></a-entity>
 
             <a-entity mixin="nodeOrange" position="0 0 -8" >
-                <a-entity mixin="h2" position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Resources "></a-entity>
-                <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Erik Verhoeven "></a-entity>
+                <a-entity mixin="h2" text="value: Resources "></a-entity>
+                <a-entity mixin="h3" text="value: Erik Verhoeven "></a-entity>
             </a-entity>
 
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 0 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="0 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: ZZP "></a-entity>
+                    <a-entity mixin="h3" text="value: ZZP "></a-entity>
                 </a-entity>
             
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, -4 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, -4 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="-4 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Studenten "></a-entity>
+                    <a-entity mixin="h3" text="value: Studenten "></a-entity>
                 </a-entity> 
             
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 4 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 4 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="4 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Medewerkers "></a-entity>
+                    <a-entity mixin="h3" text="value: Medewerkers "></a-entity>
                 </a-entity>
         </a-entity> 
         
         <!--        Kennis tree-->
+<!--
         <a-entity lazy-load="chunk: 1;" rotation="0 90 0">
-             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
+             <a-entity mixin="nodeLine" meshline=" path: 0 0 0, 0 0 -8; "></a-entity>
 
             <a-entity mixin="nodeOrange" position="0 0 -8" >
-                <a-entity mixin="h2" position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Kennis "></a-entity>
-                <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Israel Jamlean "></a-entity>
+                <a-entity mixin="h2" text="value: Kennis "></a-entity>
+                <a-entity mixin="h3" text="value: Israel Jamlean "></a-entity>
             </a-entity>
 
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 0 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="0 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Techniek "></a-entity>
+                    <a-entity mixin="h3" text="value: Techniek "></a-entity>
                 </a-entity>
-                     <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, 4 0 -32; color: #fff"></a-entity>
+                     <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, 4 0 -32; "></a-entity>
                         <a-entity mixin="nodeOrange" position="4 0 -32" >
-                            <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Horton "></a-entity>
+                            <a-entity mixin="h3" text="value: Horton "></a-entity>
                         </a-entity>
-                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, 2 0 -32; color: #fff"></a-entity>
+                        <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, 2 0 -32; "></a-entity>
                         <a-entity mixin="nodeOrange" position="2 0 -32" >
-                            <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Apache "></a-entity>
+                            <a-entity mixin="h3" text="value: Apache "></a-entity>
                         </a-entity>
-                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, 0 0 -32; color: #fff"></a-entity>
+                        <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, 0 0 -32; "></a-entity>
                         <a-entity mixin="nodeOrange" position="0 0 -32" >
-                            <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Machine Learning "></a-entity>
+                            <a-entity mixin="h3" text="value: Machine Learning "></a-entity>
                         </a-entity>
-                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, -2 0 -32; color: #fff"></a-entity>
+                        <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, -2 0 -32; "></a-entity>
                         <a-entity mixin="nodeOrange" position="-2 0 -32" >
-                            <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Robotics "></a-entity>
+                            <a-entity mixin="h3" text="value: Robotics "></a-entity>
                         </a-entity>
-                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, -4 0 -32; color: #fff"></a-entity>
+                        <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, -4 0 -32; "></a-entity>
                         <a-entity mixin="nodeOrange" position="-4 0 -32" >
-                            <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: AI "></a-entity>
+                            <a-entity mixin="h3" text="value: AI "></a-entity>
                         </a-entity>
-                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, -6 0 -32; color: #fff"></a-entity>
+                        <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, -6 0 -32; "></a-entity>
                         <a-entity mixin="nodeOrange" position="-6 0 -32" >
-                            <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Analytics "></a-entity>
+                            <a-entity mixin="h3" text="value: Analytics "></a-entity>
                         </a-entity>
 
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, -4 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, -4 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="-4 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Gamification "></a-entity>
+                    <a-entity mixin="h3" text="value: Gamification "></a-entity>
                 </a-entity> 
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 4 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 4 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="4 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Toepassingen "></a-entity>
+                    <a-entity mixin="h3" text="value: Toepassingen "></a-entity>
                 </a-entity>
 
             
             
         </a-entity>
+-->
           <!--        TU/e tree-->
+<!--
         <a-entity lazy-load="chunk: 1;" rotation="0 135 0">
-             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -5; color: #fff"></a-entity>
+             <a-entity mixin="nodeLine" meshline=" path: 0 0 0, 0 0 -5; "></a-entity>
 
             <a-entity mixin="nodeOrange" position="0 0 -5" >
-                <a-entity mixin="h2" position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: TU/e "></a-entity>
-                <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Erik Verhoeven "></a-entity>
+                <a-entity mixin="h2" text="value: TU/e "></a-entity>
+                <a-entity mixin="h3" text="value: Erik Verhoeven "></a-entity>
             </a-entity>
 
            
         </a-entity>
-          <!--        PMC's tree-->
+-->
+<!--                  PMC's tree-->
+<!--
         <a-entity lazy-load="chunk: 1;" rotation="0 180 0">
-             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
+             <a-entity mixin="nodeLine" meshline=" path: 0 0 0, 0 0 -8; "></a-entity>
 
             <a-entity mixin="nodeOrange" position="0 0 -8" >
-                <a-entity mixin="h2" position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: PMC's "></a-entity>
-                <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Patrick Vetkamp "></a-entity>
+                <a-entity mixin="h2" text="value: PMC's "></a-entity>
+                <a-entity mixin="h3" text="value: Patrick Vetkamp "></a-entity>
             </a-entity>
 
-                 <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
+                 <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 0 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="0 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Banken & Datalakes "></a-entity>
+                    <a-entity mixin="h3" text="value: Banken & Datalakes "></a-entity>
                 </a-entity>
             
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, -4 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, -4 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="-4 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Logistiek & IOT / BI Data "></a-entity>
+                    <a-entity mixin="h3" text="value: Logistiek & IOT / BI Data "></a-entity>
                 </a-entity> 
             
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 4 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 4 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="4 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Supply Chain & IoT / Big Data "></a-entity>
+                    <a-entity mixin="h3" text="value: Supply Chain & IoT / Big Data "></a-entity>
                 </a-entity>
             
         </a-entity>
+-->
           <!--        Dataviz tree-->
+<!--
         <a-entity lazy-load="chunk: 1;" rotation="0 225 0">
-             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
+             <a-entity mixin="nodeLine" meshline=" path: 0 0 0, 0 0 -8; "></a-entity>
 
             <a-entity mixin="nodeOrange" position="0 0 -8" >
-                <a-entity mixin="h2" position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Datavisualisatie "></a-entity>
-                <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Bart Geers "></a-entity>
+                <a-entity mixin="h2" text="value: Datavisualisatie "></a-entity>
+                <a-entity mixin="h3" text="value: Bart Geers "></a-entity>
             </a-entity>
 
             
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 6 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 6 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="6 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: D3JS "></a-entity>
+                    <a-entity mixin="h3" text="value: D3JS "></a-entity>
                 </a-entity>
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 2 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 2 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="2 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: App Development "></a-entity>
+                    <a-entity mixin="h3" text="value: App Development "></a-entity>
                 </a-entity> 
-                    <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 2 0 -16, 4 0 -24; color: #fff"></a-entity>
+                    <a-entity mixin="nodeLine" meshline=" path: 2 0 -16, 4 0 -24; "></a-entity>
                     <a-entity mixin="nodeOrange" position="4 0 -24" >
-                        <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Rappit "></a-entity>
+                        <a-entity mixin="h3" text="value: Rappit "></a-entity>
                     </a-entity>
             
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, -2 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, -2 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="-2 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Dashboards "></a-entity>
+                    <a-entity mixin="h3" text="value: Dashboards "></a-entity>
                 </a-entity> 
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, -6 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, -6 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="-6 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: WebVR "></a-entity>
+                    <a-entity mixin="h3" text="value: WebVR "></a-entity>
                 </a-entity>
-                    <a-entity class="ignore-ray" meshline="lineWidth: 5; path: -6 0 -16, -10 0 -24; color: #fff"></a-entity>
+                    <a-entity mixin="nodeLine" meshline=" path: -6 0 -16, -10 0 -24; "></a-entity>
                     <a-entity mixin="nodeOrange" position="-10 0 -24" >
-                        <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Dreamlake "></a-entity>
+                        <a-entity mixin="h3" text="value: Dreamlake "></a-entity>
                     </a-entity>
             
         </a-entity>
+-->
              <!--        why tree-->
+<!--
         <a-entity lazy-load="chunk: 1;" rotation="0 270 0">
-             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -5; color: #fff"></a-entity>
+             <a-entity mixin="nodeLine" meshline=" path: 0 0 0, 0 0 -5; "></a-entity>
 
             <a-entity mixin="nodeOrange" position="0 0 -5" >
-                <a-entity mixin="h2" position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: WHY "></a-entity>
-                <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Patrick Vetkamp "></a-entity>
+                <a-entity mixin="h2" text="value: WHY "></a-entity>
+                <a-entity mixin="h3" text="value: Patrick Vetkamp "></a-entity>
             </a-entity>
 
         </a-entity> 
-        <!--        Verdienmodel tree-->
+                Verdienmodel tree
         <a-entity lazy-load="chunk: 1;" rotation="0 315 0">
-             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
+             <a-entity mixin="nodeLine" meshline=" path: 0 0 0, 0 0 -8; "></a-entity>
 
             <a-entity mixin="nodeOrange" position="0 0 -8" >
-                <a-entity mixin="h2" position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Verdienmodel "></a-entity>
-                <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Patrick Vetkamp "></a-entity>
+                <a-entity mixin="h2" text="value: Verdienmodel "></a-entity>
+                <a-entity mixin="h3" text="value: Patrick Vetkamp "></a-entity>
             </a-entity>
             
-                   <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
+                   <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 0 0 -16; "></a-entity>
                     <a-entity mixin="nodeOrange" position="0 0 -16" >
-                        <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Kosten & baten "></a-entity>
+                        <a-entity mixin="h3" text="value: Kosten & baten "></a-entity>
                     </a-entity>
 
         </a-entity>
+-->
           <!--        Organisatie tree-->
+<!--
         <a-entity rotation="0 360 0">
-             <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 0, 0 0 -8; color: #fff"></a-entity>
+             <a-entity mixin="nodeLine" meshline=" path: 0 0 0, 0 0 -8; "></a-entity>
 
             <a-entity mixin="nodeOrange" position="0 0 -8" >
-                <a-entity mixin="h2" position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Organisatie "></a-entity>
-                <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Erik Verhoeven "></a-entity>
+                <a-entity mixin="h2" text="value: Organisatie "></a-entity>
+                <a-entity mixin="h3" text="value: Erik Verhoeven "></a-entity>
             </a-entity>
             
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, 0 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 0 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="0 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Netwerk "></a-entity>
+                    <a-entity mixin="h3" text="value: Netwerk "></a-entity>
                 </a-entity>
             
-                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -8, -4 0 -16; color: #fff"></a-entity>
+                <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, -4 0 -16; "></a-entity>
                 <a-entity mixin="nodeOrange" position="-4 0 -16" >
-                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Uitstraling "></a-entity>
+                    <a-entity mixin="h3" text="value: Uitstraling "></a-entity>
                 </a-entity> 
-                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, 0 0 -24; color: #fff"></a-entity>
+                        <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, 0 0 -24; "></a-entity>
                         <a-entity mixin="nodeOrange" position="0 0 -24" >
-                            <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Doelgroepen "></a-entity>
+                            <a-entity mixin="h3" text="value: Doelgroepen "></a-entity>
                         </a-entity>
             
-                            <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -24, 0 0 -32; color: #fff"></a-entity>
+                            <a-entity mixin="nodeLine" meshline=" path: 0 0 -24, 0 0 -32; "></a-entity>
                             <a-entity mixin="nodeOrange" position="0 0 -32" >
-                                <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Opdrachtgevers "></a-entity>
+                                <a-entity mixin="h3" text="value: Opdrachtgevers "></a-entity>
                             </a-entity>
 
-                            <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -24, -4 0 -32; color: #fff"></a-entity>
+                            <a-entity mixin="nodeLine" meshline=" path: 0 0 -24, -4 0 -32; "></a-entity>
                             <a-entity mixin="nodeOrange" position="-4 0 -32" >
-                                <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Professionals"></a-entity>
+                                <a-entity mixin="h3" text="value: Professionals"></a-entity>
                             </a-entity> 
 
-                            <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -24, 4 0 -32; color: #fff"></a-entity>
+                            <a-entity mixin="nodeLine" meshline=" path: 0 0 -24, 4 0 -32; "></a-entity>
                             <a-entity mixin="nodeOrange" position="4 0 -32" >
-                                <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Kids "></a-entity>
+                                <a-entity mixin="h3" text="value: Kids "></a-entity>
                             </a-entity>
 
-                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, -4 0 -24; color: #fff"></a-entity>
+                        <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, -4 0 -24; "></a-entity>
                         <a-entity mixin="nodeOrange" position="-4 0 -24" >
-                            <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Branding"></a-entity>
+                            <a-entity mixin="h3" text="value: Branding"></a-entity>
                         </a-entity> 
 
-                        <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 0 0 -16, 4 0 -24; color: #fff"></a-entity>
+                        <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, 4 0 -24; "></a-entity>
                         <a-entity mixin="nodeOrange" position="4 0 -24" >
-                            <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Huisstijl "></a-entity>
+                            <a-entity mixin="h3" text="value: Huisstijl "></a-entity>
                         </a-entity>
-                                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 4 0 -24, 8 0 -32; color: #fff"></a-entity>
+                                <a-entity mixin="nodeLine" meshline=" path: 4 0 -24, 8 0 -32; "></a-entity>
                                 <a-entity mixin="nodeOrange" position="8 0 -32" >
-                                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: JIM "></a-entity>
+                                    <a-entity mixin="h3" text="value: JIM "></a-entity>
                                 </a-entity>
 
-                                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 4 0 -24, 12 0 -28; color: #fff"></a-entity>
+                                <a-entity mixin="nodeLine" meshline=" path: 4 0 -24, 12 0 -28; "></a-entity>
                                 <a-entity mixin="nodeOrange" position="12 0 -28" >
-                                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: Strijp-S"></a-entity>
+                                    <a-entity mixin="h3" text="value: Strijp-S"></a-entity>
                                 </a-entity> 
 
-                                <a-entity class="ignore-ray" meshline="lineWidth: 5; path: 4 0 -24, 16 0 -24; color: #fff"></a-entity>
+                                <a-entity mixin="nodeLine" meshline=" path: 4 0 -24, 16 0 -24; "></a-entity>
                                 <a-entity mixin="nodeOrange" position="16 0 -24" >
-                                    <a-entity mixin="h2" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white; value: LivingLAS "></a-entity>
+                                    <a-entity mixin="h3" text="value: LivingLAS "></a-entity>
                                 </a-entity>
 
         </a-entity>
+-->
 
         <!-- Camera + cursor. -->
+<!--
                 <a-entity camera="userHeight: 1.8" raycaster crawling-cursor="target: #my-cursor"  gamepad-controls look-controls wasd-controls lookEnabled="false"  
                           event-set__1="_event: gamepadbuttondown:0; position: 0 2 0;" 
                           event-set__2="_event: gamepadbuttondown:1; position: 0 10 0;" 
@@ -352,6 +369,7 @@ function onClick() {
                   
                 </a-entity>
                 <a-circle color="#fff" scale= "0.1 0.1 0.1" id="my-cursor"></a-circle>
+-->
 
     </a-scene>
     
