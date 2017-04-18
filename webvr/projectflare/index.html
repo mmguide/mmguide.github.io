@@ -15,6 +15,8 @@
     <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
     
+    <!-- enable ovr -->
+    <script src="js/components/beacon.js"></script>
     <!--Color mixins-->
     <script src="js/components/webvrmixins.js"></script>
     <!--this is the sky color-->
@@ -50,7 +52,18 @@
     <link rel="apple-touch-icon icon" sizes="180x180" href="/images/favicon/favicon-180.png">
     <link rel="apple-touch-icon icon" sizes="192x192" href="/images/favicon/favicon-192.png">
 
-  
+  <script>
+    
+       AFRAME.registerComponent('hello-world', {
+          init: function () {
+//            console.log('Hello, World!');
+//            document.querySelector('a-scene').setAttribute('hello-world', '');
+              window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
+          }
+
+        });
+      
+    </script>
    
     
 </head>
@@ -64,10 +77,10 @@
 
 <script>
 // You can also navigate programmatically from script
-function onClick() {
+//function onClick() {
   // Replace http://ocul.us/experience with your URL
-  window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
-}
+//  window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
+//}
 </script>
 
 <body>
