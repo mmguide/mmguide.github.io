@@ -53,13 +53,36 @@
 
 
 //5
-AFRAME.registerComponent('box', {
+//AFRAME.registerComponent('orange_node', {
+//  schema: {
+//    width: {type: 'number', default: 1},
+//    height: {type: 'number', default: 1},
+//    depth: {type: 'number', default: 1},
+//    color: {type: 'color', default: '#AAA'}
+//  },
+//  /**
+//   * Initial creation and setting of the mesh.
+//   */
+//  init: function () {
+//    var data = this.data;
+//    var el = this.el;
+//    // Create geometry.
+//    this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
+//    // Create material.
+//    this.material = new THREE.MeshStandardMaterial({color: data.color});
+//    // Create mesh.
+//    this.mesh = new THREE.Mesh(this.geometry, this.material);
+//    // Set mesh on entity.
+//    el.setObject3D('mesh', this.mesh);
+//  }
+//});
+
+AFRAME.registerComponent('orange_node', {
   schema: {
-    width: {type: 'number', default: 1},
-    height: {type: 'number', default: 1},
-    depth: {type: 'number', default: 1},
-    color: {type: 'color', default: '#AAA'},
-    position: {type: 'number',default: 0 0 -2}
+    radius: {type: 'number', default: 1},
+//    segmentsHeight: {type: 'number', default: 1},
+//    segmentsWidth: {type: 'number', default: 1},
+    color: {type: 'color', default: '#f26d40'}
   },
   /**
    * Initial creation and setting of the mesh.
@@ -68,9 +91,8 @@ AFRAME.registerComponent('box', {
     var data = this.data;
     var el = this.el;
     // Create geometry.
-    this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
-      
-    this.geometry = new THREE.BoxBufferGeometry(data.position);
+    this.geometry = new THREE.BoxBufferGeometry({radius: data.radius});
+//    this.geometry = new THREE.BoxBufferGeometry(data.radius, data.segmentsHeight, data.segmentsWidth);
     // Create material.
     this.material = new THREE.MeshStandardMaterial({color: data.color});
     // Create mesh.
@@ -79,3 +101,17 @@ AFRAME.registerComponent('box', {
     el.setObject3D('mesh', this.mesh);
   }
 });
+
+//
+//orangeNode {
+//     material {
+//        color: #f26d40;
+//      }
+//      geometry {
+//        primitive: sphere;
+//        radius: .5;
+//        segmentsHeight: 8;
+//        segmentsWidth: 16;
+//      }
+// }
+
