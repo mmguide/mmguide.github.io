@@ -15,10 +15,6 @@
     <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
     
-    <!-- enable ovr -->
-    <script src="js/components/beacon.js"></script>
-    <!--Color mixins-->
-    <script src="js/components/webvrmixins.js"></script>
     <!--this is the sky color-->
     <script src="js/components/gradient.js"></script>
     <!--this makes the cursor follow a geomtry-->
@@ -36,7 +32,6 @@
     <!--lazyload, this enables to do chunk loads-->
     <script src="js/components/lazyload.js"></script>
     
-    <script src="js/components/nodePosition.js"></script>
     
 <!--     <script src="https://rawgit.com/chenzlabs/gearvr-controls/master/dist/aframe-gearvr-controls-component.min.js"></script>-->
     
@@ -52,28 +47,26 @@
     <link rel="apple-touch-icon icon" sizes="180x180" href="/images/favicon/favicon-180.png">
     <link rel="apple-touch-icon icon" sizes="192x192" href="/images/favicon/favicon-192.png">
 
-  <script>
-    
-       AFRAME.registerComponent('hello-world', {
-          init: function () {
-//            console.log('Hello, World!');
-//            document.querySelector('a-scene').setAttribute('hello-world', '');
-              window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
-          }
-
-        });
-      
-    </script>
-   
     
 </head>
+     <script type="text/javascript">
+    function load()
+    {
+    window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
+
+    }
+    </script>
+    
+    
 <!-- Launch Carmel Developer Preview using standard links, replace http://ocul.us/experience with your URL -->
+<!--
     <a href="ovrweb:http://mmguide.github.io/webvr/projectflare/index.html">
         Navigate to an HTTP experience
     </a>
     <a href="ovrweb:https://mmguide.github.io/webvr/projectflare/index.html">
         Navigate to an HTTPS experience
     </a>
+-->
 
 <script>
 // You can also navigate programmatically from script
