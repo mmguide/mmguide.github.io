@@ -4,15 +4,21 @@
     <!-- SEO -->
     <title>MM Guide; PROJECT FLARE</title>
     <meta name="description" content="MM Guide; PROJECT FLARE ">
-<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-
-
     
-    <!--    A Frame Components-->
-    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    
+<!--    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>-->
+
+    <!-- latest version of a frame-->
+    <script src="js/aframe.min.js"></script>
+   
+    <!--    Allowing you to change the 360 img on click-->
+    <script src="js/components/eventset.js"></script>
+    <!--    Geommetry animations-->
+    <script src="js/components/animation.js"></script>
+    <!--    flexbox like layout-->
+    <script src="js/components/layout.js"></script>
+    <!--    creating templates for cleaner code-->
+    <script src="js/components/template.js"></script>
     
     <!--this is the sky color-->
     <script src="js/components/gradient.js"></script>
@@ -32,7 +38,7 @@
     <script src="js/components/lazyload.js"></script>
     
     
-<!--     <script src="https://rawgit.com/chenzlabs/gearvr-controls/master/dist/aframe-gearvr-controls-component.min.js"></script>-->
+    <script src="https://rawgit.com/chenzlabs/gearvr-controls/master/dist/aframe-gearvr-controls-component.min.js"></script>
     
     
 
@@ -59,14 +65,12 @@
     
     
 <!-- Launch Carmel Developer Preview using standard links, replace http://ocul.us/experience with your URL -->
-<!--
     <a href="ovrweb:http://mmguide.github.io/webvr/projectflare/index.html">
         Navigate to an HTTP experience
     </a>
     <a href="ovrweb:https://mmguide.github.io/webvr/projectflare/index.html">
         Navigate to an HTTPS experience
     </a>
--->
 
 <script>
 // You can also navigate programmatically from script
