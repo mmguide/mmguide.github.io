@@ -39,6 +39,8 @@
     <!--enable gear vr controls-->
     <script src="js/components/gearvrcontrols.js"></script>
     
+    <script src="https://rawgit.com/chenzlabs/aframe/fix-auto-enter-vr-dist/dist/aframe-master.min.js"></script>
+    
     
     <!-- FAVICONS -->
     <link rel="shortcut icon" sizes="16x16" href="/images/favicon/favicon-16.png">
@@ -66,25 +68,13 @@
         //   Replace http://ocul.us/experience with your URL
 //          window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
 //        }
-   AFRAME.registerComponent('auto-init-vr', {
-    init: function () {
 
-        var scene = this;
-
-        scene.el.addEventListener('loaded', function () {
-            setTimeout(function(){
-                console.log('Automatically entering VR...');
-                scene.el.sceneEl.enterVR();
-            },1000);
-        });
-    }
-});
     
 </script>
 
 
 <body>
-    <a-scene stats auto-init-vr outline webvr-ui >
+    <a-scene stats auto-enter-vr="display:all" outline webvr-ui >
        <a-assets>
            
            <!--Colors-->
