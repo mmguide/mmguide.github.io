@@ -11,41 +11,66 @@
 
         <a-assets>
             
-            <a-mixin id="text" text="width: 2; align:center; lineHeight: 5; letterSpacing: 5; color: white; " geometry="primitive: plane; height: 1; width: 1; material.color:green;"></a-mixin> 
+            <a-mixin id="text" 
+                     text="width: 2; align:center; lineHeight: 5; letterSpacing: 5; color: white; " 
+                     geometry="primitive: plane; height: 1; width: 1;"
+                     event-set__1="_event: mouseenter; material.color: red; scale: 1.5 1.5 1.5;"
+                     event-set__2="_event: mouseleave; material.color: red; scale: 1 1 1;" 
+                     ></a-mixin> 
 
-            
+            <script id="bartimg" type="text/html">
+                <a-plane src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg" ></a-plane>
+            </script>
             <script id="bart" type="text/html">
                <a-text 
                        mixin="text"
-                       value="Bart Geers:"
-                       event-set__1="_event: mouseenter; material.color: red; scale: 1.5 1.5 1.5; value:Bart Geers - I'm currently working on...." 
-                       event-set__2="_event: mouseleave; material.color: red; scale: 1 1 1; value:Bart Geers - "
-                >
-                </a-text>
+                       material="src: #bartimg"
+                       value="Bart Geers - "
+                       event-set__1="_event: mouseenter; value: Bart Geers - I'm currently working on...." 
+                       event-set__2="_event: mouseleave; value: Bart Geers - "
+                ></a-text>
             </script>   
             
+             <img id="city" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
             <script id="patrick" type="text/html">
                <a-text 
-                         mixin="text"
-                       value="Patrick Vetkamp"
-                       event-set__1="_event: mouseenter; material.color: red; scale: 1.5 1.5 1.5; value:Patrick Vetkamp: - I'm currently working on...." 
-                       event-set__2="_event: mouseleave; material.color: red; scale: 1 1 1; value:Patrick Vetkamp - "
-                >
-                </a-text>
+                       mixin="text"
+                       value="Patrick Vetkamp - "
+                       event-set__1="_event: mouseenter; value: Patrick Vetkamp: - I'm currently working on...." 
+                       event-set__2="_event: mouseleave; value: Patrick Vetkamp - "
+                ></a-text>
             </script>  
             
         </a-assets>
 
+<!--
+        
+        <a-assets>
+               <a-asset-item id="horse-obj" src="horse.obj"></a-asset-item>
+               <a-asset-item id="horse-mtl" src="horse.mtl"></a-asset-item>
+               <a-mixin id="giant" scale="5 5 5"></a-mixin>
+               <audio id="neigh" src="neigh.mp3"></audio>
+               <img id="advertisement" src="ad.png">
+            <video id="kentucky-derby" src="derby.mp4"></video>
+    </a-assets>
+
+  <a-plane src="advertisement"></a-plane>
+  <a-sound src="#neigh"></a-sound>
+  <a-entity geometry="primitive: plane" material="src: #kentucky-derby"></a-entity>
+  <a-entity mixin="giant" obj-model="obj: #horse-obj; mtl: #horse-mtl"></a-entity>
+         
+-->
+   
+        
+        
         <a-entity id="links" layout="layout: line; margin: 1.5" position="0 0 -5">
-            <a-text template="src: #bart"></a-text>
-            <a-text template="src: #patrick"></a-text>
+
+            <a-entity template="src: #bart"></a-entity>  
+            <a-entity template="src: #patrick"></a-entity>  
         </a-entity>
         
           <a-camera>
             <a-cursor></a-cursor>
         </a-camera>
-
-        
-      
     </a-scene>
 </body>
