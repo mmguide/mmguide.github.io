@@ -72,7 +72,7 @@
 
 
 <body>
-    <a-scene stats outline auto-enter-vr webvr-ui >
+    <a-scene stats outline webvr-ui >
        <a-assets>
            
            <!--Colors-->
@@ -369,7 +369,7 @@
         </a-entity>
 
         <!-- Camera + cursor. -->
-                <a-entity camera="userHeight: 3.8" raycaster gamepad-controls look-controls wasd-controls gearvr-controls lookEnabled="false"  
+                <a-entity camera="userHeight: 3.8" raycaster gamepad-controls look-controls wasd-controls lookEnabled="false"  
                           event-set__1="_event: gamepadbuttondown:0; position: 0 2 0;" 
                           event-set__2="_event: gamepadbuttondown:1; position: 0 10 0;" 
                           event-set__3="_event: gamepadbuttondown:2; position: 0 20 0;" 
