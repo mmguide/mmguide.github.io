@@ -66,18 +66,25 @@
         //   Replace http://ocul.us/experience with your URL
 //          window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
 //        }
-    AFRAME.registerComponent('auto-enter-vr', {
-  init: function () {
-    this.el.sceneEl.enterVR();
-//        window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
-  }
+   AFRAME.registerComponent('auto-init-vr', {
+    init: function () {
+
+        var scene = this;
+
+        scene.el.addEventListener('loaded', function () {
+            setTimeout(function(){
+                console.log('Automatically entering VR...');
+                scene.el.sceneEl.enterVR();
+            },1000);
+        });
+    }
 });
     
 </script>
 
 
 <body>
-    <a-scene stats auto-enter-vr outline webvr-ui >
+    <a-scene stats auto-init-vr outline webvr-ui >
        <a-assets>
            
            <!--Colors-->
