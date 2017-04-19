@@ -49,42 +49,45 @@
     <link rel="apple-touch-icon icon" sizes="180x180" href="/images/favicon/favicon-180.png">
     <link rel="apple-touch-icon icon" sizes="192x192" href="/images/favicon/favicon-192.png">
 
-    <script type="text/javascript">
-        function load()
-        {
-//            window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
-            window.open("ovrweb:https://mmguide.github.io/webvr/projectflare/index.html");
-
-        }
-    </script>
 </head>
 
     
     
 <!-- Launch Carmel Developer Preview using standard links, replace http://ocul.us/experience with your URL -->
-    <a href="ovrweb:http://mmguide.github.io/webvr/projectflare/index.html">
-        Navigate to an HTTP experience
-    </a>
+<!--
     <a href="ovrweb:https://mmguide.github.io/webvr/projectflare/index.html">
         Navigate to an HTTPS experience
     </a>
+-->
 
 <script>
-// You can also navigate programmatically from script
-function onClick() {
-//   Replace http://ocul.us/experience with your URL
-  window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
-}
+        // You can also navigate programmatically from script
+//        function onClick() {
+        //   Replace http://ocul.us/experience with your URL
+//          window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
+//        }
 </script>
 
+<script>
+    var scene = document.querySelector('a-scene');
+if (scene.hasLoaded) {
+  run();
+} else {
+  scene.addEventListener('loaded', run);
+}
+function run () {
+   window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
+}
+    </script>    
+    
 <body>
-    <a-scene stats outline webvr-ui>
+    <a-scene stats outline webvr-ui keyboard-shortcuts="resetSensor: true">
        <a-assets>
            
            <!--Colors-->
-<!--            <a-style src="/mss/colors.mss"></a-style>-->
-            <!-- images-->
-<!--            <img id="mmg-logo" src="../images/logo-mmg-slack.jpg">-->
+           <!--            <a-style src="/mss/colors.mss"></a-style>-->
+           <!-- images-->
+           <!--            <img id="mmg-logo" src="../images/logo-mmg-slack.jpg">-->
 
             <!--Audio-->
             <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
@@ -106,12 +109,8 @@ function onClick() {
            <a-mixin id="path3" meshline="path: 0 0 -16, 0 0 -24;" lazy-load="chunk: 3;"></a-mixin> 
            <a-mixin id="path4" meshline="path: 0 0 -24, 0 0 -32;" lazy-load="chunk: 4;"></a-mixin> 
            <a-mixin id="path5" meshline="path: 0 0 -32, 0 0 -40;" lazy-load="chunk: 5;"></a-mixin> 
-           
-           
-           <a-mixin id="branch4" meshline="path: 0 0 0, -4 0 0;"></a-mixin> 
-           
-           
-           
+          
+           <!--           rotations-->
            <a-mixin id="r45" rotation="0 45 0"></a-mixin>
            <a-mixin id="r90" rotation="0 90 0"></a-mixin>
            <a-mixin id="r135" rotation="0 135 0"></a-mixin>
@@ -148,7 +147,6 @@ function onClick() {
                 <a-entity mixin="h3" text="value: Erik Verhoeven "></a-entity>
             </a-entity>
 
-            
                      <a-entity mixin="nodeLine path2" meshline=" path: 0 0 -8, 4 0 -16; "></a-entity>
                     <a-entity mixin="nodeOrange position2" position="4 0 -16" >
                         <a-entity mixin="h3" text="value: ZZP "></a-entity>
@@ -300,7 +298,7 @@ function onClick() {
             </a-entity>
 
         </a-entity> 
-<!--                Verdienmodel tree-->
+        <!--                Verdienmodel tree-->
         <a-entity lmixin="r315">
              <a-entity mixin="nodeLine path1"></a-entity>
 
@@ -315,7 +313,7 @@ function onClick() {
                     </a-entity>
 
         </a-entity>
-          <!--        Organisatie tree-->
+        <!--        Organisatie tree-->
         <a-entity mixin="r360">
              <a-entity mixin="nodeLine path1"></a-entity>
 
@@ -380,14 +378,13 @@ function onClick() {
         </a-entity>
 
         <!-- Camera + cursor. -->
-                <a-entity camera="userHeight: 3.8" raycaster crawling-cursor="target: #my-cursor"  gamepad-controls look-controls wasd-controls gearvr-controls lookEnabled="false"  
+                <a-entity camera="userHeight: 3.8" raycaster gamepad-controls look-controls wasd-controls gearvr-controls lookEnabled="false"  
                           event-set__1="_event: gamepadbuttondown:0; position: 0 2 0;" 
                           event-set__2="_event: gamepadbuttondown:1; position: 0 10 0;" 
                           event-set__3="_event: gamepadbuttondown:2; position: 0 20 0;" 
                           >
                   
                 </a-entity>
-                <a-circle color="#fff" scale= "0.1 0.1 0.1" id="my-cursor"></a-circle>
 
     </a-scene>
     
