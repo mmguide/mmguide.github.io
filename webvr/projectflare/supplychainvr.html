@@ -1,0 +1,84 @@
+<head>
+    <title>MM Guide VR SupplyChain </title>
+    <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+    <script src="js/components/gradient.js"></script>
+    <script src="js/components/alongpath.js"></script>
+    <script src="js/components/curve.js"></script>
+    <script src="js/components/outline.js"></script>
+    <script src="js/components/billboard.js"></script>
+
+</head>
+
+
+<body>
+    <a-scene outline>
+        <a-gradient-sky material="shader: gradient; topColor: 255 255 255; bottomColor: 51 111 161;"></a-gradient-sky>
+        <a-assets>
+
+            <a-curve id="track1" type="type:QuadraticBezier">
+                <a-curve-point position="0 10 5"></a-curve-point>
+                <a-curve-point position="0 0 0"></a-curve-point>
+                <a-curve-point position="0 0 -10"></a-curve-point>
+            </a-curve>
+            <a-curve id="track1a" type="type:QuadraticBezier">
+                <a-curve-point position="0 0 -10"></a-curve-point>
+                <a-curve-point position="-.8 0 -20"></a-curve-point>
+                <a-curve-point position="-10 0 -40"></a-curve-point>
+                <a-curve-point position="-10 0 -50"></a-curve-point>
+            </a-curve>
+            <a-curve id="track1b" type="type:QuadraticBezier">
+                <a-curve-point position="0 0 -10"></a-curve-point>
+                <a-curve-point position=".8 0 -20"></a-curve-point>
+                <a-curve-point position="10 0 -40"></a-curve-point>
+                <a-curve-point position="10 0 -50"></a-curve-point>
+            </a-curve>
+
+            <!--            mixings-->
+            <a-mixin id="nodeOrange" geometry="primitive: sphere; radius: .3; segmentsHeight: 8; segmentsWidth: 16;" material="color: #f26d40" alongpath="loop: true;  dur:1000;"></a-mixin>
+
+            <a-mixin id="curvedline" material="shader: line; color: white;" width="2" ;></a-mixin>
+            <a-mixin id="cloneline" clone-along-curve="spacing: 0.1; rotation: 0 0 0;" geometry="primitive:box; height:0.02; width:0.02; depth:.02" material="color: blue"></a-mixin>
+
+            <a-mixin id="h1" billboard class="ignore-ray" position="0 2.1 0" text="width: 20; align:center; lineHeight: 5; letterSpacing: 5; color: white; "></a-mixin>
+            <a-mixin id="h1b" billboard class="ignore-ray" position="0 1.6 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white;"></a-mixin>
+        </a-assets>
+
+        <a-entity position="25 -10 -35" rotation="0 90 0">
+            <!-- Draw the Curve -->
+            <a-draw-curve mixin="curvedline" curveref="#track1"></a-draw-curve>
+            <a-draw-curve mixin="curvedline" curveref="#track1a"></a-draw-curve>
+            <a-draw-curve mixin="curvedline" curveref="#track1b"></a-draw-curve>
+
+            <!-- Clone a Box along the Curve -->
+            <a-entity mixin="cloneline" clone-along-curve="curve: #track1;"></a-entity>
+            <a-entity mixin="cloneline" clone-along-curve="curve: #track1a;"></a-entity>
+            <a-entity mixin="cloneline" clone-along-curve="curve: #track1b;"></a-entity>
+
+            <!--  this is the animated object -->
+            <a-entity mixin="nodeOrange" scale="1 1 1" alongpath="curve: #track1; loop: true;"></a-entity>
+            <a-entity mixin="nodeOrange" scale=".6 .6 .6" alongpath="curve: #track1a; delay:1000;"></a-entity>
+            <a-entity mixin="nodeOrange" scale=".4 .4 .4" alongpath="curve: #track1b; delay:1000;"></a-entity>
+
+
+            <a-entity position="0 20 -25">
+                <a-entity mixin="h1" scale="4 4 4" text="value: VR SUPPLYCAIN "></a-entity>
+            </a-entity>
+            <a-box position="0 10 5">
+                <a-entity mixin="h1" text="value: DATA INPUT"></a-entity>
+            </a-box>
+            <a-box position="0 0 -10">
+                <a-entity mixin="h1" text="value: DATA GATE"></a-entity>
+            </a-box>
+            <a-box position="10 0 -50">
+                <a-entity mixin="h1" text="value: DATA OUTPUT 2 (25%)"></a-entity>
+            </a-box>
+            <a-box position="-10 0 -50">
+                <a-entity mixin="h1" text="value: DATA OUTPUT 1 (75%)"></a-entity>
+            </a-box>
+        </a-entity>
+
+        <a-camera userheight="5.8">
+            <a-cursor></a-cursor>
+        </a-camera>
+    </a-scene>
+</body>

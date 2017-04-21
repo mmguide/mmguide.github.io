@@ -1,0 +1,408 @@
+<html>
+
+<head>
+    <!-- SEO -->
+    <title>MM Guide; PROJECT FLARE</title>
+    <meta name="description" content="MM Guide; PROJECT FLARE ">
+
+
+    <!--    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>-->
+
+    <!-- latest version of a frame-->
+    <script src="js/aframe.min.js"></script>
+
+    <!--    Allowing you to change the 360 img on click-->
+    <script src="js/components/eventset.js"></script>
+    <!--    Geommetry animations-->
+    <script src="js/components/animation.js"></script>
+    <!--    flexbox like layout-->
+    <script src="js/components/layout.js"></script>
+    <!--    creating templates for cleaner code-->
+    <script src="js/components/template.js"></script>
+
+    <!--this is the sky color-->
+    <script src="js/components/gradient.js"></script>
+    <!--this makes the cursor follow a geomtry-->
+    <script src="js/components/crawlingcursor.js"></script>
+    <!--this creates an outline over geomtry-->
+    <script src="js/components/outline.js"></script>
+    <!--this creates an line Between geomtry-->
+    <script src="js/components/draw-line.js"></script>
+    <!--This helps the text follow the camera-->
+    <script src="js/components/billboard.js"></script>
+    <!--This helps the text follow the camera-->
+    <script src="js/components/webvr-ui.js"></script>
+    <!--this enables the xbox controller-->
+    <script src="js/components/xboxgamepad.js"></script>
+    <!--lazyload, this enables to do chunk loads-->
+    <script src="js/components/lazyload.js"></script>
+    <!--enable gear vr controls-->
+    <!--    <script src="js/components/gearvrcontrols.js"></script>-->
+
+    <!--    <script src="https://rawgit.com/chenzlabs/aframe/fix-auto-enter-vr-dist/dist/aframe-master.min.js"></script>-->
+
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="/images/favicon/favicon-16.png">
+    <link rel="shortcut icon" sizes="32x32" href="/images/favicon/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="/images/favicon/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="/images/favicon/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="/images/favicon/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="/images/favicon/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="/images/favicon/favicon-192.png">
+
+</head>
+
+<style type="text/css">
+    .mobileShow {
+        display: none;
+        position: fixed;
+        top: 25%;
+        left: 50%;
+        z-index: 999;
+        background-color: white;
+        padding: 20px;
+        corner-radius: 5px;
+    }
+    /* Smartphone Portrait and Landscape */
+    
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+        .mobileShow {
+            display: inline;
+        }
+    }
+</style>
+
+<!-- Launch Carmel Developer Preview using standard links, replace http://ocul.us/experience with your URL -->
+<a class="mobileShow" href="ovrweb:https://mmguide.github.io/webvr/projectflare/index.html">
+       open it in the gearvr
+    </a>
+
+<script>
+    // You can also navigate programmatically from script
+    //        function onClick() {
+    //   Replace http://ocul.us/experience with your URL
+    //          window.location.href = "ovrweb:https://mmguide.github.io/webvr/projectflare/index.html";
+    //        }
+</script>
+
+
+<body>
+    <a-scene outline webvr-ui>
+        <a-entity gearvr-controls></a-entity>
+        <a-assets>
+
+
+            <!--Audio-->
+            <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+
+            <!--            node positions-->
+            <a-mixin id="nodeOrange" geometry="primitive: sphere; radius: .3; segmentsHeight: 8; segmentsWidth: 16;" material="color: #f26d40"></a-mixin>
+            <a-mixin id="position0" position="0 0 0" lazy-load="chunk: 0;"></a-mixin>
+            <a-mixin id="position1" position="0 0 -8" lazy-load="chunk: 1;"></a-mixin>
+            <a-mixin id="position2" position="0 0 -16" lazy-load="chunk: 2;"></a-mixin>
+            <a-mixin id="position3" position="0 0 -24" lazy-load="chunk: 3;"></a-mixin>
+            <a-mixin id="position4" position="0 0 -32" lazy-load="chunk: 4;"></a-mixin>
+            <a-mixin id="position5" position="0 0 -40" lazy-load="chunk: 5;"></a-mixin>
+
+            <!--           draw lines-->
+            <a-mixin id="NodeLine" class="ignore-ray" meshline="lineWidth: 5; color: #fff;"></a-mixin>
+            <a-mixin id="path0" meshline="path: 0 0 0,0 0 0;" lazy-load="chunk: 0;"></a-mixin>
+            <a-mixin id="path1" meshline="path: 0 0 0, 0 0 -8;" lazy-load="chunk: 1;" layout="layout: line; margin: 1.5"></a-mixin>
+            <a-mixin id="path2" meshline="path: 0 0 -8, 0 0 -16;" lazy-load="chunk: 2;"></a-mixin>
+            <a-mixin id="path3" meshline="path: 0 0 -16, 0 0 -24;" lazy-load="chunk: 3;"></a-mixin>
+            <a-mixin id="path4" meshline="path: 0 0 -24, 0 0 -32;" lazy-load="chunk: 4;"></a-mixin>
+            <a-mixin id="path5" meshline="path: 0 0 -32, 0 0 -40;" lazy-load="chunk: 5;"></a-mixin>
+
+            <!--           rotations-->
+            <a-mixin id="r45" rotation="0 45 0"></a-mixin>
+            <a-mixin id="r90" rotation="0 90 0"></a-mixin>
+            <a-mixin id="r135" rotation="0 135 0"></a-mixin>
+            <a-mixin id="r180" rotation="0 180 0"></a-mixin>
+            <a-mixin id="r225" rotation="0 225 0"></a-mixin>
+            <a-mixin id="r270" rotation="0 270 0"></a-mixin>
+            <a-mixin id="r315" rotation="0 315 0"></a-mixin>
+            <a-mixin id="r360" rotation="0 -45 0"></a-mixin>
+
+
+            <a-mixin id="h1" billboard class="ignore-ray" position="0 1.1 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; "></a-mixin>
+            <a-mixin id="h1b" billboard class="ignore-ray" position="0 .6 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white;"></a-mixin>
+            <a-mixin id="h2" billboard class="ignore-ray" position="0 .9 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white; "></a-mixin>
+            <a-mixin id="h3" billboard class="ignore-ray" position="0 .5 0" text="width: 5; align:center; lineHeight: 5; letterSpacing: 5; color: white;"></a-mixin>
+
+        </a-assets>
+
+
+        <!-- Dim ambient lighting. -->
+        <a-light type="ambient" light="color: #fff; intensity: .8"></a-light>
+        <a-gradient-sky material="shader: gradient; topColor: 255 255 255; bottomColor: 51 111 161;"></a-gradient-sky>
+        <!--        value: A MM Guide Community Project"-->
+
+        <a-entity mixin="nodeOrange">
+            <a-entity mixin="h1" text="value: Data Engineering"></a-entity>
+            <a-entity mixin="h1b" text="value: A MM Guide Community Project"></a-entity>
+        </a-entity>
+
+        <!--        Resources tree-->
+        <a-entity mixin="r45">
+            <a-entity mixin="NodeLine path1"></a-entity>
+            <a-entity mixin="nodeOrange position1">
+                <a-entity mixin="h2" text="value: Resources "></a-entity>
+                <a-entity mixin="h3" text="value: Erik Verhoeven "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine path2" meshline=" path: 0 0 -8, 4 0 -16; "></a-entity>
+            <a-entity mixin="nodeOrange position2" position="4 0 -16">
+                <a-entity mixin="h3" text="value: ZZP "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine path2" meshline=" path: 0 0 -8, 0 0 -16; "></a-entity>
+            <a-entity mixin="nodeOrange position2" position="0 0 -16">
+                <a-entity mixin="h3" text="value: Studenten "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine path2" meshline=" path: 0 0 -8, -4 0 -16; "></a-entity>
+            <a-entity mixin="nodeOrange position2" position="-4 0 -16">
+                <a-entity mixin="h3" text="value: Medewerkers "></a-entity>
+            </a-entity>
+        </a-entity>
+
+
+
+        <!--        Kennis tree-->
+        <a-entity mixin="r90">
+            <a-entity mixin="nodeLine path1"></a-entity>
+
+            <a-entity mixin="nodeOrange position1">
+                <a-entity mixin="h2" text="value: Kennis "></a-entity>
+                <a-entity mixin="h3" text="value: Israel Jamlean "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine path2 "></a-entity>
+            <a-entity mixin="nodeOrange position2">
+                <a-entity mixin="h3" text="value: Techniek "></a-entity>
+            </a-entity>
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, 4 0 -32; "></a-entity>
+            <a-entity mixin="nodeOrange" position="4 0 -32">
+                <a-entity mixin="h3" text="value: Horton "></a-entity>
+            </a-entity>
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, 2 0 -32; "></a-entity>
+            <a-entity mixin="nodeOrange" position="2 0 -32">
+                <a-entity mixin="h3" text="value: Apache "></a-entity>
+            </a-entity>
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, 0 0 -32; "></a-entity>
+            <a-entity mixin="nodeOrange" position="0 0 -32">
+                <a-entity mixin="h3" text="value: Machine Learning "></a-entity>
+            </a-entity>
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, -2 0 -32; "></a-entity>
+            <a-entity mixin="nodeOrange" position="-2 0 -32">
+                <a-entity mixin="h3" text="value: Robotics "></a-entity>
+            </a-entity>
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, -4 0 -32; "></a-entity>
+            <a-entity mixin="nodeOrange" position="-4 0 -32">
+                <a-entity mixin="h3" text="value: AI "></a-entity>
+            </a-entity>
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, -6 0 -32; "></a-entity>
+            <a-entity mixin="nodeOrange" position="-6 0 -32">
+                <a-entity mixin="h3" text="value: Analytics "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, -4 0 -16; "></a-entity>
+            <a-entity mixin="nodeOrange" position="-4 0 -16">
+                <a-entity mixin="h3" text="value: Gamification "></a-entity>
+            </a-entity>
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 4 0 -16; "></a-entity>
+            <a-entity mixin="nodeOrange" position="4 0 -16">
+                <a-entity mixin="h3" text="value: Toepassingen "></a-entity>
+            </a-entity>
+
+
+
+        </a-entity>
+        <!--        TU/e tree-->
+        <a-entity mixin="r135">
+            <a-entity mixin="nodeLine path1"></a-entity>
+
+            <a-entity mixin="nodeOrange position1">
+                <a-entity mixin="h2" text="value: TU/e "></a-entity>
+                <a-entity mixin="h3" text="value: Erik Verhoeven "></a-entity>
+            </a-entity>
+
+
+        </a-entity>
+        <!--                  PMC's tree-->
+        <a-entity mixin="r180">
+            <a-entity mixin="nodeLine path1"></a-entity>
+
+            <a-entity mixin="nodeOrange position1">
+                <a-entity mixin="h2" text="value: PMC's "></a-entity>
+                <a-entity mixin="h3" text="value: Patrick Vetkamp "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine path2 "></a-entity>
+            <a-entity mixin="nodeOrange position2">
+                <a-entity mixin="h3" text="value: Banken & Datalakes "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, -4 0 -16; "></a-entity>
+            <a-entity mixin="nodeOrange" position="-4 0 -16">
+                <a-entity mixin="h3" text="value: Logistiek & IOT / BI Data "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 4 0 -16; "></a-entity>
+            <a-entity mixin="nodeOrange" position="4 0 -16">
+                <a-entity mixin="h3" text="value: Supply Chain & IoT / Big Data "></a-entity>
+            </a-entity>
+
+        </a-entity>
+        <!--        Dataviz tree-->
+        <a-entity mixin="r225">
+            <a-entity mixin="nodeLine path1"></a-entity>
+
+            <a-entity mixin="nodeOrange position1">
+                <a-entity mixin="h2" text="value: Datavisualisatie "></a-entity>
+                <a-entity mixin="h3" text="value: Bart Geers "></a-entity>
+            </a-entity>
+
+
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 6 0 -16; "></a-entity>
+            <a-entity mixin="nodeOrange" position="6 0 -16">
+                <a-entity mixin="h3" text="value: D3JS "></a-entity>
+            </a-entity>
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, 2 0 -16; "></a-entity>
+            <a-entity mixin="nodeOrange" position="2 0 -16">
+                <a-entity mixin="h3" text="value: App Development "></a-entity>
+            </a-entity>
+            <a-entity mixin="nodeLine" meshline=" path: 2 0 -16, 4 0 -24; "></a-entity>
+            <a-entity mixin="nodeOrange" position="4 0 -24">
+                <a-entity mixin="h3" text="value: Rappit "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, -2 0 -16; "></a-entity>
+            <a-entity mixin="nodeOrange" position="-2 0 -16">
+                <a-entity mixin="h3" text="value: Dashboards "></a-entity>
+            </a-entity>
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, -6 0 -16; "></a-entity>
+            <a-entity mixin="nodeOrange" position="-6 0 -16">
+                <a-entity mixin="h3" text="value: WebVR "></a-entity>
+            </a-entity>
+            <a-entity mixin="nodeLine" meshline=" path: -6 0 -16, -10 0 -24; "></a-entity>
+            <a-entity mixin="nodeOrange" position="-10 0 -24">
+                <a-entity mixin="h3" text="value: Dreamlake "></a-entity>
+            </a-entity>
+
+        </a-entity>
+        <!--        why tree-->
+        <a-entity mixin="r270">
+            <a-entity mixin="nodeLine path1"></a-entity>
+
+            <a-entity mixin="nodeOrange position1">
+                <a-entity mixin="h2" text="value: WHY "></a-entity>
+                <a-entity mixin="h3" text="value: Patrick Vetkamp "></a-entity>
+            </a-entity>
+
+        </a-entity>
+        <!--                Verdienmodel tree-->
+        <a-entity lmixin="r315">
+            <a-entity mixin="nodeLine path1"></a-entity>
+
+            <a-entity mixin="nodeOrange position1">
+                <a-entity mixin="h2" text="value: Verdienmodel "></a-entity>
+                <a-entity mixin="h3" text="value: Patrick Vetkamp "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine path2 "></a-entity>
+            <a-entity mixin="nodeOrange position2">
+                <a-entity mixin="h3" text="value: Kosten & baten "></a-entity>
+            </a-entity>
+
+        </a-entity>
+        <!--        Organisatie tree-->
+        <a-entity mixin="r360">
+            <a-entity mixin="nodeLine path1"></a-entity>
+
+            <a-entity mixin="nodeOrange position1">
+                <a-entity mixin="h2" text="value: Organisatie "></a-entity>
+                <a-entity mixin="h3" text="value: Erik Verhoeven "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine path2 "></a-entity>
+            <a-entity mixin="nodeOrange position2">
+                <a-entity mixin="h3" text="value: Netwerk "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -8, -4 0 -16; "></a-entity>
+            <a-entity mixin="nodeOrange" position="-4 0 -16">
+                <a-entity mixin="h3" text="value: Uitstraling "></a-entity>
+            </a-entity>
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, 0 0 -24; "></a-entity>
+            <a-entity mixin="nodeOrange" position="0 0 -24">
+                <a-entity mixin="h3" text="value: Doelgroepen "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -24, 0 0 -32; "></a-entity>
+            <a-entity mixin="nodeOrange" position="0 0 -32">
+                <a-entity mixin="h3" text="value: Opdrachtgevers "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -24, -4 0 -32; "></a-entity>
+            <a-entity mixin="nodeOrange" position="-4 0 -32">
+                <a-entity mixin="h3" text="value: Professionals"></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -24, 4 0 -32; "></a-entity>
+            <a-entity mixin="nodeOrange" position="4 0 -32">
+                <a-entity mixin="h3" text="value: Kids "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, -4 0 -24; "></a-entity>
+            <a-entity mixin="nodeOrange" position="-4 0 -24">
+                <a-entity mixin="h3" text="value: Branding"></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine" meshline=" path: 0 0 -16, 4 0 -24; "></a-entity>
+            <a-entity mixin="nodeOrange" position="4 0 -24">
+                <a-entity mixin="h3" text="value: Huisstijl "></a-entity>
+            </a-entity>
+            <a-entity mixin="nodeLine" meshline=" path: 4 0 -24, 8 0 -32; "></a-entity>
+            <a-entity mixin="nodeOrange" position="8 0 -32">
+                <a-entity mixin="h3" text="value: JIM "></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine" meshline=" path: 4 0 -24, 12 0 -28; "></a-entity>
+            <a-entity mixin="nodeOrange" position="12 0 -28">
+                <a-entity mixin="h3" text="value: Strijp-S"></a-entity>
+            </a-entity>
+
+            <a-entity mixin="nodeLine" meshline=" path: 4 0 -24, 16 0 -24; "></a-entity>
+            <a-entity mixin="nodeOrange" position="16 0 -24">
+                <a-entity mixin="h3" text="value: LivingLAS "></a-entity>
+            </a-entity>
+
+        </a-entity>
+
+        <!-- Camera + cursor. -->
+        <a-entity camera="userHeight: 3.8" raycaster gamepad-controls look-controls wasd-controls lookEnabled="false" event-set__1="_event: gamepadbuttondown:0; position: 0 2 0;" event-set__2="_event: gamepadbuttondown:1; position: 0 10 0;" event-set__3="_event: gamepadbuttondown:2; position: 0 20 0;">
+
+        </a-entity>
+
+    </a-scene>
+
+    <!--
+XBOX ONE Gampepad layout
+0: A    
+1: B
+2: X 
+3: Y
+4: LB
+5: RB
+6: LT 
+7: RT
+8: options 1
+9: Options 2
+-->
+
+
+</body>
+
+</html>

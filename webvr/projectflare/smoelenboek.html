@@ -1,76 +1,133 @@
 <head>
     <title>MM Guide Smoelenboek </title>
-      <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-layout-component@3.x.x/dist/aframe-layout-component.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@3.x.x/dist/aframe-event-set-component.min.js"></script>
+
+    <!--This helps the text follow the camera-->
+    <script src="js/components/billboard.js"></script>
+    <!--this is the sky color-->
+    <script src="js/components/gradient.js"></script>
+    
+<!--
+    <script>
+        AFRAME.registerComponent('row1', {
+           position: {type: 'vec3', default: {x: 2, y: 2, z: 2}}
+            
+        } init: function () {
+            this.row1El.setAttribute('position', this.data.position);}
+                                );
+    </script>
+-->
+ 
 </head>
+
 
 <body>
     <a-scene>
-
+        <a-gradient-sky material="shader: gradient; topColor: 255 255 255; bottomColor: 51 111 161;"></a-gradient-sky>
         <a-assets>
             
-            <a-mixin id="text" 
-                     text="width: 2; align:center; lineHeight: 5; letterSpacing: 5; color: white; " 
-                     geometry="primitive: plane; height: 1; width: 1; material.color:green;"
-                     event-set__1="_event: mouseenter; scale: 1.5 1.5 1.5;"
-                     event-set__2="_event: mouseleave; scale: 1 1 1;" 
-                    >
-            </a-mixin> 
+<!--
+              <script id="clouds" type="text/x-jade-template">
+               - for (var x = -5; x < 5; x++) {
+        - for (var z = -5; z < 5; z++) {
+            a-entity(geometry="primitive: box; depth: 8; height: 1; width: 6", material="opacity: 0.2", position="#{x * 20} 15 #{z * 20}")
+        - }
+      - }
+            </script>
+-->
+    
+
+            <!--
+            blue: 336fa1
+            dark blue 103454
+            black 383838
+            orange f26d40
+-->
+            <a-mixin id="row1"  position.y="0"></a-mixin>
+            <a-mixin id="row2"  position.y="2"></a-mixin>
+            <a-mixin id="row3"  position.y="4"></a-mixin>
+            <a-mixin id="row4"  position.y="6"></a-mixin>
+            <a-mixin id="row5"  position.y="8"></a-mixin>
             
-            <a-text id="barttext" value="Bart Geers - "></a-text>
-            <script id="bart" type="text/html">
-               <a-text 
-                       mixin="text"
-                       value="#barttext"
-                       event-set__1="_event: mouseenter; value: Bart Geers - I'm currently working on...." 
-                       event-set__2="_event: mouseleave; value:#barttext"
-                ></a-text>
-<!--                <a-plane material="shader: flat;" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg" ></a-plane>-->
-            </script>   
+            <a-mixin id="column1"  position.x="0"></a-mixin>
+            <a-mixin id="column2"  position.x="2"></a-mixin>
+            <a-mixin id="column3"  position.x="4"></a-mixin>
             
-             <img id="city" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
-            <script id="patrick" type="text/html">
-               <a-text 
-                       mixin="text"
-                       value="Patrick Vetkamp - "
-                       event-set__1="_event: mouseenter; value: Patrick Vetkamp: - I'm currently working on...." 
-                       event-set__2="_event: mouseleave; value: Patrick Vetkamp - "
-                ></a-text>
-            </script>  
+            <a-mixin id="table"  position.z="0"></a-mixin>
             
+            <a-mixin id="card" 
+                     billboard 
+                     text="width: 1.9; align:center; lineHeight: 50; letterSpacing: 5; color: white; wrapCount: 32; " 
+                     geometry="primitive: plane; shader: flat;" 
+                     event-set__1="_event: mouseenter; geometry.height: 2.2; geometry.width: 2.2; material.color: #336fa1; position:0 0 1; zOffset: 0.1" 
+                     event-set__2="_event: mouseleave; geometry.height: 1; geometry.width: 1; material.color: none; position:0 0 0;">
+            </a-mixin>
+            <a-mixin id="name" 
+                     billboard 
+                     position="0 -0.8 0.05"
+                     text="width: 1; align:center; lineHeight: 50; letterSpacing: 5; color: white; wrapCount: 16;">
+            </a-mixin>
+
+            <script id="bgeers" type="text/html">
+                 <a-text mixin="card" material=" src:/images/profilepics/bgeers.jpg" event-set__1="_event: mouseenter; value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident." event-set__2="_event: mouseleave; value:"></a-text>
+                <a-text mixin="name"  value="Bart Geers" ></a-text>
+            </script>
+
+            <img id="city" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
+            <script id="pvetkamp" type="text/html">
+                 <a-text mixin="card" material=" src:/images/profilepics/luis.jpg" event-set__1="_event: mouseenter; value: I'm currently working on....;" event-set__2="_event: mouseleave; value:"></a-text>
+                <a-text mixin="name"  value="Patrick Vetkmp" ></a-text>
+            </script>
+
+
+            <script id="jdijkman" type="text/html">
+                 <a-text mixin="card" material=" src:/images/profilepics/johannes.jpg" event-set__1="_event: mouseenter; value: I'm currently working on...." event-set__2="_event: mouseleave; value:"></a-text>
+                <a-text mixin="name"  value="Johannes Dijkman" ></a-text>
+            </script>
+
+            <script id="ijamlean" type="text/html">
+                <a-text mixin="card" material=" src:/images/profilepics/israel.jpg" event-set__1="_event: mouseenter; value: I'm currently working on...." event-set__2="_event: mouseleave; value:"></a-text>
+                <a-text mixin="name"  value="Israel Jamlean" ></a-text>
+            </script>
+
+            <script id="loliveira" type="text/html">
+                <a-text mixin="card" material=" src:/images/profilepics/luis.jpg" event-set__1="_event: mouseenter; value: I'm currently working on...." event-set__2="_event: mouseleave; value:"></a-text>
+                <a-text mixin="name"  value="Luis Oliveira" ></a-text>
+            </script>
+
+
         </a-assets>
 
+<a-entity >
+<!--        <a-entity layout="type:circle; radius: 5; margin:2;" position="0 0.5 0">-->
+
+            <a-animation attribute="rotation" easing="linear" dur="500000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+
+      <a-entity box position="{{ x* 2 }} 15 {{ z * 2 }}"></a-entity>
 <!--
-        
-        <a-assets>
-               <a-asset-item id="horse-obj" src="horse.obj"></a-asset-item>
-               <a-asset-item id="horse-mtl" src="horse.mtl"></a-asset-item>
-               <a-mixin id="giant" scale="5 5 5"></a-mixin>
-               <audio id="neigh" src="neigh.mp3"></audio>
-               <img id="advertisement" src="ad.png">
-            <video id="kentucky-derby" src="derby.mp4"></video>
-    </a-assets>
-
-  <a-plane src="advertisement"></a-plane>
-  <a-sound src="#neigh"></a-sound>
-  <a-entity geometry="primitive: plane" 
-material="src: #kentucky-derby
-"></a-entity>
-  <a-entity mixin="giant" obj-model="obj: #horse-obj; mtl: #horse-mtl"></a-entity>
-         
+            <a-entity template="src: #bgeers"></a-entity>
+            <a-entity mixin="table row2 column1" template="src: #pvetkamp"></a-entity>
+            <a-entity mixin="table row3 column1" template="src: #jdijkman"></a-entity>
+            <a-entity mixin="table row4 column1" template="src: #ijamlean"></a-entity>
+            <a-entity mixin="table row5 column1" template="src: #loliveira"></a-entity> 
+            
+            <a-entity mixin="table row1 column2" template="src: #bgeers"></a-entity>
+            <a-entity mixin="table row2 column2" template="src: #pvetkamp"></a-entity>
+            <a-entity mixin="table row3 column2" template="src: #jdijkman"></a-entity>
+            <a-entity mixin="table row4 column2" template="src: #ijamlean"></a-entity>
+            <a-entity mixin="table row5 column2" template="src: #loliveira"></a-entity>
+            
+            <a-entity mixin="table row1 column3" template="src: #bgeers"></a-entity>
+            <a-entity mixin="table row2 column3" template="src: #pvetkamp"></a-entity>
+            <a-entity mixin="table row3 column3" template="src: #jdijkman"></a-entity>
+            <a-entity mixin="table row4 column3" template="src: #ijamlean"></a-entity>
+            <a-entity mixin="table row5 column3" template="src: #loliveira"></a-entity>
 -->
-   
-        
-        
-        <a-entity id="links" layout="layout: line; margin: 1.5" position="0 0 -5">
-
-            <a-entity template="src: #bart"></a-entity>  
-            <a-entity template="src: #patrick"></a-entity>  
         </a-entity>
-        
-          <a-camera>
+        <a-camera>
             <a-cursor></a-cursor>
         </a-camera>
     </a-scene>
