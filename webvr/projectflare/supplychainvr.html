@@ -5,7 +5,8 @@
     <script src="js/components/alongpath.js"></script>
     <script src="js/components/curve.js"></script>
     <script src="js/components/outline.js"></script>
-    <script src="js/components/billboard.js"></script>
+    <script src="js/components/billboard.js"></script> 
+    <script src="js/components/layout.js"></script>
 
 </head>
 
@@ -32,15 +33,17 @@
                 <a-curve-point position="10 0 -40"></a-curve-point>
                 <a-curve-point position="10 0 -50"></a-curve-point>
             </a-curve>
-
             <!--            mixings-->
             <a-mixin id="nodeOrange" geometry="primitive: sphere; radius: .3; segmentsHeight: 8; segmentsWidth: 16;" material="color: #f26d40" alongpath="loop: true;  dur:1000;"></a-mixin>
 
             <a-mixin id="curvedline" material="shader: line; color: white;" width="2" ;></a-mixin>
             <a-mixin id="cloneline" clone-along-curve="spacing: 0.1; rotation: 0 0 0;" geometry="primitive:box; height:0.02; width:0.02; depth:.02" material="color: blue"></a-mixin>
 
-            <a-mixin id="h1" billboard class="ignore-ray" position="0 2.1 0" text="width: 20; align:center; lineHeight: 5; letterSpacing: 5; color: white; "></a-mixin>
-            <a-mixin id="h1b" billboard class="ignore-ray" position="0 1.6 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white;"></a-mixin>
+            <a-mixin id="h1" billboard class="ignore-ray" position="0 2.1 0" text="width: 20; align:center; lineHeight: 5; letterSpacing: 5; color: white;" ></a-mixin>
+            <a-mixin id="h1b" billboard class="ignore-ray" position="0 1.6 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white;" ></a-mixin>
+            <a-mixin id="error" billboard class="ignore-ray" position="0 0 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white;" geometry="primitive: plane; height:.8; width:2.5;" material="color: red" ></a-mixin>
+            <a-mixin id="warning" billboard class="ignore-ray" position="0 0 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white;"geometry="primitive: plane; height:.8; width:2.5;" material="color: orange"></a-mixin>
+            <a-mixin id="running" billboard class="ignore-ray" position="0 0 0" text="width: 10; align:center; lineHeight: 5; letterSpacing: 5; color: white;"geometry="primitive: plane; height:.8; width:2.5;" material="color: green"></a-mixin>
         </a-assets>
 
         <a-entity position="25 -10 -35" rotation="0 90 0">
@@ -65,15 +68,40 @@
             </a-entity>
             <a-box position="0 10 5">
                 <a-entity mixin="h1" text="value: DATA INPUT"></a-entity>
+                <a-entity position="0 -4 0" layout="type:box; margin: 1">
+                    <a-entity mixin="error" text="value: ISSUE 1"></a-entity>
+                    <a-entity mixin="warning" text="value: ISSUE 1"></a-entity>
+                    <a-entity mixin="running" text="value: ISSUE 1"></a-entity>
+                </a-entity>
             </a-box>
             <a-box position="0 0 -10">
                 <a-entity mixin="h1" text="value: DATA GATE"></a-entity>
+                <a-entity position="0 -4 0" layout="type:box; margin: 1">
+                    <a-entity mixin="error" text="value: ISSUE 1"></a-entity>
+                    <a-entity mixin="warning" text="value: ISSUE 1"></a-entity>
+                    <a-entity mixin="running" text="value: ISSUE 1"></a-entity>
+                </a-entity>
             </a-box>
             <a-box position="10 0 -50">
                 <a-entity mixin="h1" text="value: DATA OUTPUT 2 (25%)"></a-entity>
+                <a-entity position="0 -6 0" layout="type:box; margin: 1">
+                    <a-entity mixin="error" text="value: ISSUE 1"></a-entity>
+                    <a-entity mixin="error" text="value: ISSUE 1"></a-entity>
+                    <a-entity mixin="warning" text="value: ISSUE 1"></a-entity>
+                    <a-entity mixin="running" text="value: ISSUE 1"></a-entity>
+                    <a-entity mixin="running" text="value: ISSUE 1"></a-entity>
+                </a-entity>
             </a-box>
             <a-box position="-10 0 -50">
                 <a-entity mixin="h1" text="value: DATA OUTPUT 1 (75%)"></a-entity>
+                <a-entity position="0 -8 0" layout="type:box; margin: 1">
+                    <a-entity mixin="error" text="value: ISSUE 1"></a-entity>
+                    <a-entity mixin="error" text="value: ISSUE 1"></a-entity>
+                    <a-entity mixin="error" text="value: ISSUE 1"></a-entity>
+                    <a-entity mixin="error" text="value: ISSUE 1"></a-entity>
+                    <a-entity mixin="warning" text="value: ISSUE 1"></a-entity>
+                    <a-entity mixin="running" text="value: ISSUE 1"></a-entity>
+                </a-entity>
             </a-box>
         </a-entity>
 
