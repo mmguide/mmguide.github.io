@@ -7,213 +7,213 @@
     <script src="js/components/template.min.js"></script>
     <script src="js/components/layout.js"></script>
     <script src="js/components/eventset.js"></script>
-    
-    
-<!--    <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>-->
-<!--    <script src="https://unpkg.com/aframe-layout-component@3.x.x/dist/aframe-layout-component.min.js"></script>-->
-<!--    <script src="https://unpkg.com/aframe-event-set-component@3.x.x/dist/aframe-event-set-component.min.js"></script>-->
 
 </head>
-
-
 <body>
     <a-scene stats>
         <a-gradient-sky material="shader: gradient; topColor: 255 255 255; bottomColor: 51 111 161;"></a-gradient-sky>
-        <a-assets> 
-            
-
+        <a-assets>
             <a-mixin id="mmorange" color="#f26d40"></a-mixin>
             <a-mixin id="mmblue" color="#336fa1" material="color:#336fa1"></a-mixin>
             <a-mixin id="mmblack" color="#383838"></a-mixin>
             <a-mixin id="mmdarkblue" color="#103454"></a-mixin>
 
-            <a-mixin id="card" billboard text="position: 0 0 0; anchor: center; width: 1.9; align:left; lineHeight: 50; letterSpacing: 5; color: white; wrapCount: 32; " geometry="primitive: plane; shader: flat;" event-set__1="_event: mouseenter; geometry.height: 2.2; geometry.width: 2.2; material.color: #336fa1; position:0 0 1; zOffset: 0.1" event-set__2="_event: mouseleave; geometry.height: 1; geometry.width: 1; material.color: none; position:0 0 0;">
+            <a-mixin id="card" billboard text="position: 0 0 0; anchor: center; width: 1.9; align:left; lineHeight: 50; letterSpacing: 5; color: white; wrapCount: 32; " 
+                     geometry="primitive: plane; shader: flat;" 
+                     event-set__1="_event: mouseenter; geometry.height: 2.2; geometry.width: 2.2; material.color: #336fa1; position:0 0 1; zOffset: 0.1" 
+                     event-set__2="_event: mouseleave; geometry.height: 1; geometry.width: 1; material.color: none; position:0 0 0;">
             </a-mixin>
-            <a-mixin id="name" billboard position="0 -0.7 0.2" text="width: 1.2; align:center; lineHeight: 50; letterSpacing: 5; color: white; wrapCount: 16;"></a-mixin>
-            <a-mixin id="role" billboard position="0 -.9 0.1" text="width: 1; align:center; lineHeight: 50; letterSpacing: 5; color: white; wrapCount: 17;"></a-mixin>
-            
+            <a-mixin id="cardText" billboard text="align:center; lineHeight: 50; letterSpacing: 5; color: white;"></a-mixin>
 
-            <script id="mmlogo" type="text/html">
-
-                <a-text mixin="card" material=" src:images/mmguide-logo.jpg" 
-                        event-set__1="_event: mouseenter; value: Wij laten meer zien, kijk hier waar iedereen mee bezig is!" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="MM Guide smoelenboek"></a-text>
-            </script> 
-            
-            <script id="unknown" type="text/html">
-
-                <a-text mixin="card" material=" src:/images/profilepics/unknown.jpg" 
-                        event-set__1="_event: mouseenter; value:IK BESTA NOG NIET!" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="unknown"></a-text>
-                <a-text mixin="role" value="unknow"></a-text>
-            </script>  
-            
-            <img id="city" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
-            <script id="pvetkamp" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/pvetkamp.jpg" event-set__1="_event: mouseenter; value: I'm currently working on....;" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Patrick"></a-text>
-                <a-text mixin="role" value="Account Manager"></a-text>
+            <script id="person" type="text/nunjucks">
+                <a-entity position="0 -0.7 0.2" mixin="cardText" text="width: 1.2; wrapCount: 16; value: {{ name }} "></a-entity>
+                <a-entity position="0 -.9 0.1" mixin="cardText" text="width: 1; wrapCount: 17; value: {{ role }} "></a-entity>
+                <a-text mixin="cardText card" text="width: 1; wrapCount: 17; value:" material=" {{image}}" 
+                    event-set__1="_event: mouseenter; value:{{ info }}" 
+                    event-set__2="_event: mouseleave; value:">
+                </a-text>
             </script>
-            
-            <script id="roost" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/roost.jpg" event-set__1="_event: mouseenter; value: Combinatie maken van WebVR met Data viz" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Roel"></a-text>
-                <a-text mixin="role" value="Systeem Beheerder"></a-text>
-            </script>  
-            
-            <script id="bslob" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/bslob.jpg" event-set__1="_event: mouseenter; value: 
-                                                                                                 Opdracht: \t
-                                                                                                 Technieken en methoden: Business analyse (zowel pre-ready als ready), data analyse, SQL, modelleren, data ontsluiting (inc stakeholder management). \n
-                                                                                                 Trots: \t 
-                                                                                                 Dubbelrol vervuld; BA en scrummaster. Grootste win: Ik heb voor een alternatieve (betrouwbare en reconcilieerbare) data ontsluiting gezorgd (initiatief en uitwerking) zodat er over Q1 gerapporteerd kan worden.
-                                                                                                 Buitenwerk: \t 
-                                                                                                 Muziek, voetbal, zwemmen.
-                                                                                                    " 
-                        event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Bastiaan"></a-text>
-                <a-text mixin="role" value="Business Analist"></a-text>
-            </script>
-
-            <script id="everhoeven" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/everhoeven.jpg" event-set__1="_event: mouseenter; value: I'm currently working on...." event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Erik"></a-text>
-                <a-text mixin="role" value="Human Resources"></a-text>
-            </script>
-            
-             
-            <script id="pdobson" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/unknown.jpg" event-set__1="_event: mouseenter; value: Combinatie maken van WebVR met Data viz" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Penelope"></a-text>
-                <a-text mixin="role" value="Office Manager"></a-text>
-            </script>  
-             
-            <script id="hvanvlijmen" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/unknown.jpg" event-set__1="_event: mouseenter; value: Combinatie maken van WebVR met Data viz" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Hans"></a-text>
-                <a-text mixin="role" value="Directeur"></a-text>
-            </script>  
-             
-            <script id="adenouden" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/unknown.jpg" event-set__1="_event: mouseenter; value: Combinatie maken van WebVR met Data viz" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Annette"></a-text>
-                <a-text mixin="role" value="Business Analist"></a-text>
-            </script>  
-             
-            <script id="agoossens" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/unknown.jpg" event-set__1="_event: mouseenter; value: Combinatie maken van WebVR met Data viz" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Ard"></a-text>
-                <a-text mixin="role" value="Business Analist"></a-text>
-            </script>  
-             
-            <script id="dgoedvolk" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/dgoedvolk.jpg" event-set__1="_event: mouseenter; value: Combinatie maken van WebVR met Data viz" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="David"></a-text>
-                <a-text mixin="role" value="Business Analist"></a-text>
-            </script>  
-             
-            <script id="kruyter" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/unknown.jpg" event-set__1="_event: mouseenter; value: Combinatie maken van WebVR met Data viz" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Klaas-Jan"></a-text>
-                <a-text mixin="role" value="Business Analist"></a-text>
-            </script>  
-             
-            <script id="mvanweel" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/mvanweel.jpg" event-set__1="_event: mouseenter; value: Combinatie maken van WebVR met Data viz" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Martin"></a-text>
-                <a-text mixin="role" value="Business Analist"></a-text>
-            </script>  
-             
-            <script id="rdejonge" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/unknown.jpg" event-set__1="_event: mouseenter; value: Combinatie maken van WebVR met Data viz" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Roy"></a-text>
-                <a-text mixin="role" value="Business Analist"></a-text>
-            </script>  
-             
-            <script id="wvanderzwart" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/unknown.jpg" event-set__1="_event: mouseenter; value: Combinatie maken van WebVR met Data viz" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Willem"></a-text>
-                <a-text mixin="role" value="AI Engineer"></a-text>
-            </script>  
-             
-            
-            
-            <!--Dreamlake-->
-            <script id="bgeers" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/bgeers.jpg" event-set__1="_event: mouseenter; value: Combinatie maken van WebVR met Data viz" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Bart"></a-text>
-                <a-text mixin="role" value="Digital Product Designer"></a-text>
-            </script> 
-            <script id="blommers" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/blommers.jpg" event-set__1="_event: mouseenter; value: Combinatie maken van WebVR met Data viz" event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Bas"></a-text>
-                <a-text mixin="role" value="Full stack Developer"></a-text>
-            </script>
-
-            <script id="aman" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/aman.jpg" event-set__1="_event: mouseenter; value: I'm currently working on...." event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Ahmed"></a-text>
-                <a-text mixin="role" value="VR Sales Consultant"></a-text>
-            </script>
-            
-            <script id="jdijkman" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/johannes.jpg" event-set__1="_event: mouseenter; value: I'm currently working on...." event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Johannes"></a-text>
-                <a-text mixin="role" value="VR Developer"></a-text>
-            </script>
-
-            <script id="ijamlean" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/israel.jpg" event-set__1="_event: mouseenter; value: I'm currently working on...." event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Israel"></a-text>
-                <a-text mixin="role" value="VR Developer"></a-text>
-            </script>
-
-            <script id="loliveira" type="text/html">
-                <a-text mixin="card" material=" src:/images/profilepics/luis.jpg" event-set__1="_event: mouseenter; value: I'm currently working on...." event-set__2="_event: mouseleave; value:"></a-text>
-                <a-text mixin="name" value="Luis"></a-text>
-                <a-text mixin="role" value="VR Developer"></a-text>
-            </script>
-
-
         </a-assets>
 
-        
-         <a-entity layout="type: box; columns: 5; margin: 2" position=" -4 -2.5 -5">
-             
-             <a-entity template="src: #pdobson"></a-entity>
-             <a-entity template="src: #hvanvlijmen"></a-entity>
-             <a-entity template="src: #adenouden"></a-entity>
-             <a-entity template="src: #agoossens"></a-entity>
-             <a-entity template="src: #unknown"></a-entity>
-             
-             <a-entity template="src: #kruyter"></a-entity>
-             <a-entity template="src: #mvanweel"></a-entity>
-             <a-entity template="src: #rdejonge"></a-entity>
-             <a-entity template="src: #wvanderzwart"></a-entity>
-             <a-entity template="src: #dgoedvolk"></a-entity>
-             
-             <a-entity template="src: #pvetkamp"></a-entity>
-             <a-entity template="src: #everhoeven"></a-entity>
-             <a-entity template="src: #mmlogo"></a-entity>
-             <a-entity template="src: #roost"></a-entity>
-             <a-entity template="src: #bslob"></a-entity>
-             
-             <a-entity template="src: #bgeers"></a-entity>
-             <a-entity template="src: #unknown"></a-entity>
-             <a-entity template="src: #unknown"></a-entity>
-             <a-entity template="src: #unknown"></a-entity>
-             <a-entity template="src: #unknown"></a-entity>
-             
-             <a-entity template="src: #blommers"></a-entity>
-             <a-entity template="src: #aman"></a-entity>
-             <a-entity template="src: #jdijkman"></a-entity>
-             <a-entity template="src: #ijamlean"></a-entity>
-             <a-entity template="src: #loliveira"></a-entity> 
-             
 
+        <a-entity layout="type: box; columns: 5; margin: 2" position=" -4 -2.5 -5">
+                       
+<!--
+            <a-entity id="unknown" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/unknown.jpg" 
+                    data-name="Niet bekent" 
+                    data-role="Weet niemand"
+                    data-info="ZOEK IEMAND!"
+                    ></a-entity>
+-->
+            
+            <a-entity id="pvetkamp" 
+                      template="src: #person" 
+                      data-image="src:/images/profilepics/pvetkamp.jpg" 
+                      data-name="Patrick Vetkamp" 
+                      data-role="Account Manager" 
+                      data-info="allalala"
+                      ></a-entity>  
+            
+            <a-entity id="roost" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/roost.jpg" 
+                    data-name="Roel Oost" 
+                    data-role="[...]"
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="bslob" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/bslob.jpg" 
+                    data-name="Bastiaan" 
+                    data-role="Business Analist" 
+                    data-info=" Opdracht: \t
+                                     Technieken en methoden: Business analyse (zowel pre-ready als ready), data analyse, SQL, modelleren, data ontsluiting (inc stakeholder management). \n
+                                     Trots: \t 
+                                     Dubbelrol vervuld; BA en scrummaster. Grootste win: Ik heb voor een alternatieve (betrouwbare en reconcilieerbare) data ontsluiting gezorgd (initiatief en uitwerking) zodat er over Q1    gerapporteerd kan worden.
+                                     Buitenwerk: \t 
+                                     Muziek, voetbal, zwemmen."
+                    ></a-entity>
+            
+            <a-entity id="everhoeven" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/everhoeven.jpg" 
+                    data-name="Erik" 
+                    data-role="Human Resources" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="pdobson" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/pdobson.jpg" 
+                    data-name="Penelope" 
+                    data-role="Office Manager" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="hvanvlijmen" 
+                    template="src: #person"
+                    data-image="src:/images/profilepics/hvanvlijmen.jpg" 
+                    data-name="Hans"
+                    data-role="CEO" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="adenouden" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/adenouden.jpg"
+                    data-name="Annette"
+                    data-role="Business Analist" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="agoossens" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/agoossens.jpg" 
+                    data-name="Ard" 
+                    data-role="Business Analist" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="dgoedvolk" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/dgoedvolk.jpg"
+                    data-name="David" 
+                    data-role="Business Analist" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="kruyter" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/kruyter.jpg" 
+                    data-name="Klaas-Jan" 
+                    data-role="Business Analist" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="mvanweel" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/mvanweel.jpg" 
+                    data-name="Martin" 
+                    data-role="Business Analist" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+         
+            <a-entity id="rdejonge" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/rdejonge.jpg" 
+                    data-name="Annette"
+                    data-role="Business Analist" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+             <a-entity id="mmlogo" 
+                    template="src: #person" 
+                    data-image="src:/images/mmguide-logo.jpg" 
+                    data-name="MM Guide" 
+                    data-role="Smoelenboek" 
+                    data-info="Hover over je collega's om te zien waar ze mee bezig zijn"
+                    ></a-entity>
+            
+            <a-entity id="wvanderzwart" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/wvanderzwart.jpg"
+                    data-name="Willem" 
+                    data-role="AI Engineer" 
+                    data-info="Hier moet je nog wat invullen!">
+            </a-entity>
+            
+            <a-entity id="bgeers"
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/bgeers.jpg"
+                    data-name="Bart"
+                    data-role="AI Engineer"
+                    data-info="Digital Product Designer"
+                    ></a-entity>
+            
+            <a-entity id="blommers" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/blommers.jpg"
+                    data-name="Bas" 
+                    data-role="Full stack Developer" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="aman" 
+                    template="src: #person"
+                    data-image="src:/images/profilepics/aman.jpg" 
+                    data-name="Ahmed" 
+                    data-role="Sales Consultant" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="jdijkman" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/jdijkman.jpg" 
+                    data-name="Johannes" 
+                    data-role="VR Developper" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="ijamlean" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/ijamlean.jpg"
+                    data-name="Israël" 
+                    data-role="VR Developper" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="loliveira" 
+                    template="src: #person" 
+                    data-image="src:/images/profilepics/loliveira.jpg" 
+                    data-name="luis" 
+                    data-role="VR Developper" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
         </a-entity>
-        <a-camera>
-            <a-cursor></a-cursor>
-        </a-camera>
+        <a-camera><a-cursor></a-cursor></a-camera>
     </a-scene>
 </body>
