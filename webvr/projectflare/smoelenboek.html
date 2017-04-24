@@ -23,7 +23,7 @@
                      event-set__1="_event: mouseenter; geometry.height: 2.2; geometry.width: 2.2; material.color: #336fa1; position:0 0 1; zOffset: 0.1" 
                      event-set__2="_event: mouseleave; geometry.height: 1; geometry.width: 1; material.color: none; position:0 0 0;">
             </a-mixin>
-            <a-mixin id="cardText" billboard text="align:center; lineHeight: 50; letterSpacing: 5; color: white;"></a-mixin>
+            <a-mixin id="cardText" billboard text="align:center; lineHeight: 50; letterSpacing: 5; color: white;"></a-mixin>asx
 
             <script id="person" type="text/nunjucks">
                 <a-entity position="0 -0.7 0.2" mixin="cardText" text="width: 1.2; wrapCount: 16; value: {{ name }} "></a-entity>
@@ -38,19 +38,49 @@
 
         <a-entity layout="type: box; columns: 5; margin: 2" position=" -4 -2.5 -5">
                        
-<!--
             <a-entity id="unknown" 
                     template="src: #person" 
-                    data-image="src:/images/profilepics/unknown.jpg" 
+                    data-image="src:../image/profilepics/unknown.jpg" 
                     data-name="Niet bekent" 
                     data-role="Weet niemand"
                     data-info="ZOEK IEMAND!"
                     ></a-entity>
--->
+                
+            <a-entity id="unknown" 
+                    template="src: #person" 
+                    data-image="src:../image/profilepics/unknown.jpg" 
+                    data-name="Niet bekent" 
+                    data-role="Weet niemand"
+                    data-info="ZOEK IEMAND!"
+                    ></a-entity>
+            
+            <a-entity id="unknown" 
+                    template="src: #person" 
+                    data-image="src:../image/profilepics/unknown.jpg" 
+                    data-name="Niet bekent" 
+                    data-role="Weet niemand"
+                    data-info="ZOEK IEMAND!"
+                    ></a-entity>  
+            
+            <a-entity id="unknown" 
+                    template="src: #person" 
+                    data-image="src:../image/profilepics/unknown.jpg" 
+                    data-name="Niet bekent" 
+                    data-role="Weet niemand"
+                    data-info="ZOEK IEMAND!"
+                    ></a-entity>
+            
+            <a-entity id="unknown" 
+                    template="src: #person" 
+                    data-image="src:../image/profilepics/unknown.jpg" 
+                    data-name="Niet bekent" 
+                    data-role="Weet niemand"
+                    data-info="ZOEK IEMAND!"
+                    ></a-entity>
             
             <a-entity id="pvetkamp" 
                       template="src: #person" 
-                      data-image="src:/images/profilepics/pvetkamp.jpg" 
+                      data-image="src:../image/profilepics/pvetkamp.jpg" 
                       data-name="Patrick Vetkamp" 
                       data-role="Account Manager" 
                       data-info="allalala"
@@ -58,7 +88,7 @@
             
             <a-entity id="roost" 
                     template="src: #person" 
-                    data-image="src:/images/profilepics/roost.jpg" 
+                    data-image="src:../image/profilepics/roost.jpg" 
                     data-name="Roel Oost" 
                     data-role="[...]"
                     data-info="Hier moet je nog wat invullen!"
@@ -66,7 +96,7 @@
             
             <a-entity id="bslob" 
                     template="src: #person" 
-                    data-image="src:/images/profilepics/bslob.jpg" 
+                    data-image="src:../image/profilepics/bslob.jpg" 
                     data-name="Bastiaan" 
                     data-role="Business Analist" 
                     data-info=" Opdracht: \t
@@ -79,7 +109,7 @@
             
             <a-entity id="everhoeven" 
                     template="src: #person" 
-                    data-image="src:/images/profilepics/everhoeven.jpg" 
+                    data-image="src:../image/profilepics/everhoeven.jpg" 
                     data-name="Erik" 
                     data-role="Human Resources" 
                     data-info="Hier moet je nog wat invullen!"
@@ -87,7 +117,7 @@
             
             <a-entity id="pdobson" 
                     template="src: #person" 
-                    data-image="src:/images/profilepics/pdobson.jpg" 
+                    data-image="src:../image/profilepics/pdobson.jpg" 
                     data-name="Penelope" 
                     data-role="Office Manager" 
                     data-info="Hier moet je nog wat invullen!"
@@ -95,7 +125,7 @@
             
             <a-entity id="hvanvlijmen" 
                     template="src: #person"
-                    data-image="src:/images/profilepics/hvanvlijmen.jpg" 
+                    data-image="src:../image/profilepics/hvanvlijmen.jpg" 
                     data-name="Hans"
                     data-role="CEO" 
                     data-info="Hier moet je nog wat invullen!"
@@ -103,47 +133,7 @@
             
             <a-entity id="adenouden" 
                     template="src: #person" 
-                    data-image="src:/images/profilepics/adenouden.jpg"
-                    data-name="Annette"
-                    data-role="Business Analist" 
-                    data-info="Hier moet je nog wat invullen!"
-                    ></a-entity>
-            
-            <a-entity id="agoossens" 
-                    template="src: #person" 
-                    data-image="src:/images/profilepics/agoossens.jpg" 
-                    data-name="Ard" 
-                    data-role="Business Analist" 
-                    data-info="Hier moet je nog wat invullen!"
-                    ></a-entity>
-            
-            <a-entity id="dgoedvolk" 
-                    template="src: #person" 
-                    data-image="src:/images/profilepics/dgoedvolk.jpg"
-                    data-name="David" 
-                    data-role="Business Analist" 
-                    data-info="Hier moet je nog wat invullen!"
-                    ></a-entity>
-            
-            <a-entity id="kruyter" 
-                    template="src: #person" 
-                    data-image="src:/images/profilepics/kruyter.jpg" 
-                    data-name="Klaas-Jan" 
-                    data-role="Business Analist" 
-                    data-info="Hier moet je nog wat invullen!"
-                    ></a-entity>
-            
-            <a-entity id="mvanweel" 
-                    template="src: #person" 
-                    data-image="src:/images/profilepics/mvanweel.jpg" 
-                    data-name="Martin" 
-                    data-role="Business Analist" 
-                    data-info="Hier moet je nog wat invullen!"
-                    ></a-entity>
-         
-            <a-entity id="rdejonge" 
-                    template="src: #person" 
-                    data-image="src:/images/profilepics/rdejonge.jpg" 
+                    data-image="src:../image/profilepics/adenouden.jpg"
                     data-name="Annette"
                     data-role="Business Analist" 
                     data-info="Hier moet je nog wat invullen!"
@@ -151,15 +141,55 @@
             
              <a-entity id="mmlogo" 
                     template="src: #person" 
-                    data-image="src:/images/mmguide-logo.jpg" 
+                    data-image="src:../image/mmguide-logo.jpg" 
                     data-name="MM Guide" 
                     data-role="Smoelenboek" 
                     data-info="Hover over je collega's om te zien waar ze mee bezig zijn"
                     ></a-entity>
             
+            <a-entity id="agoossens" 
+                    template="src: #person" 
+                    data-image="src:../image/profilepics/agoossens.jpg" 
+                    data-name="Ard" 
+                    data-role="Business Analist" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="dgoedvolk" 
+                    template="src: #person" 
+                    data-image="src:../image/profilepics/dgoedvolk.jpg"
+                    data-name="David" 
+                    data-role="Business Analist" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="kruyter" 
+                    template="src: #person" 
+                    data-image="src:../image/profilepics/kruyter.jpg" 
+                    data-name="Klaas-Jan" 
+                    data-role="Business Analist" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
+            <a-entity id="mvanweel" 
+                    template="src: #person" 
+                    data-image="src:../image/profilepics/mvanweel.jpg" 
+                    data-name="Martin" 
+                    data-role="Business Analist" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+         
+            <a-entity id="rdejonge" 
+                    template="src: #person" 
+                    data-image="src:../image/profilepics/rdejonge.jpg" 
+                    data-name="Annette"
+                    data-role="Business Analist" 
+                    data-info="Hier moet je nog wat invullen!"
+                    ></a-entity>
+            
             <a-entity id="wvanderzwart" 
                     template="src: #person" 
-                    data-image="src:/images/profilepics/wvanderzwart.jpg"
+                    data-image="src:../image/profilepics/wvanderzwart.jpg"
                     data-name="Willem" 
                     data-role="AI Engineer" 
                     data-info="Hier moet je nog wat invullen!">
@@ -167,7 +197,7 @@
             
             <a-entity id="bgeers"
                     template="src: #person" 
-                    data-image="src:/images/profilepics/bgeers.jpg"
+                    data-image="src:../image/profilepics/bgeers.jpg"
                     data-name="Bart"
                     data-role="AI Engineer"
                     data-info="Digital Product Designer"
@@ -175,7 +205,7 @@
             
             <a-entity id="blommers" 
                     template="src: #person" 
-                    data-image="src:/images/profilepics/blommers.jpg"
+                    data-image="src:../image/profilepics/blommers.jpg"
                     data-name="Bas" 
                     data-role="Full stack Developer" 
                     data-info="Hier moet je nog wat invullen!"
@@ -183,7 +213,7 @@
             
             <a-entity id="aman" 
                     template="src: #person"
-                    data-image="src:/images/profilepics/aman.jpg" 
+                    data-image="src:../image/profilepics/aman.jpg" 
                     data-name="Ahmed" 
                     data-role="Sales Consultant" 
                     data-info="Hier moet je nog wat invullen!"
@@ -191,7 +221,7 @@
             
             <a-entity id="jdijkman" 
                     template="src: #person" 
-                    data-image="src:/images/profilepics/jdijkman.jpg" 
+                    data-image="src:../image/profilepics/jdijkman.jpg" 
                     data-name="Johannes" 
                     data-role="VR Developper" 
                     data-info="Hier moet je nog wat invullen!"
@@ -199,7 +229,7 @@
             
             <a-entity id="ijamlean" 
                     template="src: #person" 
-                    data-image="src:/images/profilepics/ijamlean.jpg"
+                    data-image="src:../image/profilepics/ijamlean.jpg"
                     data-name="Israël" 
                     data-role="VR Developper" 
                     data-info="Hier moet je nog wat invullen!"
@@ -207,7 +237,7 @@
             
             <a-entity id="loliveira" 
                     template="src: #person" 
-                    data-image="src:/images/profilepics/loliveira.jpg" 
+                    data-image="src:../image/profilepics/loliveira.jpg" 
                     data-name="luis" 
                     data-role="VR Developper" 
                     data-info="Hier moet je nog wat invullen!"
