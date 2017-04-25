@@ -25,17 +25,19 @@
             </a-mixin>
             <a-mixin id="cardText" billboard text="align:center; lineHeight: 50; letterSpacing: 5; color: white;"></a-mixin>asx
 
-            <script id="person" type="text/nunjucks">
+            <script id="person" type="text/nunjucks" >
+                <a-entity rotation="0 0 -45">
                 <a-entity position="0 -0.7 0.2" mixin="cardText" text="width: 1.2; wrapCount: 16; value: {{ name }} "></a-entity>
                 <a-entity position="0 -.9 0.1" mixin="cardText" text="width: 1; wrapCount: 17; value: {{ role }} "></a-entity>
-                <a-text mixin="cardText card" text="width: 1; wrapCount: 17; value:" material=" {{image}}" 
+                <a-text mixin="cardText card" text="width: 2; wrapCount: 32; value:" material=" {{image}}" 
                     event-set__1="_event: mouseenter; value:{{ info }}" 
                     event-set__2="_event: mouseleave; value:">
                 </a-text>
+                </a-entity>
             </script>
         </a-assets>
 
-        <a-entity layout="type: box; columns: 5; margin: 2" position=" -4 -2.5 -5">
+        <a-entity layout="type: box; columns: 5; margin: 2" rotation="0 0 45" position=" 0 -4 -5">
                        
             <a-entity id="unknown" 
                     template="src: #person" 
