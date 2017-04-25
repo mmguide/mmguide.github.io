@@ -2,8 +2,8 @@
     <title>MM Guide VR SupplyChain </title>
     
     
-    <script src="js/aframe.min.js"></script>
-<!--    <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>-->
+<!--    <script src="js/aframe.min.js"></script>-->
+    <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
     <script src="js/components/gradient.js"></script>
     <script src="js/components/alongpath.js"></script>
     <script src="js/components/curve.js"></script>
@@ -65,27 +65,28 @@
             </a-curve>
             
             
-            <script id="datapoint" type="text/nunjucks" >
-                <a-entity position="{{ point }}">
+            
+            <script id="datapoint" type="text/html" >
+                <a-entity position="${point}">
                         <a-box></a-box>
-                        <a-entity mixin="h1" text="value: {{ title }}"></a-entity>
+                        <a-entity mixin="h1" text="value: ${ title }"></a-entity>
 
                         <a-entity position="0 -4 0" layout="type:box; margin: 1">
-                                <a-entity mixin="error" text="value: {{ error }}"></a-entity>
-                                <a-entity mixin="warning" text="value: {{ warning }}"></a-entity>
-                                <a-entity mixin="running" text="value: {{ running }}"></a-entity>
+                                <a-entity mixin="error" text="value: ${ error }"></a-entity>
+                                <a-entity mixin="warning" text="value: ${ warning }"></a-entity>
+                                <a-entity mixin="running" text="value: ${ running }"></a-entity>
                         </a-entity>
                 </a-entity>
                 
-                    <a-curve id="{{ trackid }}" type="type:QuadraticBezier">
-                            <a-curve-point position="{{ curve1 }}"></a-curve-point>
-                            <a-curve-point position="{{ curve2 }}"></a-curve-point>
-                            <a-curve-point position="{{ curve3 }}"></a-curve-point>
+                    <a-curve id="${trackid}" type="type:QuadraticBezier">
+                            <a-curve-point position="${curve1}"></a-curve-point>
+                            <a-curve-point position="${curve2}"></a-curve-point>
+                            <a-curve-point position="${curve3}"></a-curve-point>
                     </a-curve>
                 
-                    <a-draw-curve mixin="curvedline mmwhite" curveref="{{ trackid }}"></a-draw-curve>
-                    <a-entity mixin="cloneline mmblue" clone-along-curve="curve:{{ trackid }};"></a-entity>
-                    <a-entity mixin="movingNode mmorange" scale="{{scale}}" alongpath="curve:{{ trackid }}; loop:{{ repeat }}; delay:{{ wait }}; dur:{{ duration }}"></a-entity>
+                    <a-draw-curve mixin="curvedline mmwhite" curveref="${trackid}"></a-draw-curve>
+                    <a-entity mixin="cloneline mmblue" clone-along-curve="curve:${trackid};"></a-entity>
+                    <a-entity mixin="movingNode mmorange" scale="${scale}" alongpath="curve:${ trackid }; loop:${repeat}; delay:${wait}; dur:${duration}"></a-entity>
 
             </script>
             
@@ -118,8 +119,8 @@
                     data-duration="1000" 
                     >
             </a-entity>   
-            
-        
+   
+             
             <a-entity id="dataGate" 
                       
                     template="src: #datapoint" 

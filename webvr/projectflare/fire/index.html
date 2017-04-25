@@ -25,14 +25,11 @@
             <img id="scene2" rotation="0 0 90" crossorigin="anonymous" src="images/fireinstruction-2.jpg">
             <img id="scene3" rotation="0 0 90" crossorigin="anonymous" src="images/fireinstruction-3.jpg">
             
-            <img id="scene1-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
-            <img id="scene2-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
-            <img id="scene3-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
             <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
             
          
 
-            <script id="link" type="text/nunjucks">
+            <script id="navItem" type="text/nunjucks">
                 <a-plane 
                 class="link" height=".5" width="1" 
                 material="shader: flat; color:#333" 
@@ -47,13 +44,24 @@
                 ></a-plane>
             </script>
         </a-assets>
+        
+          <script id="hotSpot" type="text/nunjucks" >
+                <a-entity rotation="0 0 -45">
+                <a-entity position="0 -0.7 0.2" mixin="cardText" text="width: 1.2; wrapCount: 16; value: {{ name }} "></a-entity>
+                <a-entity position="0 -.9 0.1" mixin="cardText" text="width: 1; wrapCount: 17; value: {{ role }} "></a-entity>
+                <a-text mixin="cardText card" text="width: 2; wrapCount: 32; value:" material=" {{image}}" 
+                    event-set__1="_event: mouseenter; value:{{ info }}" 
+                    event-set__2="_event: mouseleave; value:">
+                </a-text>
+                </a-entity>
+            </script>
 
         <a-sky id="image-360" radius="10" src="#scene1"></a-sky>
 
-        <a-entity id="links" layout="type: pyramyd; margin: 1.2" position="-1.3 -1.8 -1" rotation="-70 0 0">
-            <a-entity template="src: #link" data-text="scene1" data-src="#scene1" ></a-entity>
-            <a-entity template="src: #link" data-text="scene2" data-src="#scene2" ></a-entity>
-            <a-entity template="src: #link" data-text="scene3" data-src="#scene3" ></a-entity>
+        <a-entity id="navigation" layout="type: pyramyd; margin: 1.2" position="-1.3 -1.8 -1" rotation="-70 0 0">
+            <a-entity template="src: #navItem" data-text="scene1" data-src="#scene1" ></a-entity>
+            <a-entity template="src: #navItem" data-text="scene2" data-src="#scene2" ></a-entity>
+            <a-entity template="src: #navItem" data-text="scene3" data-src="#scene3" ></a-entity>
         </a-entity>
 
         <a-entity camera look-controls>
