@@ -64,6 +64,7 @@
                 <a-curve-point position="10 0 -20"></a-curve-point>
             </a-curve>
             
+            
             <script id="datapoint" type="text/nunjucks" >
                 <a-entity position="{{ point }}">
                         <a-box></a-box>
@@ -76,16 +77,15 @@
                         </a-entity>
                 </a-entity>
                 
-                <a-curve id="track1" type="type:QuadraticBezier">
+                    <a-curve id="{{ trackid }}" type="type:QuadraticBezier">
                             <a-curve-point position="{{ curve1 }}"></a-curve-point>
                             <a-curve-point position="{{ curve2 }}"></a-curve-point>
                             <a-curve-point position="{{ curve3 }}"></a-curve-point>
-                </a-curve>
-                    
-                    
-                    <a-draw-curve mixin="curvedline mmwhite" curveref="{{trackid}}"></a-draw-curve>
-                    <a-entity mixin="cloneline mmblue" clone-along-curve="curve: {{trackid}};"></a-entity>
-                    <a-entity mixin="movingNode mmorange" scale="{{scale}}" alongpath="curve: {{trackid}}; loop:{{repeat}}; delay:{{wait}}; dur:{{duration}}"></a-entity>
+                    </a-curve>
+                
+                    <a-draw-curve mixin="curvedline mmwhite" curveref="{{ trackid }}"></a-draw-curve>
+                    <a-entity mixin="cloneline mmblue" clone-along-curve="curve:{{ trackid }};"></a-entity>
+                    <a-entity mixin="movingNode mmorange" scale="{{scale}}" alongpath="curve:{{ trackid }}; loop:{{ repeat }}; delay:{{ wait }}; dur:{{ duration }}"></a-entity>
 
             </script>
             
@@ -116,7 +116,6 @@
                     data-repeat="true" 
                     data-wait="1000" 
                     data-duration="1000" 
-                      
                     >
             </a-entity>   
             
@@ -142,6 +141,7 @@
                     data-duration="1000"
                       
                     >
+              
             </a-entity>  
             
             <a-entity id="dataOutput1" 
