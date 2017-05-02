@@ -1,246 +1,340 @@
-<html>
-
 <head>
-    <!-- SEO -->
-    <title>MM Guide, laat meer zien, presentatie</title>
-    <meta name="description" content="MM Guide Laat meer zien">
+    <title>MM Guide Smoelenboek </title>
 
-    <script src="../js/aframe-master.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-
-    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
-    <script src="components/set-image.js"></script>
-
-
-
-
-    <!-- URL CANONICAL -->
-    <link rel="canonical" href="www.mmguide.nl">
-
-    <!-- FAVICONS -->
-    <link rel="shortcut icon" sizes="16x16" href="/static/images/favicons/">
-    <link rel="shortcut icon" sizes="32x32" href="/static/images/favicons/favicon-32.png">
-    <link rel="apple-touch-icon icon" sizes="76x76" href="/static/images/favicons/favicon-76.png">
-    <link rel="apple-touch-icon icon" sizes="120x120" href="/static/images/favicons/favicon-120.png">
-    <link rel="apple-touch-icon icon" sizes="152x152" href="/static/images/favicons/favicon-152.png">
-    <link rel="apple-touch-icon icon" sizes="180x180" href="/static/images/favicons/favicon-180.png">
-    <link rel="apple-touch-icon icon" sizes="192x192" href="/static/images/favicons/favicon-192.png">
-
-    <!-- Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#333333">
+    <script src="../js/aframe.min.js"></script>
+    <script src="../js/components/billboard.js"></script>
+    <script src="../js/components/gradient.js"></script>
+    <script src="../js/components/template.min.js"></script>
+    <script src="../js/components/layout.js"></script>
+    <script src="../js/components/eventset.js"></script>
 
 </head>
-
 <body>
     <a-scene>
-
+        <a-gradient-sky material="shader: gradient; topColor: 255 255 255; bottomColor: 51 111 161;"></a-gradient-sky>
         <a-assets>
+            <a-mixin id="mmorange" color="#f26d40"></a-mixin>
+            <a-mixin id="mmblue" color="#336fa1" material="color:#336fa1"></a-mixin>
+            <a-mixin id="mmblack" color="#383838"></a-mixin>
+            <a-mixin id="mmdarkblue" color="#103454"></a-mixin>
 
-            <!-- images-->-->
-            <img id="mmg-logo" src="../images/logo-mmg-slack.jpg">
+            <a-mixin id="card"  text="position: 0 0 0; anchor: center; width: 1.9; align:left; lineHeight: 50; letterSpacing: 5; color: white; wrapCount: 32; " 
+                     geometry="primitive: plane; shader: flat;" 
+                     event-set__1="_event: mouseenter; geometry.height: 2.2; geometry.width: 2.2; material.color: #336fa1; position:0 0 1; zOffset: 0.1" 
+                     event-set__2="_event: mouseleave; geometry.height: 1; geometry.width: 1; material.color: none; position:0 0 0;">
+            </a-mixin>
+            <a-mixin id="cardText" billboard text="align:center; lineHeight: 50; letterSpacing: 5; color: white;"></a-mixin>
 
+            <script id="person"  type="text/html" >
+                <a-entity rotation="-90 0 0"> 
+                    <a-entity  billboard >
 
-            <!-- werknemers-->
-
-            <!-- Bastiaan slob-->
-            <img id="bslob" src="../images/profilepics/bslob.jpg">
-
-            <!-- Bart Geers-->
-            <img id="bgeers" src="../images/profilepics/bartg.png" text="value: Hello World;">
-            <a-asset-item id="helloworld" text="value: Hello World;"></a-asset-item>
-
-            <!-- Bas Lommers-->
-            <img id="blommers" src="../images/profilepics/blommers.jpg" text="value: Hello World;">
-            <a-asset-item id="helloworld" text="value: Hello World;"></a-asset-item>
-
-            <img id="shadow" src="../images/profilepics/shadow.png">
-            <img id="mmg" src="../images/logo-mmg-slack.jpg">
-
-            <!--Audio-->
-            <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-
-
+                        <a-entity position="0 -0.7 .2" mixin="cardText" text="width: 1.2; wrapCount: 16; value: ${ name }"></a-entity>
+                        <a-entity position="0 -1 0.1" mixin="cardText" text="width: 1; wrapCount: 17; value: ${ role }"></a-entity>
+                        <a-text mixin="cardText card" text="width: 2; wrapCount: 32; value:" material=" ${image}" 
+                            event-set__1="_event: mouseenter; value:${ info }" 
+                            event-set__2="_event: mouseleave; value:">
+                        </a-text>
+                        
+                        <!--Animation-->
+                        <a-animation attribute="scale"
+                                         dur="2500"
+                                         fill="forwards"
+                                         from="0 0 0"
+                                         to="1 1 1"
+                                         repeat="0">
+                        </a-animation>
+                        
+                        <!-- NEW-->
+                        <a-box visible="${fresh}" position="-.42 .6 .2" material="color:#f26d40" width=".1" height=".1" depth=".1"> 
+                            <a-entity position=".3 0 0" mixin="cardText" text="width: 1.2; wrapCount: 16; value: NEW"></a-entity>
+                        </a-box> 
+                        <!-- Update-->
+                        <a-box visible="${update}" position="-.42 .6 .2" material="color:#103454" width=".1" height=".1" depth=".1"> 
+                            <a-entity position=".4 0 0" mixin="cardText" text="width: 1.2; wrapCount: 16; value: UPDATE"></a-entity>
+                        </a-box>
+                    </a-entity>   
+                </a-entity>
+            </script>   
+            
+          
+                    
+          
+<!--
+       <a-animation attribute="position"
+                                         dur="5000"
+                                         fill="forwards"
+                                         from="-4 -2 -1000"
+                                         to="0 0 0"
+                                         repeat="0">
+                    </a-animation>
+-->
+            
         </a-assets>
 
+        <a-entity>
+            <a-animation attribute="rotation"
+                         dur="100000"
+                         fill="forwards"
+                         delay="2500"
+                         to="0 360 0"
+                         easing="linear"
+                         repeat="indefinite"
+                         event-set__1="_event: mouseenter;  dur:2500000; to:0 360 0" 
+                         event-set__2="_event: mouseleave; to:0 360 0">
+                
+            </a-animation>
+                <a-entity layout="type: circle; radius:6.5; columns: 1; margin: 2.5" rotation="90 0 0"  position=" 0 1.8 0">
+                    
+          
+                    
+                <a-entity id="skrijn" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/skrijn.jpg" 
+                          data-name="Stephan" 
+                          data-role="Business \n Analist"
+                          data-info="ZOEK IEMAND!"
+                          data-fresh="true"
+                          data-update="false"
+                          >
+                </a-entity>
 
+                <a-entity id="lvanoosterhout" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/unknown.jpg" 
+                          data-name="Lucas" 
+                          data-role="Software \n Developer"
+                          data-info="ZOEK IEMAND!"
+                          data-fresh="true"
+                          data-update="false"
+                          >
+                </a-entity>
 
+                <a-entity id="pvetkamp" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/pvetkamp.jpg" 
+                          data-name="Patrick" 
+                          data-role="Account \n Manager" 
+                          data-info="Vooral mensen van het werk afhouden, dat is waar ik goed in ben!"
+                          data-fresh="false"
+                          data-update="true"
+                          ></a-entity>  
 
+                <a-entity id="roost" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/roost.jpg" 
+                          data-name="Roel" 
+                          data-role="Senior Software Engineer"
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
 
+                <a-entity id="bslob" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/bslob.jpg" 
+                          data-name="Bastiaan" 
+                          data-role="Business \n Analist" 
+                          data-info="Dubbelrol vervuld, BA en scrummaster! Ik heb voor een alternatieve (betrouwbare en reconcilieerbare) data ontsluiting gezorgd (initiatief en uitwerking) zodat er over Q1 gerapporteerd  kan worden."
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
 
-        <!--Column 1  Left -->
-        <!--
-        <a-entity position="-2.2 .2 -2.87" rotation="0 9 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
+                <a-entity id="everhoeven" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/everhoeven.jpg" 
+                          data-name="Erik" 
+                          data-role="Human \n Resources" 
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
+
+                <a-entity id="pdobson" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/pdobson.jpg" 
+                          data-name="Penelope" 
+                          data-role="Office \n Manager" 
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
+
+                <a-entity id="hvanvlijmen" 
+                          template="src: #person"
+                          data-image="src: ../images/profilepics/hvanvlijmen.jpg" 
+                          data-name="Hans"
+                          data-role="CEO" 
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
+
+                <a-entity id="adenouden" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/adenouden.jpg"
+                          data-name="Annette"
+                          data-role="Business \n Analist" 
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
+
+                 <a-entity id="mmlogo" 
+                           template="src: #person" 
+                           data-image="src: ../images/mmguide-logo.jpg" 
+                           data-name="MM Guide" 
+                           data-role="Smoelenboek" 
+                           data-info="Hover over je collega's om te zien waar ze mee bezig zijn"
+                           data-fresh="false"
+                          data-update="false"
+                        ></a-entity>
+
+                <a-entity id="agoossens" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/agoossens.jpg" 
+                          data-name="Ard" 
+                          data-role="Business \n Analist" 
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
+
+                <a-entity id="dgoedvolk" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/dgoedvolk.jpg"
+                          data-name="David" 
+                          data-role="Business \n Analist" 
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
+
+                <a-entity id="kruyter" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/kruyter.jpg" 
+                          data-name="Klaas-Jan" 
+                          data-role="Datawarehouse \n Specialist" 
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
+
+                <a-entity id="mvanweel" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/mvanweel.jpg" 
+                          data-name="Martin" 
+                          data-role="Business \n Analist" 
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
+
+                <a-entity id="rdejonge" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/rdejonge.jpg" 
+                          data-name="Roy"
+                          data-role="Business \n Analist" 
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                          >
+                    </a-entity>
+
+                <a-entity id="wvanderzwart" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/wvanderzwart.jpg"
+                          data-name="Willem" 
+                          data-role="AI \n Engineer" 
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                          >
+                </a-entity>
+
+                <a-entity id="bgeers"
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/bgeers.jpg"
+                          data-name="Bart"
+                          data-role="Digital \n Product \n Designer"
+                          data-info="Momenteel ben ik bezig om een Data Viz te realiseren in (WebVR)"
+                          data-fresh="false"
+                          data-update="true"
+                          >
+                    </a-entity>
+
+                <a-entity id="blommers" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/blommers.jpg"
+                          data-name="Bas" 
+                          data-role="Software \n Developer" 
+                          data-info="Webapp ontwikkeling met ASP.NET Core en Angular2"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
+
+                <a-entity id="aman" 
+                          template="src: #person"
+                          data-image="src: ../images/profilepics/aman.jpg" 
+                          data-name="Ahmed" 
+                          data-role="Sales \n Consultant" 
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
+
+                <a-entity id="jdijkman" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/jdijkman.jpg" 
+                          data-name="Johannes" 
+                          data-role="VR \n Developper" 
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
+
+                <a-entity id="ijamlean" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/ijamlean.jpg"
+                          data-name="Israel" 
+                          data-role="VR \n Developper" 
+                          data-info="Dreamlake tot een succes maken!"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
+
+                <a-entity id="loliveira" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/loliveira.jpg" 
+                          data-name="luis" 
+                          data-role="VR \n Developper" 
+                          data-info="Hier moet je nog wat invullen!"
+                          data-fresh="false"
+                          data-update="true"
+                        ></a-entity>
+                    
+                <a-entity id="yshen" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/yshen.png"
+                          data-name="Shen" 
+                          data-role="Intern \n Dreamlake" 
+                          data-info="3D Samurai, mainly working on creating different 3D contents and real-time visualisation with UE4."
+                          data-fresh="true"
+                          data-update="false"
+                        ></a-entity>
+
+                <a-entity id="vytautus" 
+                          template="src: #person" 
+                          data-image="src: ../images/profilepics/vytausus.png" 
+                          data-name="Vytautus" 
+                          data-role="Intern \n Dreamlake" 
+                          data-info="I'm passionately converting Blueprints into C++"
+                          data-fresh="true"
+                          data-update="false"
+                        ></a-entity>
+            
         </a-entity>
-
-        <a-entity position="-2.2 1.3 -2.87" rotation="0 9 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
-        <a-entity position="-2.2 2.4 -2.87" rotation="0 9 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
-
-        <a-entity position="-2.2 3.5 -2.87" rotation="0 9 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
--->
-
-        <!--Column 2   -->
-        <!--
-        <a-entity position="-1.1 .2 -3" rotation="0 3 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
-
-        <a-entity position="-1.1 1.3 -3" rotation="0 3 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
-        <a-entity position="-1.1 2.4 -3" rotation="0 3 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
-
-        <a-entity position="-1.1 3.5 -3" rotation="0 3 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
--->
-
-        <!--Column 3  MIDDLE -->
-        <!--
-<a-entity position="0 .2 -3.02">
-    <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-    </a-image>
-    <a-entity position="0 0 0" text="width: 2.2; lineHeight: 50; letterSpacing: 5; color: white; value: 
-                            Dit is het Virtuele MM Guide Smoelenboek, hier op kun je zien wat je collega's bezig houden. 
-                          ">
-    </a-entity>
-</a-entity>
--->
-
-<!--
-        <a-entity position="0 3.5 -3.02">
-            <a-image template="src: #link" data-src="#blommers" data-thumb="#s1" position="0 0 0" src="#shadow" text="value: Hello World;" id="helloworld" text="value: Hello World;">
-            </a-image>
-            <a-entity text="value: Hello World;" id="helloworld" text="value: Hello World;"></a-entity>
-        </a-entity>
--->
-<!--
-        <a-entity position="0 2.4 -3.02">
-            <a-image template="src: #link" data-src="#bgeers" position="0 0 0" src="#shadow">
-            </a-image>
-        </a-entity>
--->
-<!--
-        <a-entity position="0 1.3 -3.02">
-            <a-image template="src: #link" data-src="#bslob" position="0 0 0" src="#shadow">
-            </a-image>
-        </a-entity>
--->
-
-        <a-entity position="0 2.4 -3.02">
-            <a-image template="src: #link" data-src="#bgeers" position="0 0 0" src="#shadow">
-            </a-image>
-        </a-entity>
-
-        <script id="link" type="text/html">
-            <a-entity class="link" 
-                      geometry="primitive: plane; height: 1; width: 1;" 
-                      material="shader: flat; src: ${src}; " 
-                      text="text: ${src}" 
-                      event-set__1="_event: mousedown; scale: 1 1 1; position: 0 0 .5;" 
-                      event-set__2="_event: mouseup; scale: 1 1 1; position: 0 0 .5;" 
-                      event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2; position: 0 0 .5;" 
-                      event-set__4="_event: mouseleave; scale: 1 1 1; position: 0 0 0;" 
-                      sound="on: click; src: #click-sound;"></a-entity>
-        </script>
-
-
-
-
-        <!--        Column 4  MIDDLE -->
-        <!--
-        <a-entity position="1.1 .2 -3" rotation="0 -3 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
-
-        <a-entity position="1.1 1.3 -3" rotation="0 -3 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
-        <a-entity position="1.1 2.4 -3" rotation="0 -3 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
-
-        <a-entity position="1.1 3.5 -3" rotation="0 -3 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
--->
-
-        <!--Column 5  Right -->
-        <!--
-        <a-entity position="2.2 .2 -2.87" rotation="0 -9 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
-
-        <a-entity position="2.2 1.3 -2.87" rotation="0 -9 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
-        <a-entity position="2.2 2.4 -2.87" rotation="0 -9 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
-
-        <a-entity position="2.2 3.5 -2.87" rotation="0 -9 0">
-            <a-image template="src: #link" data-src="#s1" data-thumb="#s1" position="0 0 0" src="#s2">
-            </a-image>
-        </a-entity>
--->
-
-        <!-- MMG Intro. -->
-        <!--
-        <a-entity position="-0 0 -100" scale=" 100 100 100;">
-            <a-image position="-.5 .8 0" src="#mmg-logo"></a-image>
-            <a-entity position="0 0 0" text="width: 2.2; lineHeight: 50; letterSpacing: 5; color: white; value: 
-                            Dit is het Virtuele MM Guide Smoelenboek, hier op kun je zien wat je collega's bezig houden. 
-                          ">
             </a-entity>
-        </a-entity>
--->
-
-
-
-
-
-
-
-
-        <!-- Camera + cursor. -->
-        <a-entity camera="userHeight: 1.8" look-controls wasd-controls>
-            <a-cursor id="cursor" animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150" animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500" event-set__1="_event: mouseenter; color: springgreen" event-set__2="_event: mouseleave; color: black" raycaster="objects: .link">
-            </a-cursor>
-        </a-entity>
-
-
-        <a-sky color="#333"></a-sky>
-
+        <a-camera><a-cursor></a-cursor></a-camera>
     </a-scene>
-
-
 </body>
-
-</html>
