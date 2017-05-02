@@ -40,6 +40,8 @@
 
                         <a-entity position="0 -0.7 .2" mixin="cardText" text="width: 1.2; wrapCount: 16; value: ${ name }"></a-entity>
                         <a-entity position="0 -1 0.1" mixin="cardText" text="width: 1; wrapCount: 17; value: ${ role }"></a-entity>
+                        <a-entity position="0 -1.2 0" mixin="cardText" text="width: 1; wrapCount: 18; value: ${ project }"></a-entity>
+                        <a-entity position="0 -1.4 -0.1" mixin="cardText" text="width: 1; wrapCount: 19; value: ${ bedrijf }"></a-entity>
                         <a-text mixin="cardText card" text="width: 2; wrapCount: 32; value:" material=" ${image}" 
                             event-set__1="_event: mouseenter; value:${ info }" 
                             event-set__2="_event: mouseleave; value:">
@@ -93,7 +95,7 @@
                          event-set__2="_event: mouseleave; to:0 360 0">
                 
             </a-animation>
-                <a-entity layout="type: circle; radius:6.5; columns: 1; margin: 2.5" rotation="90 0 0"  position=" 0 1.8 0">
+                <a-entity layout="type: circle; radius:6.5; columns: 1; margin: 2.5" rotation="90 0 0"  position=" 0 0 0">
                     
           
                     
@@ -102,6 +104,8 @@
                           data-image="src: ../images/profilepics/skrijn.jpg" 
                           data-name="Stephan" 
                           data-role="Business \n Analist"
+                          data-project="Coursera Cursus"
+                          data-bedrijf="MM Guide"                        
                           data-info="ZOEK IEMAND!"
                           data-fresh="true"
                           data-update="false"
@@ -113,6 +117,8 @@
                           data-image="src: ../images/profilepics/unknown.jpg" 
                           data-name="Lucas" 
                           data-role="Software \n Developer"
+                          data-project=""                        
+                          data-bedrijf=""                         
                           data-info="ZOEK IEMAND!"
                           data-fresh="true"
                           data-update="false"
@@ -124,6 +130,8 @@
                           data-image="src: ../images/profilepics/pvetkamp.jpg" 
                           data-name="Patrick" 
                           data-role="Account \n Manager" 
+                          data-project="Community"                          
+                          data-bedrijf="MM Guide"                          
                           data-info="Vooral mensen van het werk afhouden, dat is waar ik goed in ben!"
                           data-fresh="false"
                           data-update="true"
@@ -134,6 +142,8 @@
                           data-image="src: ../images/profilepics/roost.jpg" 
                           data-name="Roel" 
                           data-role="Senior Software Engineer"
+                          data-project=""                          
+                          data-bedrijf=""                          
                           data-info="Hier moet je nog wat invullen!"
                           data-fresh="false"
                           data-update="true"
@@ -144,6 +154,8 @@
                           data-image="src: ../images/profilepics/bslob.jpg" 
                           data-name="Bastiaan" 
                           data-role="Business \n Analist" 
+                          data-project=""                          
+                          data-bedrijf=""                          
                           data-info="Dubbelrol vervuld, BA en scrummaster! Ik heb voor een alternatieve (betrouwbare en reconcilieerbare) data ontsluiting gezorgd (initiatief en uitwerking) zodat er over Q1 gerapporteerd  kan worden."
                           data-fresh="false"
                           data-update="true"
@@ -154,6 +166,8 @@
                           data-image="src: ../images/profilepics/everhoeven.jpg" 
                           data-name="Erik" 
                           data-role="Human \n Resources" 
+                          data-project="HR"                           
+                          data-bedrijf="MM Guide"                          
                           data-info="Opzoek naar nieuwe collega's! "
                           data-fresh="false"
                           data-update="true"
@@ -164,6 +178,8 @@
                           data-image="src: ../images/profilepics/pdobson.jpg" 
                           data-name="Penelope" 
                           data-role="Office \n Manager" 
+                          data-project=""                       
+                          data-bedrijf="MM Guide"                   
                           data-info="Hier moet je nog wat invullen!"
                           data-fresh="false"
                           data-update="true"
@@ -173,7 +189,9 @@
                           template="src: #person"
                           data-image="src: ../images/profilepics/hvanvlijmen.jpg" 
                           data-name="Hans"
-                          data-role="CEO" 
+                          data-role="Directeur" 
+                          data-project=""                          
+                          data-bedrijf="MM Guide"                         
                           data-info="Hier moet je nog wat invullen!"
                           data-fresh="false"
                           data-update="true"
@@ -184,6 +202,8 @@
                           data-image="src: ../images/profilepics/adenouden.jpg"
                           data-name="Annette"
                           data-role="Business \n Analist" 
+                          data-project=""                        
+                          data-bedrijf=""                         
                           data-info="Hier moet je nog wat invullen!"
                           data-fresh="false"
                           data-update="true"
@@ -194,9 +214,11 @@
                            data-image="src: ../images/mmguide-logo.jpg" 
                            data-name="MM Guide" 
                            data-role="Smoelenboek" 
+                           data-project=""                           
+                           data-bedrijf=""                    
                            data-info="Hover over je collega's om te zien waar ze mee bezig zijn"
                            data-fresh="false"
-                          data-update="false"
+                           data-update="false"
                         ></a-entity>
 
                 <a-entity id="agoossens" 
@@ -204,6 +226,8 @@
                           data-image="src: ../images/profilepics/agoossens.jpg" 
                           data-name="Ard" 
                           data-role="Business \n Analist" 
+                          data-project=""                         
+                          data-bedrijf=""                         
                           data-info="Hier moet je nog wat invullen!"
                           data-fresh="false"
                           data-update="true"
@@ -214,6 +238,8 @@
                           data-image="src: ../images/profilepics/dgoedvolk.jpg"
                           data-name="David" 
                           data-role="Business \n Analist" 
+                          data-project=""                          
+                          data-bedrijf=""                         
                           data-info="Hier moet je nog wat invullen!"
                           data-fresh="false"
                           data-update="true"
@@ -224,6 +250,8 @@
                           data-image="src: ../images/profilepics/kruyter.jpg" 
                           data-name="Klaas-Jan" 
                           data-role="Datawarehouse \n Specialist" 
+                          data-project=""                         
+                          data-bedrijf=""                         
                           data-info="Hier moet je nog wat invullen!"
                           data-fresh="false"
                           data-update="true"
@@ -234,6 +262,8 @@
                           data-image="src: ../images/profilepics/mvanweel.jpg" 
                           data-name="Martin" 
                           data-role="Business \n Analist" 
+                          data-project="Fire"                        
+                          data-bedrijf="Rabobank"                           
                           data-info="Hier moet je nog wat invullen!"
                           data-fresh="false"
                           data-update="true"
@@ -244,6 +274,8 @@
                           data-image="src: ../images/profilepics/rdejonge.jpg" 
                           data-name="Roy"
                           data-role="Business \n Analist" 
+                           data-project=""                         
+                          data-bedrijf="Rabobank"                          
                           data-info="Hier moet je nog wat invullen!"
                           data-fresh="false"
                           data-update="true"
@@ -255,6 +287,8 @@
                           data-image="src: ../images/profilepics/wvanderzwart.jpg"
                           data-name="Willem" 
                           data-role="AI \n Engineer" 
+                          data-project=""                           
+                          data-bedrijf=""                          
                           data-info="Hier moet je nog wat invullen!"
                           data-fresh="false"
                           data-update="true"
@@ -266,6 +300,8 @@
                           data-image="src: ../images/profilepics/bgeers.jpg"
                           data-name="Bart"
                           data-role="Digital \n Product \n Designer"
+                          data-project=""                          
+                          data-bedrijf=""                          
                           data-info="Momenteel ben ik bezig om een Data Viz te realiseren in (WebVR)"
                           data-fresh="false"
                           data-update="true"
@@ -277,6 +313,8 @@
                           data-image="src: ../images/profilepics/blommers.jpg"
                           data-name="Bas" 
                           data-role="Software \n Developer" 
+                          data-project="SintLucas, IVT, DEME"                           
+                          data-bedrijf=""                          
                           data-info="Webapp ontwikkeling met ASP.NET Core en Angular2"
                           data-fresh="false"
                           data-update="true"
@@ -287,7 +325,9 @@
                           data-image="src: ../images/profilepics/aman.jpg" 
                           data-name="Ahmed" 
                           data-role="Sales \n Consultant" 
-                          data-info="Hier moet je nog wat invullen!"
+                          data-project=""                          
+                          data-bedrijf="Dreamlake"                           
+                          data-info="IK HEB EEN MOTOR GEKOCHT!"
                           data-fresh="false"
                           data-update="true"
                         ></a-entity>
@@ -297,6 +337,8 @@
                           data-image="src: ../images/profilepics/jdijkman.jpg" 
                           data-name="Johannes" 
                           data-role="VR \n Developper" 
+                          data-project="VR Room"                         
+                          data-bedrijf="Dreamlake"                           
                           data-info="Hier moet je nog wat invullen!"
                           data-fresh="false"
                           data-update="true"
@@ -307,6 +349,8 @@
                           data-image="src: ../images/profilepics/ijamlean.jpg"
                           data-name="Israel" 
                           data-role="VR \n Developper" 
+                          data-project=""                          
+                          data-bedrijf="Dreamlake"                          
                           data-info="Dreamlake tot een succes maken!"
                           data-fresh="false"
                           data-update="true"
@@ -317,6 +361,8 @@
                           data-image="src: ../images/profilepics/loliveira.jpg" 
                           data-name="luis" 
                           data-role="VR \n Developper" 
+                          data-project="VR Room"                         
+                          data-bedrijf="Dreamlake"                          
                           data-info="Hier moet je nog wat invullen!"
                           data-fresh="false"
                           data-update="true"
@@ -326,7 +372,9 @@
                           template="src: #person" 
                           data-image="src: ../images/profilepics/yshen.png"
                           data-name="Shen" 
-                          data-role="Intern \n Dreamlake" 
+                          data-role="Internship" 
+                          data-project=""                          
+                          data-bedrijf="Dreamlake"                         
                           data-info="3D Samurai, mainly working on creating different 3D contents and real-time visualisation with UE4."
                           data-fresh="true"
                           data-update="false"
@@ -336,7 +384,9 @@
                           template="src: #person" 
                           data-image="src: ../images/profilepics/vytausus.png" 
                           data-name="Vytautus" 
-                          data-role="Intern \n Dreamlake" 
+                          data-role="Internship" 
+                          data-project=""                          
+                          data-bedrijf="Dreamlake"                         
                           data-info="I'm passionately converting Blueprints into C++"
                           data-fresh="true"
                           data-update="false"
@@ -344,6 +394,6 @@
             
         </a-entity>
             </a-entity>
-        <a-camera><a-cursor></a-cursor></a-camera>
+        <a-camera position="0 -1.8 0"><a-cursor></a-cursor></a-camera>
     </a-scene>
 </body>
