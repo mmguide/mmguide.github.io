@@ -7,6 +7,7 @@
     <script src="../js/components/template.min.js"></script>
     <script src="../js/components/layout.js"></script>
     <script src="../js/components/eventset.js"></script>
+    <script src="../js/components/animation.min.js"></script>
     
      <!-- FAVICONS -->
         <link rel="shortcut icon" sizes="16x16" href="../images/favicons/favicon.png">
@@ -26,7 +27,8 @@
             <a-mixin id="mmblue" color="#336fa1" material="color:#336fa1"></a-mixin>
             <a-mixin id="mmblack" color="#383838"></a-mixin>
             <a-mixin id="mmdarkblue" color="#103454"></a-mixin>
-
+         
+            
             <a-mixin id="card"  text="position: 0 0 0; anchor: center; width: 1.9; align:left; lineHeight: 50; letterSpacing: 5; color: white; wrapCount: 32; " 
                      geometry="primitive: plane; shader: flat;" 
                      event-set__1="_event: mouseenter; geometry.height: 2.2; geometry.width: 2.2; material.color: #336fa1; position:0 0 1; zOffset: 0.1" 
@@ -67,24 +69,40 @@
                     </a-entity>   
                 </a-entity>
             </script>   
-            
-          
-                    
-          
-<!--
-       <a-animation attribute="position"
-                                         dur="5000"
-                                         fill="forwards"
-                                         from="-4 -2 -1000"
-                                         to="0 0 0"
-                                         repeat="0">
-                    </a-animation>
--->
+
+             <script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
             
         </a-assets>
+<!--
+         <a-cylinder color="#F55" radius="0.1"
+                animation="property: color; dir: alternate; dur: 1000;
+                           easing: easeInSine; loop: true; to: #5F5"
+                animation__scale="property: scale; dir: alternate; dur: 200;
+                           easing: easeInSine; loop: true; to: 1.2 1 1.2"
+                animation__yoyo="property: position; dir: alternate; dur: 1000;
+                                 easing: easeInSine; loop: true; to: 0 2 0">
+    </a-cylinder>    
+-->
+        
+        
+        
+       
+<!--                <a-entity geometry="primitive: sphere" material="shader: gradient; topColor: 255 100 100; bottomColor: 100 100 200; offset: 0.0001"  position="0 0 -5"></a-entity>-->
 
-        <a-entity>
-            <a-animation attribute="rotation"
+
+        
+        <a-entity
+             
+             
+                animation__rotation="property: rotation; 
+                                     dur: 100000;
+                                     easing: linear; 
+                                     loop: true; 
+                                     to: 0 360 0;
+                                     ">
+            
+<!--
+                    <a-animation attribute="rotation"
                          dur="100000"
                          fill="forwards"
                          delay="2500"
@@ -95,8 +113,9 @@
                          event-set__2="_event: mouseleave; to:0 360 0">
                 
             </a-animation>
-                <a-entity layout="type: circle; radius:6.5; columns: 1; margin: 2.5" rotation="90 0 0"  position=" 0 0 0">
-                    
+-->
+            <a-entity  layout="type: circle; radius:6.5; columns: 1; margin: 2.5" rotation="90 0 0"  position=" 0 0 0">
+                   
           
                     
                 <a-entity id="skrijn" 
@@ -327,7 +346,7 @@
                           data-role="Sales \n Consultant" 
                           data-project=""                          
                           data-bedrijf="Dreamlake"                           
-                          data-info="IK HEB EEN MOTOR GEKOCHT!"
+                          data-info="IK HEB EEN MOTOR GEKOCHT! Eerst nog m'n motorrijbewijs halen! "
                           data-fresh="false"
                           data-update="true"
                         ></a-entity>
@@ -339,7 +358,7 @@
                           data-role="VR \n Developper" 
                           data-project="VR Room"                         
                           data-bedrijf="Dreamlake"                           
-                          data-info="Hier moet je nog wat invullen!"
+                          data-info="Samen met Luis ben ik bezig om de VR Room 2.0 te bouwen! "
                           data-fresh="false"
                           data-update="true"
                         ></a-entity>
@@ -363,7 +382,7 @@
                           data-role="VR \n Developper" 
                           data-project="VR Room"                         
                           data-bedrijf="Dreamlake"                          
-                          data-info="Hier moet je nog wat invullen!"
+                          data-info="I'm building the VR Room 2.0"
                           data-fresh="false"
                           data-update="true"
                         ></a-entity>
