@@ -76,6 +76,19 @@
         </a-assets>
 <!--         <a-entity geometry="primitive: sphere" material="shader: gradient; topColor: 250 208 0; bottomColor: 242 109 64; offset: 0.0001"  position="0 0 -5"></a-entity>-->
             
+        
+          <a-entity position="0 30 -50" rotation="0 180 0" scale="12 12 12" id="mmlogo" 
+                        template="src: #person" 
+                        data-image="src: ../images/mmguide-logo.jpg" 
+                        data-name="MM Guide" 
+                        data-role="Smoelenboek" 
+                        data-project=""                           
+                        data-bedrijf=""                    
+                        data-info="Hover over je collega's om te zien waar ze mee bezig zijn"
+                        data-fresh="false"
+                        data-update="false"
+                        >
+             </a-entity>
          <a-entity id="container" position="0 -2 -5">
              <a-mixin id="option"
                      geometry="primitive: box; width: 1; height: 1; depth: .01"
@@ -87,8 +100,7 @@
                      event-set__2="_event: mousedown; material.color: #555;  geometry.depth: .1"
                      text="align: center; width: 4; color: #FFF; zOffset: 0.1">
              </a-mixin>
-             
-            <a-entity layout="type: line; margin: 1.2" position="-.6 -1.5 0">
+               <a-entity layout="type: line; margin: 1.2" position="-.6 -1.5 0">
               <a-entity mixin="option" event-proxy="emit: animationPause" text="value: Pause"></a-entity>
               <a-entity mixin="option" event-proxy="emit: animationResume" text="value: Play"></a-entity>
             </a-entity>
@@ -215,18 +227,6 @@
                           data-info="Hier moet je nog wat invullen!"
                           data-fresh="false"
                           data-update="true"
-                        ></a-entity>
-
-                 <a-entity id="mmlogo" 
-                           template="src: #person" 
-                           data-image="src: ../images/mmguide-logo.jpg" 
-                           data-name="MM Guide" 
-                           data-role="Smoelenboek" 
-                           data-project=""                           
-                           data-bedrijf=""                    
-                           data-info="Hover over je collega's om te zien waar ze mee bezig zijn"
-                           data-fresh="false"
-                           data-update="false"
                         ></a-entity>
 
                 <a-entity id="agoossens" 
