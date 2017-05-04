@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <!-- SEO -->
+    <title>MM Guide; PROJECT FLARE</title>
+    <meta name="description" content="MM Guide; PROJECT FLARE ">
+
+
+    <!--    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>-->
+
+    <!-- latest version of a frame-->
+    <script src="js/aframe.min.js"></script>
+
+    <!--    Allowing you to change the 360 img on click-->
+    <script src="js/components/eventset.js"></script>
+    <!--    Geommetry animations-->
+    <script src="js/components/animation.js"></script>
+    <!--    flexbox like layout-->
+    <script src="js/components/layout.js"></script>
+    <!--    creating templates for cleaner code-->
+    <script src="js/components/template.js"></script>
+
+    <!--this is the sky color-->
+    <script src="js/components/gradient.js"></script>
+    <!--this makes the cursor follow a geomtry-->
+    <script src="js/components/crawlingcursor.js"></script>
+    <!--this creates an outline over geomtry-->
+    <script src="js/components/outline.js"></script>
+    <!--this creates an line Between geomtry-->
+    <script src="js/components/draw-line.js"></script>
+    <!--This helps the text follow the camera-->
+    <script src="js/components/billboard.js"></script>
+    <!--This helps the text follow the camera-->
+    <script src="js/components/webvr-ui.js"></script>
+    <!--this enables the xbox controller-->
+    <script src="js/components/xboxgamepad.js"></script>
+    <!--lazyload, this enables to do chunk loads-->
+    <script src="js/components/lazyload.js"></script>
+    <script src="../js/components/tube.min.js"></script>
+    <!--enable gear vr controls-->
+    <!--    <script src="js/components/gearvrcontrols.js"></script>-->
+
+    <!--    <script src="https://rawgit.com/chenzlabs/aframe/fix-auto-enter-vr-dist/dist/aframe-master.min.js"></script>-->
+
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="/images/favicon/favicon-16.png">
+    <link rel="shortcut icon" sizes="32x32" href="/images/favicon/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="/images/favicon/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="/images/favicon/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="/images/favicon/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="/images/favicon/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="/images/favicon/favicon-192.png">
+
+</head>
+    
+  <a-assets>
+      
+           <a-mixin id="mmorange"      color="#f26d40 , 242 109  64"></a-mixin>
+            <a-mixin id="mmblue"        color="#336fa1 ,  51 111 161" ></a-mixin>
+            <a-mixin id="mmblack"       color="#383838 ,  56  56  56"></a-mixin>
+            <a-mixin id="mmdarkblue"    color="#103454 ,  16  52  84"></a-mixin>
+            <a-mixin id="mmteal"        color="#54d3b5 ,  84 211 181"></a-mixin>
+            <a-mixin id="mmyellow"      color="#fad000 , 250 208   0" ></a-mixin>
+      
+    <a-asset-item id="plane-obj" src="obj/base.obj"></a-asset-item>
+    <a-asset-item id="left-obj" src="obj/left.obj"></a-asset-item>
+    <a-asset-item id="right-obj" src="obj/right.obj"></a-asset-item>
+      
+      
+  </a-assets>
+
+
+<body>
+    <a-scene>
+        <a-gradient-sky material="shader: gradient; topColor: 51 111 161; bottomColor: 255 255 255 ;"></a-gradient-sky>
+        <a-entity scale=" .03 .03 .03" material="color:#336fa1;" position="0 2.8 -2" rotation="0 90 90" obj-model="obj: #plane-obj;"></a-entity>
+        <a-entity scale=" .03 .03 .03" material="color:#336fa1;" position="0 2.8 -2" rotation="0 90 90" obj-model="obj: #right-obj;"></a-entity>
+        <a-entity scale=" .03 .03 .03" material="color:#336fa1;" position="0 2.8 -2" rotation="0 90 90" obj-model="obj: #left-obj;"></a-entity>
+        
+    <a-entity geometry="primitive: sphere" material="shader: gradient; topColor: 250 208 0; bottomColor: 242 109 64; offset: 0.0001"  position="0 0 -5"></a-entity>
+    
+        
+        <a-entity geometry="primitive: box" width="1" height="1" depth="1" material="shader: gradient; topColor: 250 208 0; bottomColor: 242 109 64; offset: 0.0001"  position="0 0 -5"></a-entity>
+            
+ <a-tube></a-tube>
+        
+        <a-box  width="1" height="100" position="0 -50 -10" depth="1" material="shader: gradient; topColor: 51 111 161; bottomColor: 255 255 255; offset: 100" ></a-box>
+    </a-scene>
+
+
+</body>
+
+</html>
