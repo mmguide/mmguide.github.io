@@ -9,6 +9,7 @@
     <script src="../js/components/eventset.js"></script>
     <script src="../js/components/animation.min.js"></script>
     <script src="../js/components/proxy.js"></script>
+    <script src="../js/components/webvr-ui.js"></script>
     
      <!-- FAVICONS -->
         <link rel="shortcut icon" sizes="16x16" href="../images/favicons/favicon.png">
@@ -21,7 +22,7 @@
 
 </head>
 <body>
-    <a-scene>
+    <a-scene webvr-ui>
         <a-gradient-sky material="shader: gradient; topColor: 245 245 245; bottomColor: 51 111 161;"></a-gradient-sky>
         <a-assets>
             <a-mixin id="mmorange"      color="#f26d40 , 242 109  64"></a-mixin>
@@ -78,7 +79,7 @@
             
         
   
-         <a-entity id="container" position="0 -2 -5">
+         <a-entity id="container" position="0 -1.4 -5">
              <a-mixin id="option"
                      geometry="primitive: box; width: 1; height: 1; depth: .01"
                      material="color: #103454; shader:flat;"
@@ -157,7 +158,7 @@
                           data-fresh="false"
                           data-update="true"
                         ></a-entity>
-
+            
                 <a-entity id="bslob" 
                           template="src: #person" 
                           data-image="src: ../images/profilepics/bslob.jpg" 
@@ -380,8 +381,8 @@
                           template="src: #person" 
                           data-image="src: ../images/profilepics/yshen.png"
                           data-name="Shen" 
-                          data-role="Internship" 
-                          data-project=""                          
+                          data-role="VR Developer" 
+                          data-project="Internship"                          
                           data-bedrijf="Dreamlake"                         
                           data-info="3D Samurai, mainly working on creating different 3D contents and real-time visualisation with UE4."
                           data-fresh="true"
@@ -391,9 +392,9 @@
                 <a-entity id="vytautus" 
                           template="src: #person" 
                           data-image="src: ../images/profilepics/vytausus.png" 
-                          data-name="Vytautus" 
-                          data-role="Internship" 
-                          data-project=""                          
+                          data-name="Vytautas" 
+                          data-role="VR Developer" 
+                          data-project="Internship"                          
                           data-bedrijf="Dreamlake"                         
                           data-info="I'm passionately converting Blueprints into C++"
                           data-fresh="true"
