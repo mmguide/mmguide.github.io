@@ -49,7 +49,13 @@
                      position="0 1.8 -1" 
                      width="4" 
                      height="4"           
-             
+                     animation__poof="property: position; 
+                                    dur: 100;
+                                    easing: easeInSine;
+                                    to: 0 0 1000;
+                                    delay:10000"   
+                         animation__color="property: color; dir: alternate; dur: 1000;
+                           easing: easeInSine; loop: true; to: #5F5"
                          >
 
             </a-plane>  
