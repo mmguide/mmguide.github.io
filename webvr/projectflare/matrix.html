@@ -1,0 +1,84 @@
+<head>
+    <title>MM Guid in the Matrix</title>
+
+
+    <script src="../js/aframe.min.js"></script>
+    <script src="../js/components/gradient.js"></script>
+    <script src="../js/components/alongpath.js"></script>
+    <script src="../js/components/curve.js"></script>
+    <script src="../js/components/outline.js"></script>
+    <script src="../js/components/billboard.js"></script>
+    <script src="../js/components/layout.js"></script>
+    <script src="../js/components/template.min.js"></script>
+    <script src="../js/components/eventset.js"></script>
+    <script src="../js/components/animation.min.js"></script>
+    <script src="../js/components/matrix.js"></script>
+    <script src="../js/components/extras.js"></script>
+    <script src="../js/components/tube.min.js"></script>
+    
+    
+    
+    <script src="https://cdn.rawgit.com/maxkrieger/aframe-draw-component/5a5d1e66/dist/aframe-draw-component.min.js"></script>
+
+   
+</head>
+
+
+<body>
+    <a-scene fog="type: exponential; color: #fff; density: 1"
+             animation="property: fog.density; delay:4000; dur: 2000; easing: easeInOutSine; loop: false; to: 0.1">
+    
+      
+        <a-assets>
+          
+            <script id="building" type="text/html">
+                <a-box position="${position}" 
+                       material="color:${color}" 
+                       width="${sides}" 
+                       height="${height}" 
+                       depth="${sides}"
+                       >
+                </a-box>
+            </script>
+            
+        </a-assets>
+
+        
+        <a-entity>
+                <a-plane amatrix 
+                     position="0 1.8 -1" 
+                     width="3" 
+                     height="3"           
+             
+                         >
+
+            </a-plane>  
+        </a-entity>
+
+        <a-entity >
+            
+            <a-plane position="0 2 -4" src="../images/mmguide-logo.jpg"><a-text position="-.5 -1 0" value="MM Guide"></a-text></a-plane> 
+            
+            
+            
+            <a-entity id="building-1" 
+                      template="src: #building" 
+                      data-position="1 .1 1"
+                      data-sides=".1"
+                      data-height=".3"
+                      data-color="white"
+                      >
+            </a-entity>    
+
+
+
+        <a-camera userheight="1.8">
+            <a-cursor></a-cursor>
+        </a-camera>
+    </a-scene>
+</body>
+
+
+
+
+

@@ -12,7 +12,15 @@
     <script src="../js/components/template.min.js"></script>
     <script src="../js/components/eventset.js"></script>
     <script src="../js/components/animation.min.js"></script>
+    <script src="../js/components/matrix.js"></script>
+    <script src="../js/components/extras.js"></script>
+    <script src="../js/components/tube.min.js"></script>
+    
+    
+    
+    <script src="https://cdn.rawgit.com/maxkrieger/aframe-draw-component/5a5d1e66/dist/aframe-draw-component.min.js"></script>
 
+   
 </head>
 
 
@@ -20,13 +28,15 @@
     <a-scene fog="type: exponential; color: #336fa1; density: 1"
              animation="property: fog.density; dur: 2000; easing: easeInOutSine; loop: false; to: 0.1">
         <a-gradient-sky material="shader: gradient; topColor: 255 255 255; bottomColor: 51 111 161;"></a-gradient-sky>
+         <a-ocean color="#103454" width="32" depth="32" density="32" speed="1"></a-ocean>
         <a-assets>
 
-            <a-mixin id="mmwhite" color="#fff" material="color:#fff"></a-mixin>
-            <a-mixin id="mmorange" color="#f26d40" material="color:#f26d40"></a-mixin>
-            <a-mixin id="mmblue" color="#336fa1" material="color:#336fa1"></a-mixin>
-            <a-mixin id="mmblack" color="#383838" material="color:#383838"></a-mixin>
-            <a-mixin id="mmdarkblue" color="#103454" material="color:#103454"></a-mixin>
+             <a-mixin id="mmorange"      color="#f26d40 , 242 109  64"></a-mixin>
+            <a-mixin id="mmblue"        color="#336fa1 ,  51 111 161" ></a-mixin>
+            <a-mixin id="mmblack"       color="#383838 ,  56  56  56"></a-mixin>
+            <a-mixin id="mmdarkblue"    color="#103454 ,  16  52  84"></a-mixin>
+            <a-mixin id="mmteal"        color="#54d3b5 ,  84 211 181"></a-mixin>
+            <a-mixin id="mmyellow"      color="#fad000 , 250 208   0" ></a-mixin>
 
           
             <script id="building" type="text/html">
@@ -34,15 +44,30 @@
                        material="color:${color}" 
                        width="${sides}" 
                        height="${height}" 
-                       depth="${sides}">
+                       depth="${sides}"
+                       >
                 </a-box>
             </script>
             
         </a-assets>
+        
 
+        
+     
 
-
-        <a-entity position="0 0 -4">
+        <a-entity position="0 .5 -2.5">
+            
+            <a-plane position="0 2 -4" src="../images/mmguide-logo.jpg"><a-text position="-.5 -1 0" value="MM Guide"></a-text></a-plane> 
+            
+             <a-tube path="5 0.1 0,
+                           2.5 0.1 0,
+                           0 0.1 -1.2, 
+                           -2.5 0.1 0, 
+                           -5 0.1 0" 
+                radius="0.04" 
+                     
+                material="shader: gradient; topColor:242, 109, 64; bottomColor: 250 208   0; offset:2;"s>
+            </a-tube>
             <a-entity id="building-1" 
                       template="src: #building" 
                       data-position="1 .1 1"
@@ -183,8 +208,13 @@
         </a-entity>
 
 
-        <a-camera userheight="5.8">
+        <a-camera userheight="1.8">
             <a-cursor></a-cursor>
         </a-camera>
     </a-scene>
 </body>
+
+
+
+
+
