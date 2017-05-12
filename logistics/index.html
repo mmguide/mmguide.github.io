@@ -52,14 +52,10 @@
     <main role="main">
         <article id="webslides">
             <section class="frame bg-blue slide" id="cover">
-                <span class="background dark" style="background-image:url('./static/images/backgrounds/amsamstel-1.jpg')"></span>
-                <div class="wrap">
-                    <div class="cta">
-                        <div class="number">
-                         <img class="whitelogo" src="https://webslides.tv/static/images/logos/netflix.svg" alt="Netflix" data-pin-nopin="true">
-                         <img class="whitelogo" src="/static/images/logos/MMG-LOGO-DEFAULT.svg" alt="Netflix" data-pin-nopin="true">
-                        </div>
-                           
+                <span class="background  dark" style="background-image:url('./static/images/backgrounds/amsamstel-1.jpg')"></span>
+                <div class="wrap fadeIn">
+                    <div class="cta fadeIn slow">
+                        <img class="number  whitelogo" src="/static/images/logos/MMG-LOGO-DEFAULT.svg">
                         <div class="benefit">
                             <h2>Gevaarlijk transport</h2>
                             <p>Patrick Vetkamp</p>
@@ -93,41 +89,58 @@
                             <p> <a href="http://www.tubantia.nl/enschede/chloortrein-blijft-rijden-door-twente~a29efc2b/">Tubantia</a></p>
                         </div>
                     </div>
-                    <!--end .grid -->
                 </div>
-                <!-- .end .wrap -->
             </section>
 
             <section id="section-42" class="slide current">
                 <span class="background-left-top" style="background-image:url('./static/images/backgrounds/gevaarlijk-transport-chloor-1.jpg')"></span>
-                <section class="aligncenter">
-                    <div class="wrap">
-                        <div class="card-50">
-                            <div class="flex-content">
-                                <h3>Rekening houden met...</h3>
-                                <ul class="flexblock specs">
-                                    <li>
-                                        <div>
-                                            <h2>Ongepland</h2>
-                                            Weer, feesten, demonstraties, ongelukken.
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <h2>Gepland</h2>
-                                            Omleiding, werkzaamheden, pauzes, tunnels
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
 
+                <div class="wrap">
+                    <div class="card-50">
+                        <div class="flex-content">
+                            <h3>Rekening houden met...</h3>
+                            <ul class="flexblock specs">
+                                <li>
+                                    <div>
+                                        <h2>Ongepland</h2>
+                                        Weer, feesten, demonstraties, ongelukken.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h2>Gepland</h2>
+                                        Omleiding, werkzaamheden, pauzes, tunnels
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        <!-- .end card-50 -->
                     </div>
-                    <!-- .end .wrap -->
-                </section>
+                </div>
+            </section>
 
-
+<section id="gepland" >
+          <div class="wrap">
+            <h2>.grid &gt; .column</h2>
+            <p>Basic Grid (auto-fill and equal height).</p>
+            <hr>
+            <div class="grid">
+              <div class="column">
+                <h3>.column 1</h3>
+                <p>Incredibly versatile! Auto-fill and equal height. Flexbox is awesome.</p>
+              </div>
+              <div class="column">
+                <h3>.column 2</h3>
+                <p>Incredibly versatile! Auto-fill and equal height. Flexbox is awesome. Just focus on your content. Have less. Do more.</p>
+              </div>
+              <div class="column">
+                <h3>.column 3</h3>
+                <p>Incredibly versatile! Auto-fill and equal height. Flexbox is awesome.</p>
+              </div>
+            </div>
+            <!--end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
 
 
         </article>
@@ -140,7 +153,6 @@
 
     <script type="text/javascript">
         var slide = jQuery('#webslides').webslides();
-
     </script>
 
     <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
