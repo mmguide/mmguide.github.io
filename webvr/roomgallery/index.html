@@ -1,0 +1,153 @@
+<head>
+    <title>MM Guide Smoelenboek </title>
+
+    <script src="../js/aframe.min.js"></script>
+    <script src="../js/components/billboard.js"></script>
+    <script src="../js/components/gradient.js"></script>
+    <script src="../js/components/template.min.js"></script>
+    <script src="../js/components/layout.js"></script>
+    <script src="../js/components/eventset.js"></script>
+    <script src="../js/components/animation.min.js"></script>
+    <script src="../js/components/proxy.js"></script>
+    <script src="../js/components/webvr-ui.js"></script>
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="../images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="../images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="../images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="../images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="../images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="../images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="../images/favicons/favicon-192.png">
+
+</head>
+
+<body>
+    <a-scene>
+        <!--    <a-scene fog="type: exponential; color: #336fa1; density: 1" animation="property: fog.density; dur: 3000; easing: easeInOutSine; loop: false; to: 0.1">-->
+        <a-gradient-sky material="shader: gradient; topColor: 245 245 245; bottomColor: 51 111 161;"></a-gradient-sky>
+        <a-assets>
+            <a-mixin id="mmorange" color="#f26d40 , 242 109  64"></a-mixin>
+            <a-mixin id="mmblue" color="#336fa1 ,  51 111 161"></a-mixin>
+            <a-mixin id="mmblack" color="#383838 ,  56  56  56"></a-mixin>
+            <a-mixin id="mmdarkblue" color="#103454 ,  16  52  84"></a-mixin>
+            <a-mixin id="mmteal" color="#54d3b5 ,  84 211 181"></a-mixin>
+            <a-mixin id="mmyellow" color="#fad000 , 250 208   0"></a-mixin>
+
+
+            <a-mixin 
+                     id="card" 
+                     text="position: 0 0 0; anchor: center; width: 4; align:left; lineHeight: 50; letterSpacing: 5; color: white; wrapCount: 32; " 
+                     geometry="primitive: plane; shader: flat; material.color: #336fa1;" 
+                     event-set__1="_event: mouseenter; geometry.height: 2; geometry.width: 2; material.color: none; position:0 0 1; zOffset: 0.1" 
+                     event-set__2="_event: mouseleave; geometry.height: 2; geometry.width: 2; material.color: #336fa1; position:0 0 0;">
+            </a-mixin>
+            <a-mixin id="cardText" billboard text="align:center; lineHeight: 50; letterSpacing: 5; color: white;"></a-mixin>
+
+            <script id="photo" type="text/html">
+                <a-entity rotation="-90 0 0">
+                    <a-entity billboard>
+
+                        <a-entity position="0 -0.7 .2" mixin="cardText" text="width: .2; wrapCount: 16; value: ${ name }"></a-entity>
+                        <a-text mixin="cardText card" text="width: 2; wrapCount: 32; value:" material=" ${image}">
+                        </a-text>
+
+                        <!--Animation-->
+                        <a-animation attribute="scale" dur="2500" fill="forwards" from="0 0 0" to="1 1 1" repeat="0">
+                        </a-animation>
+
+
+                    </a-entity>
+                </a-entity>
+            </script>
+
+        </a-assets>
+        <!--         <a-entity geometry="primitive: sphere" material="shader: gradient; topColor: 250 208 0; bottomColor: 242 109 64; offset: 0.0001"  position="0 0 -5"></a-entity>-->
+
+
+        <a-entity geometry="primitive: box; width: 100; height: 150; depth: 80;" position="0 60 0" material="color: #336fa1; side:back; metalness:.0002;">
+                
+            <a-entity light="type: ambient; color: #fff;intensity: .7"></a-entity>
+            <a-entity light="type: point; intensity: .5;" position="0 0 0"></a-entity>
+                
+        </a-entity>
+            
+<!--
+            <a-mixin id="option" geometry="primitive: box; width: 1; height: 1; depth: .01" material="color: #103454; shader:flat;" event-proxy="listen: click; target: a-box" event-set__enter="_event: mouseenter; material.color: #383838; geometry.depth: .1" event-set__leave="_event: mouseleave; material.color: #103454; geometry.depth: 0.01" event-set__1="_event: mouseup; material.color: #222;  geometry.depth: .1" event-set__2="_event: mousedown; material.color: #555;  geometry.depth: .1" text="align: center; width: 4; color: #FFF; zOffset: 0.1">
+            </a-mixin>
+-->
+            <!--
+<a-entity layout="type: line; margin: 1.2" position="-.6 -1.5 0">
+    <a-entity mixin="option" event-proxy="emit: animationPause" text="value: Pause"></a-entity>
+    <a-entity mixin="option" event-proxy="emit: animationResume" text="value: Play"></a-entity>
+</a-entity>
+-->
+
+        
+        <a-entity animation__slide="property: position;
+                                    loop: true; 
+                                    from: 0 0 -360
+                                    to: 0 0 360;
+                                    dur: 100000;
+                                    easing: linear; 
+                                    to: 0 360 0;
+                                    pauseEvents: animationPause;
+                                    resumeEvents: animationResume;"></a-entity>
+
+        
+        <a-entity layout="type: line; radius:6.5; columns: 1; margin: 2.5" rotation="90 0 0" position=" 0 2 -2">
+
+            <a-entity 
+                      id="photo1" 
+                      template="src: #photo" 
+                      data-image="src: images/photo-11.jpg" 
+                      data-name="photo" >
+            </a-entity>
+            <a-entity 
+                      id="photo1" 
+                      template="src: #photo" 
+                      data-image="src: images/photo-2.jpg" 
+                      data-name="photo" >
+            </a-entity>
+            <a-entity 
+                      id="photo1" 
+                      template="src: #photo" 
+                      data-image="src: images/photo-3.jpg" 
+                      data-name="photo" >
+            </a-entity>
+            <a-entity 
+                      id="photo1" 
+                      template="src: #photo" 
+                      data-image="src: images/photo-4.jpg" 
+                      data-name="photo" >
+            </a-entity>
+            <a-entity 
+                      id="photo1" 
+                      template="src: #photo" 
+                      data-image="src: images/photo-5.jpg" 
+                      data-name="photo" >
+            </a-entity>
+            <a-entity 
+                      id="photo1" 
+                      template="src: #photo" 
+                      data-image="src: images/photo-6.jpg" 
+                      data-name="photo" >
+            </a-entity>
+            <a-entity 
+                      id="photo1" 
+                      template="src: #photo" 
+                      data-image="src: images/photo-7.jpg" 
+                      data-name="photo" >
+            </a-entity>
+            <a-entity 
+                      id="photo1" 
+                      template="src: #photo" 
+                      data-image="src: images/photo-8.jpg" 
+                      data-name="photo">
+            </a-entity>
+            </a-entity>
+        <a-camera fov="90" position="0 0 0" rotation="10 0 0">
+            <a-cursor></a-cursor>
+        </a-camera>
+    </a-scene>
+</body>

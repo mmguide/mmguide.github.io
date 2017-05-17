@@ -2348,3 +2348,10 @@ svg {
 .fa-university {
 	width: 1.1428583338856697em;
 }
+.grow2 {
+  display: block;
+  width: 100px;
+  height: 82px;
+  background: url(svg/icn-svg-grow2.svg);
+  background-size: 100px 82px;
+}
