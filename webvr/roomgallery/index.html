@@ -56,7 +56,8 @@
              
                     <a-entity>
 
-                        <a-entity mixin="cardText" text="width: .2; wrapCount: 16; value: ${ name }"></a-entity>
+                        <a-entity mixin="cardText" position="0 -.8 0" text="width: 1; wrapCount: 16; value: ${title}"></a-entity>
+                        <a-entity mixin="cardText" position="0 -1,8 0" text="width: 2; wrapCount: 16; value: ${name}"></a-entity>
                         <a-text mixin="cardText card"  geometry="width:.68; height:1.024;" text="width: 2; wrapCount: 32; value:" material=" ${image}">
                         </a-text>
 
@@ -84,7 +85,7 @@
 
         </a-assets>
         
-<!--        <a-entity position="0 0 0" rotation="0 0 0" color="" scale=".01 .01 .01" roughness="1" metalness="1"  material="src: url(/webvr/roomgallery/3d/museumVRayCompleteMap.jpg)" obj-model="obj: #museum-obj;"></a-entity>-->
+<!--        <a-entity position="0 0 1.1" rotation="0 0 0" color="" scale=".01 .01 .01" roughness="1" metalness="1"  material="src: url(/webvr/roomgallery/3d/museumVRayCompleteMap.jpg)" obj-model="obj: #museum-obj;"></a-entity>-->
                 
             <a-entity light="type: ambient; color: #fff;intensity: 1.2"></a-entity>
             
@@ -98,179 +99,205 @@
             </a-entity>
 -->
 <!--        <a-entity mixin="table"> </a-entity>-->
-                
-        <a-entity layout="type: line; margin: 2" position="5.5 1.6 8" rotation="0 180 0">
+            
+        <a-entity layout="type: line; margin: 2" position="6 1.6 7" rotation="0 180 0">
 
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-1.jpg" 
-                      data-name="Erik ">
+                      data-name="Martin" 
+                      data-title="Back to the Misty Mountains">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-2.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains \t, Revenge of the fallen">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-3.jpg" 
-                      data-name="Erik ">
+                      data-name="Ard " 
+                      data-title="Misty Mountains \tfirst blood">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-4.jpg" 
-                      data-name="Erik ">
+                      data-name="Willem " 
+                      data-title="Misty Mountains \t, there and back again">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-5.jpg" 
-                      data-name="Erik ">
+                      data-name="Luis " data-title="Misty Mountains \t, revisited">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-6.jpg" 
-                      data-name="Erik ">
+                      data-name="Bas " 
+                      data-title="Misty Mountains \t, Vista SP2">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-7.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains:\t Directors Cut">
             </a-entity>
         </a-entity>
-        <a-entity layout="type: line; margin: 2" position="8 1.6 -7.5" rotation="180 90 180">
+        <a-entity layout="type: line; margin: 2" position="7 1.6 -6" rotation="180 90 180">
 
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-8.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains,\t Tokyo Drift">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-9.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="The return of the Misty Mountains">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-10.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Míwù shānmài, crouching tiger, hidden dragon. ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-11.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains Remasted ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-12.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains Forever">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-13.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains from Mars">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-14.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains Ultimate Edition">
             </a-entity>
         </a-entity>      
-        <a-entity layout="type: line; margin: 2" position="-5.5 1.6 -8" rotation="0 0 0">
+        <a-entity layout="type: line; margin: 2" position="-6 1.6 -7" rotation="0 0 0">
 
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-15.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains, Breaking down.">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-16.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains, age of Ultron">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-17.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains Rises">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-18.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains Retaliation">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-19.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains Tournament 2004">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-20.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains, Nitro">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-21.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Saving private Misty Mountains">
             </a-entity>
         </a-entity> 
-        <a-entity layout="type: line; margin: 2" position="-5.5 1.6 5" rotation="-180 -90 180">
+        <a-entity layout="type: line; margin: 2" position="-7 1.6 5" rotation="-180 -90 180">
 
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-22.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains, A New Hope">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-23.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains, Enterprises">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-24.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains 3D">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-25.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="The curse of the Misty Mountains">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-26.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains, Tomorrow never dies">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-27.jpg" 
-                      data-name="Erik ">
+                      data-name="Erik " 
+                      data-title="Misty Mountains, the Windwaker">
             </a-entity>
           
         </a-entity>
