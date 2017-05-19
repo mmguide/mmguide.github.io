@@ -40,7 +40,7 @@
             <a-mixin 
                      id="card" 
                      text="position: 0 0 0; anchor: center; width: 4; align:left; lineHeight: 50; letterSpacing: 5; color: white; wrapCount: 32; " 
-                     geometry="primitive: plane; shader: flat; material.color: #336fa1; width:1; height:1.4; rotation:180 180 180;" >
+                     geometry="primitive: plane; shader: flat; material.color: #336fa1; rotation:180 180 180;" >
             </a-mixin>
             <a-mixin id="cardText" text="align:center; lineHeight: 50; letterSpacing: 5; color: #383838;"></a-mixin>
             <a-mixin id="table"
@@ -57,7 +57,7 @@
                     <a-entity>
 
                         <a-entity mixin="cardText" text="width: .2; wrapCount: 16; value: ${ name }"></a-entity>
-                        <a-text mixin="cardText card" text="width: 2; wrapCount: 32; value:" material=" ${image}">
+                        <a-text mixin="cardText card"  geometry="width:.68; height:1.024;" text="width: 2; wrapCount: 32; value:" material=" ${image}">
                         </a-text>
 
                     </a-entity>
@@ -67,8 +67,15 @@
                           material=" ${image}" 
                           transparent="true"
                           scale=".5 .5 .5"
+                          geometry="width:1; height:1;"
                           position="${position}"
-                          rotation="${rotation}"></a-entity>
+                          rotation="${rotation}">
+                </a-entity>
+                <a-entity geometry="primitive: plane; 
+                                    shader: flat; 
+                                    material.color: #ffffff; 
+                                    rotation:90 0 0;">
+                </a-entity>
             </script>
             
             
@@ -77,22 +84,22 @@
 
         </a-assets>
         
-        <a-entity position="0 0 0" rotation="0 0 0" color="" scale=".01 .01 .01" roughness="1" metalness="1"  material="src: url(/webvr/roomgallery/3d/museumVRayCompleteMap.jpg)" obj-model="obj: #museum-obj;"></a-entity>
-        <a-entity position="0 0 0" rotation="0 0 0" color="" scale=".01 .01 .01" roughness="1" metalness="1" obj-model="obj: #ref-obj;"></a-entity>
+<!--        <a-entity position="0 0 0" rotation="0 0 0" color="" scale=".01 .01 .01" roughness="1" metalness="1"  material="src: url(/webvr/roomgallery/3d/museumVRayCompleteMap.jpg)" obj-model="obj: #museum-obj;"></a-entity>-->
                 
-            <a-entity light="type: ambient; color: #fff;intensity: .7"></a-entity>
-            <a-entity light="type: point; intensity: .5;" position="0 0 0"></a-entity>
+            <a-entity light="type: ambient; color: #fff;intensity: 1.2"></a-entity>
             
+<!--
                <a-entity 
                          id="polaroid-1" 
                          template="src: #polaroid" 
-                         data-image="src: images/polaroids/polaroid-1.png"
+                         data-image="src: images/polaroids/polaroid-img-1.jpg"
                          data-position="0 .5 0"
                          data-rotation="-90 0 0">
             </a-entity>
+-->
 <!--        <a-entity mixin="table"> </a-entity>-->
                 
-        <a-entity layout="type: line; margin: 2" position="-5.5 1.6 -8">
+        <a-entity layout="type: line; margin: 2" position="5.5 1.6 8" rotation="0 180 0">
 
             <a-entity 
                       id="painting-1" 
@@ -103,37 +110,37 @@
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-2.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-3.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-4.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-5.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-6.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-7.jpg" 
                       data-name="Erik ">
             </a-entity>
         </a-entity>
@@ -142,88 +149,88 @@
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-8.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-9.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-10.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-11.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-12.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-13.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-14.jpg" 
                       data-name="Erik ">
             </a-entity>
         </a-entity>      
-        <a-entity layout="type: line; margin: 2" position="-5.5 1.6 -8" rotation="180 180 180">
+        <a-entity layout="type: line; margin: 2" position="-5.5 1.6 -8" rotation="0 0 0">
 
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-15.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-16.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-17.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-18.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-19.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-20.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-21.jpg" 
                       data-name="Erik ">
             </a-entity>
         </a-entity> 
@@ -232,45 +239,40 @@
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-22.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-23.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-24.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-25.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-26.jpg" 
                       data-name="Erik ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
+                      data-image="src: images/paintings/painting-27.jpg" 
                       data-name="Erik ">
             </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
-                      data-name="Erik ">
-            </a-entity>
+          
         </a-entity>
         
             <a-camera fov="80" position="0 0 0" rotation="0 0 0" userheight="1.8;">
