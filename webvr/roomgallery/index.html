@@ -70,13 +70,15 @@
                           scale=".5 .5 .5"
                           geometry="width:1; height:1;"
                           position="${position}"
-                          rotation="${rotation}">
+                          rotation="${rotation}"> 
+                            <a-plane  position="0 -.2 -.01"
+                                     rotation="0 0 0"
+                                     width="1.2"
+                                     height="1.6"
+                                     ></a-plane>
+                    <a-entity mixin="cardText" position="0 -.7 0" text="width: 1; wrapCount: 16; value: ${caption}"></a-entity>
                 </a-entity>
-                <a-entity geometry="primitive: plane; 
-                                    shader: flat; 
-                                    material.color: #ffffff; 
-                                    rotation:90 0 0;">
-                </a-entity>
+               
             </script>
             
             
@@ -85,20 +87,38 @@
 
         </a-assets>
         
-<!--        <a-entity position="0 0 1.1" rotation="0 0 0" color="" scale=".01 .01 .01" roughness="1" metalness="1"  material="src: url(/webvr/roomgallery/3d/museumVRayCompleteMap.jpg)" obj-model="obj: #museum-obj;"></a-entity>-->
+        <a-entity position="0 0 1.1" rotation="0 0 0" color="" scale=".01 .01 .01" roughness="1" metalness="1"  material="src: url(/webvr/roomgallery/3d/museumVRayCompleteMap.jpg)" obj-model="obj: #museum-obj;"></a-entity>
                 
             <a-entity light="type: ambient; color: #fff;intensity: 1.2"></a-entity>
-            
-<!--
-               <a-entity 
-                         id="polaroid-1" 
-                         template="src: #polaroid" 
-                         data-image="src: images/polaroids/polaroid-img-1.jpg"
-                         data-position="0 .5 0"
-                         data-rotation="-90 0 0">
-            </a-entity>
--->
-<!--        <a-entity mixin="table"> </a-entity>-->
+           
+         <a-entity layout="type: box; column: 5; margin:0.2;" position="-3 0.1 -2" rotation="90 0 0">
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-1.jpg" data-position="1 .5 0" data-rotation="-180 0 34" data-caption="Hotel California"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-2.jpg" data-position="2 .5 0" data-rotation="-180 0 465" data-caption="Comfortably Numb"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-3.jpg" data-position="3 .5 0" data-rotation="-180 0 324" data-caption="The River"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-4.jpg" data-position="4 .5 0" data-rotation="-180 0 2435" data-caption="November Rain"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-5.jpg" data-position="5 .5 0" data-rotation="-180 0 2345" data-caption="Nothing Else Matters"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-6.jpg" data-position="1 .5 0" data-rotation="-180 0 213" data-caption="One"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-7.jpg" data-position="2 .5 0" data-rotation="-180 0 123" data-caption="Africa"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-8.jpg" data-position="3 .5 0" data-rotation="-180 0 23" data-caption="Viva La Vida"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-9.jpg" data-position="4 .5 0" data-rotation="-180 0 3452" data-caption="Old and Wise"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-10.jpg" data-position="5 .5 0" data-rotation="-180 0 2345" data-caption="Clocks"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-11.jpg" data-position="1 .5 0" data-rotation="-180 0 43250" data-caption="Innuendo"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-12.jpg" data-position="2 .5 0" data-rotation="-180 0 3450" data-caption="Brabant"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-13.jpg" data-position="3 .5 0" data-rotation="-180 0 345" data-caption="Back to black"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-14.jpg" data-position="4 .5 0" data-rotation="-180 0 25345" data-caption="Riders on the storm"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-15.jpg" data-position="5 .5 0" data-rotation="-180 0 22345" data-caption="Iron Sky"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-16.jpg" data-position="1 .5 0" data-rotation="-180 0 2345" data-caption="Somebody to love"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-17.jpg" data-position="2 .5 0" data-rotation="-180 0 2323145" data-caption="With or without you"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-18.jpg" data-position="3 .5 0" data-rotation="-180 0 234" data-caption="Highway to hell "></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-19.jpg" data-position="4 .5 0" data-rotation="-180 0 432" data-caption="Another brick in the wall"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-20.jpg" data-position="5 .5 0" data-rotation="-180 0 123" data-caption="Let it be"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-21.jpg" data-position="1 .5 0" data-rotation="-180 0 43" data-caption="The house of the rising sun"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-22.jpg" data-position="2 .5 0" data-rotation="-180 0 1234" data-caption="Killing in the name"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-23.jpg" data-position="3 .5 0" data-rotation="-180 0 43" data-caption="Chasing cars"></a-entity>
+                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-24.jpg" data-position="4 .5 0" data-rotation="-180 0 2" data-caption="Losing my religion"></a-entity>
+        
+        </a-entity>
+        
             
         <a-entity layout="type: line; margin: 2" position="6 1.6 7" rotation="0 180 0">
 
@@ -121,7 +141,7 @@
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-3.jpg" 
                       data-name="Ard " 
-                      data-title="Misty Mountains \tfirst blood">
+                      data-title="Misty Mountains \t first blood">
             </a-entity>
             <a-entity 
                       id="painting-1" 
@@ -134,7 +154,8 @@
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-5.jpg" 
-                      data-name="Luis " data-title="Misty Mountains \t, revisited">
+                      data-name="Luis " 
+                      data-title="Misty Mountains \t, revisited">
             </a-entity>
             <a-entity 
                       id="painting-1" 
@@ -201,7 +222,7 @@
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-14.jpg" 
                       data-name="Mieke " 
-                      data-title="Misty Mountains Ultimate Edition">
+                      data-title="Misty Mountains \t Ultimate Edition">
             </a-entity>
         </a-entity>      
         <a-entity layout="type: line; margin: 2" position="-6 1.6 -7" rotation="0 0 0">
@@ -218,35 +239,35 @@
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-16.jpg" 
                       data-name="Geertje " 
-                      data-title="Misty Mountains, age of Ultron">
+                      data-title="Misty Mountains,\t age of Ultron">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-17.jpg" 
                       data-name="Vytautas" 
-                      data-title="Misty Mountains Rises">
+                      data-title="Misty Mountains \t Rises">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-18.jpg" 
                       data-name="Hans " 
-                      data-title="Misty Mountains Retaliation">
+                      data-title="Misty Mountains \t Retaliation">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-19.jpg" 
                       data-name="Johannes " 
-                      data-title="Misty Mountains Tournament 2004">
+                      data-title="Misty Mountains \t Tournament 2004">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-20.jpg" 
                       data-name="Bart " 
-                      data-title="Misty Mountains, Nitro">
+                      data-title="Misty Mountains, \t Nitro">
             </a-entity>
             <a-entity 
                       id="painting-1" 
@@ -263,21 +284,21 @@
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-22.jpg" 
                       data-name="Erik " 
-                      data-title="Misty Mountains, A New Hope">
+                      data-title="Misty Mountains, \t A New Hope">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-23.jpg" 
                       data-name="Iris " 
-                      data-title="Misty Mountains, Enterprise">
+                      data-title="Misty Mountains, \t Enterprise">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-24.jpg" 
                       data-name="Annette " 
-                      data-title="Misty Mountains 3D">
+                      data-title="Misty Mountains \t 3D">
             </a-entity>
             <a-entity 
                       id="painting-1" 
@@ -291,14 +312,14 @@
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-26.jpg" 
                       data-name="Patrick " 
-                      data-title="Misty Mountains, Tomorrow never dies">
+                      data-title="Misty Mountains, \t Tomorrow never dies">
             </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-27.jpg" 
                       data-name="Klaas-Jan " 
-                      data-title="Misty Mountains, the Windwaker">
+                      data-title="Misty Mountains, \t the Windwaker">
             </a-entity>
           
         </a-entity>
