@@ -10,6 +10,7 @@
     <script src="../js/components/animation.min.js"></script>
     <script src="../js/components/proxy.js"></script>
     <script src="../js/components/webvr-ui.js"></script>
+    <script src="../js/components/lazyload.js"></script>
 
     <!-- FAVICONS -->
     <link rel="shortcut icon" sizes="16x16" href="../images/favicons/favicon.png">
@@ -55,7 +56,7 @@
 
             <script id="painting" type="text/html">
              
-                    <a-entity>
+                    <a-entity lazy-load="delay: 500;">
 
                         <a-entity mixin="cardText" position=".9 .3 0" text="width: 1; wrapCount: 16; value: ${title}"></a-entity>
                         <a-entity mixin="cardText" position="1.15 0 0" text="width: 1.5; wrapCount: 16; value: ${name}"></a-entity>
@@ -71,8 +72,9 @@
 
                     </a-entity>
             </script>
-            <script id="polaroid" type="text/html">
-                <a-entity mixin="card" 
+            <script  id="polaroid" type="text/html">
+
+                <a-entity lazy-load="delay: 1000;" mixin="card" 
                           material=" ${image}" 
                           transparent="true"
                           scale=".5 .5 .5"
