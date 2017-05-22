@@ -27,7 +27,8 @@
 <body>
     <a-scene stats>
         <!--    <a-scene fog="type: exponential; color: #336fa1; density: 1" animation="property: fog.density; dur: 3000; easing: easeInOutSine; loop: false; to: 0.1">-->
-        <a-gradient-sky material="shader: gradient; topColor: 245 245 245; bottomColor: 51 111 161;"></a-gradient-sky>
+<!--        <a-gradient-sky material="shader: gradient; topColor: 245 245 245; bottomColor: 51 111 161;"></a-gradient-sky>-->
+         <a-sky src="/webvr/roomgallery/images/skybox.jpg"></a-sky>
         <a-assets>
             <a-mixin id="mmorange" color="#f26d40 , 242 109  64"></a-mixin>
             <a-mixin id="mmblue" color="#336fa1 ,  51 111 161"></a-mixin>
@@ -42,7 +43,7 @@
                      text="position: 0 0 0; anchor: center; width: 4; align:left; lineHeight: 50; letterSpacing: 5; color: white; wrapCount: 32; " 
                      geometry="primitive: plane; shader: flat; material.color: #336fa1; rotation:180 180 180;" >
             </a-mixin>
-            <a-mixin id="cardText" text="align:center; lineHeight: 50; letterSpacing: 5; color: #383838;"></a-mixin>
+            <a-mixin id="cardText" text="align:left; lineHeight: 50; letterSpacing: 5;"></a-mixin>
             <a-mixin id="table"
                      geometry="box" 
                      width="8" 
@@ -56,10 +57,17 @@
              
                     <a-entity>
 
-                        <a-entity mixin="cardText" position="0 -.8 0" text="width: 1; wrapCount: 16; value: ${title}"></a-entity>
-                        <a-entity mixin="cardText" position="0 -1.2 0" text="width: 2; wrapCount: 16; value: ${name}"></a-entity>
-                        <a-text mixin="cardText card"  geometry="width:.68; height:1.024;" text="width: 2; wrapCount: 32; value:" material=" ${image}">
-                        </a-text>
+                        <a-entity mixin="cardText" position=".9 .3 0" text="width: 1; wrapCount: 16; value: ${title}"></a-entity>
+                        <a-entity mixin="cardText" position="1.15 0 0" text="width: 1.5; wrapCount: 16; value: ${name}"></a-entity>
+                        <a-text mixin="cardText card"  geometry="width:.68; height:1.024;" text="width: 2; wrapCount: 32; value:" material=" ${image}"></a-text>
+                         <a-entity geometry="primitive: plane; 
+                                 shader: flat; 
+                                 width:1.2; 
+                                 height:1.5;" 
+                                   position="0 -.05 -.1"
+                                   material="src: url(images/shadow.png); transparent:true">  
+                     
+                        </a-entity>
 
                     </a-entity>
             </script>
@@ -75,23 +83,31 @@
                                      rotation="0 0 0"
                                      width="1.2"
                                      height="1.6"
-                                     ></a-plane>
-                    <a-entity mixin="cardText" position="0 -.7 0" text="width: 1m; wrapCount: 16; value: ${caption}"></a-entity>
+                                     > <a-entity geometry="primitive: plane; 
+                                 shader: flat; 
+                                 width:1.7; 
+                                 height:2.2;" 
+                                   position="0 0 -.05"
+                                   material="src: url(images/shadow.png); transparent:true">  
+                     
+                        </a-entity></a-plane>
+                    
+                    <a-entity mixin="cardText" position="0 -.7 0" text="width: 1; color: black; wrapCount: 16; value: ${caption}"></a-entity>
                 </a-entity>
                
             </script>
             
             
-            <a-asset-item id="museum-obj" src="/webvr/roomgallery/3d/museum01.obj"></a-asset-item>
+            <a-asset-item id="museum-obj" src="/webvr/roomgallery/3d/museum06.obj"></a-asset-item>
             <a-asset-item id="ref-obj" src="/webvr/roomgallery/3d/refCube01.obj"></a-asset-item>
 
         </a-assets>
         
-        <a-entity position="0 0 1.1" rotation="0 0 0" color="" scale=".01 .01 .01" roughness="1" metalness="1"  material="src: url(/webvr/roomgallery/3d/museumVRayCompleteMap.jpg)" obj-model="obj: #museum-obj;"></a-entity>
+        <a-entity position="0 0 2.85" rotation="0 0 0" color="" scale=".01 .01 .01" roughness="1" metalness="1"  material="src: url(/webvr/roomgallery/3d/museumVRayCompleteMap.jpg)" obj-model="obj: #museum-obj;"></a-entity>
                 
             <a-entity light="type: ambient; color: #fff;intensity: 1.2"></a-entity>
            
-         <a-entity layout="type: box; column: 10; margin:0.1;" position="-4 0.1 -3" rotation="90 0 0">
+         <a-entity layout="type: box; column: 10; margin:0.1;" position="-4 .15 -3" rotation="90 0 0">
                 <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-1.jpg" data-position="1 .5 0" data-rotation="-180 0 34" data-caption="Hotel California"></a-entity>
                 <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-2.jpg" data-position="2 .5 0" data-rotation="-180 0 465" data-caption="Comfortably Numb"></a-entity>
                 <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-3.jpg" data-position="3 .5 0" data-rotation="-180 0 324" data-caption="The River"></a-entity>
@@ -151,8 +167,8 @@
         
         </a-entity>
         
-            
-        <a-entity layout="type: line; margin: 2" position="6 1.6 7" rotation="0 180 0">
+<!--          windowwall  -->
+        <a-entity layout="type: line; margin: 2" position="8 1.6 7.6" rotation="0 180 0">
 
             <a-entity 
                       id="painting-1" 
@@ -181,6 +197,21 @@
                       data-image="src: images/paintings/painting-4.jpg" 
                       data-name="Willem " 
                       data-title="Misty Mountains \t, there and back again">
+            </a-entity> 
+            <a-entity geometry="primitive: plane; 
+                                 shader: flat; 
+                                 width:1; 
+                                 height:1;" 
+                      position="8 0 -5"
+                      material="src: url(images/bobross.png); transparent:true">  
+                        <a-animation attribute="position" from="8 0 -5" to="8 0 -6"></a-animation>
+                    <a-animation attribute="rotation"
+                                 dur="1000"
+                                 direction="alternate"
+                                 easing="ease"
+                                 from="0 0 45"
+                                 to="0 0 -45"
+                                 repeat="indefinite"></a-animation>
             </a-entity>
             <a-entity 
                       id="painting-1" 
@@ -204,15 +235,9 @@
                       data-title="Misty Mountains:\t Delete Scenes">
             </a-entity>
         </a-entity>
-        <a-entity layout="type: line; margin: 2" position="7 1.6 -6" rotation="180 90 180">
+<!--        right wall-->
+        <a-entity layout="type: line; margin: 2" position="10.5 1.6 -5" rotation="180 90 180">
 
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-8.jpg" 
-                      data-name="Mariette" 
-                      data-title="Misty Mountains,\t Tokyo Drift">
-            </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
@@ -225,8 +250,7 @@
                       template="src: #painting" 
                       data-image="src: images/paintings/painting-10.jpg" 
                       data-name="Israel " 
-                      data-title="Misty Mountains \t: directors cut. "
- >
+                      data-title="Misty Mountains \t: directors cut. ">
             </a-entity>
             <a-entity 
                       id="painting-1" 
@@ -256,9 +280,17 @@
                       data-name="Mieke " 
                       data-title="Misty Mountains \t Ultimate Edition">
             </a-entity>
-        </a-entity>      
+        </a-entity>   
+<!--        middelwal-->
         <a-entity layout="type: line; margin: 2" position="-6 1.6 -7" rotation="0 0 0">
 
+            <a-entity 
+                      id="painting-1" 
+                      template="src: #painting" 
+                      data-image="src: images/paintings/painting-8.jpg" 
+                      data-name="Mariette" 
+                      data-title="Misty Mountains,\t Tokyo Drift">
+            </a-entity>
             <a-entity 
                       id="painting-1" 
                       template="src: #painting" 
@@ -309,7 +341,8 @@
                       data-title="Saving private Misty Mountains">
             </a-entity>
         </a-entity> 
-        <a-entity layout="type: line; margin: 2" position="-7 1.6 5" rotation="-180 -90 180">
+<!--      left walla-->
+        <a-entity layout="type: line; margin: 2" position="-8.5 1.6 5" rotation="-180 -90 180">
 
             <a-entity 
                       id="painting-1" 
