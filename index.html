@@ -1,406 +1,146 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
 <head>
-    <title>MM Guide VR Gallery  </title>
-<!--
-    <base href='/'>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
--->
-    
-    <script src="../js/aframe.min.js"></script>
-    <script src="../js/components/billboard.js"></script>
-    <script src="../js/components/gradient.js"></script>
-    <script src="../js/components/template.min.js"></script>
-    <script src="../js/components/layout.js"></script>
-    <script src="../js/components/eventset.js"></script>
-    <script src="../js/components/animation.min.js"></script>
-    <script src="../js/components/proxy.js"></script>
-    <script src="../js/components/webvr-ui.js"></script>
-    <script src="../js/components/lazyload.js"></script>
-     <script src="../js/components/xboxgamepad.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <!-- SEO -->
+    <title>MM Guide, laat meer zien, presentatie</title>
+    <meta name="description" content="MM Guide Laat meer zien">
+
+    <!-- URL CANONICAL -->
+    <link rel="canonical" href="www.mmguide.nl">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" type="text/css" media="all" href="/static/css/base.css">
+
+    <!-- CSS Colors -->
+    <link rel="stylesheet" type="text/css" media="all" href="/static/css/colors.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type="text/css" media="all" href="/static/css/svg-icons.css">
+
 
     <!-- FAVICONS -->
-    <link rel="shortcut icon" sizes="16x16" href="../images/favicons/favicon.png">
-    <link rel="shortcut icon" sizes="32x32" href="../images/favicons/favicon-32.png">
-    <link rel="apple-touch-icon icon" sizes="76x76" href="../images/favicons/favicon-76.png">
-    <link rel="apple-touch-icon icon" sizes="120x120" href="../images/favicons/favicon-120.png">
-    <link rel="apple-touch-icon icon" sizes="152x152" href="../images/favicons/favicon-152.png">
-    <link rel="apple-touch-icon icon" sizes="180x180" href="../images/favicons/favicon-180.png">
-    <link rel="apple-touch-icon icon" sizes="192x192" href="../images/favicons/favicon-192.png">
+    <link rel="shortcut icon" sizes="16x16" href="./static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="./static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="./static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="./static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="./static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="./static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="./static/images/favicons/favicon-192.png">
 
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
 </head>
 
 
-
 <body>
-    <a-scene stats>
-        <!--    <a-scene fog="type: exponential; color: #336fa1; density: 1" animation="property: fog.density; dur: 3000; easing: easeInOutSine; loop: false; to: 0.1">-->
-<!--        <a-gradient-sky material="shader: gradient; topColor: 245 245 245; bottomColor: 51 111 161;"></a-gradient-sky>-->
-         <a-sky src="/webvr/13mei/images/skybox.jpg"></a-sky>
-        <a-assets>
-            <a-mixin id="mmorange" color="#f26d40 , 242 109  64"></a-mixin>
-            <a-mixin id="mmblue" color="#336fa1 ,  51 111 161"></a-mixin>
-            <a-mixin id="mmblack" color="#383838 ,  56  56  56"></a-mixin>
-            <a-mixin id="mmdarkblue" color="#103454 ,  16  52  84"></a-mixin>
-            <a-mixin id="mmteal" color="#54d3b5 ,  84 211 181"></a-mixin>
-            <a-mixin id="mmyellow" color="#fad000 , 250 208   0"></a-mixin>
+    <header role="banner">
+        <nav role="navigation" class="navbar">
+            <ul>
+                <li><a href="http://www.mmguide.nl">Website</a></li>
+                <li><a href="http://www.mmguide.nl">Services</a></li>
+                <li><a href="http://www.mmguide.nl">Clients</a></li>
+                <li><a href="http://www.mmguide.nl/contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main role="main">
+        <article id="webslides">
+
+            <!--Cover-->
+            <section class="bg-blue background-diffuse frame  slide current">
+
+            </section>
+            <!--end of cover-->
 
 
-            <a-mixin 
-                     id="card" 
-                     text="position: 0 0 0; anchor: center; width: 4; align:left; lineHeight: 50; letterSpacing: 5; color: white; wrapCount: 32; " 
-                     geometry="primitive: plane; shader: flat; material.color: #336fa1; rotation:180 180 180;" >
-            </a-mixin>
-            <a-mixin id="cardText" text="align:left; lineHeight: 50; letterSpacing: 5;"></a-mixin>
-            <a-mixin id="table"
-                     geometry="box" 
-                     width="8" 
-                     height="8" 
-                     depth="2"
-                     material="color: #fafafa"
-                     >
-            </a-mixin>
+            <!--slide2-->
+            <section class="bg-white">
+                <img class="topcorner-mmg-logo-white" src="static/images/logos/MMG-LOGO-DEFAULT.svg">
+                <div class="wrap">
+                    <h2>Development Environment</h2>
+                    <p>Laat meer zien</p>
+                </div>
+                <hr>
 
-            <script id="painting" type="text/html">
-             
-                    <a-entity lazy-load="delay: 500;">
+                <img class="topcorner-mmg-logo-white" src="static/images/logos/MMG-LOGO-DEFAULT.svg">
+                <div class="wrap">
+                    <div class="grid vertical-align">
 
-                        <a-entity mixin="cardText" position=".9 .4 0" text="width: 1; wrapCount: 32; value: ${title}"></a-entity>
-                        <a-entity mixin="cardText" position="1.15 .2 0" text="width: 1.5; wrapCount: 24; value: ${name}"></a-entity>
-                        <a-text mixin="cardText card"  geometry="width:.68; height:1.024;" text="width: 2; wrapCount: 32; value:" material=" ${image}"></a-text>
-                         <a-entity geometry="primitive: plane; 
-                                 shader: flat; 
-                                 width:1.2; 
-                                 height:1.5;" 
-                                   position="0 -.05 -.1"
-                                   material="src: url(images/shadow.png); transparent:true">  
-                     
-                        </a-entity>
+                        <div class="column">
+                            <h4><strong>Internship</strong></h4>
+                            <p>This is what we want to know.</p>
+                            <ul class="description">
+                                <li><a href="static/pdf/pgadmin4-performance.pdf">pgAdmin 4: performance optimalisatie</a></li>
+                                <li><a href="static/pdf/pgadmin4-UX.pdf">pgAdmin 4: UX optimalisatie</a></li>
+                                <li><a href="static/pdf/docker-applicatievirtualisatie.pdf">Docker: applicatievirtualisatie</a></li>
+                            </ul>
+                            <br>
+                            <a class="" href="#">See all ></a>
+                        </div>
+                        <div class="column">
+                            <h4><strong>R&D</strong></h4>
+                            <p>This is what we are working on to know</p>
+                            <ul class="description">
+                                <li> <a class="" href="/webvr/projectflare/community.html">Community (WebVR, ThreeJS)</a> </li>
+                                <li> <a class="" href="/webvr/projectflare/supplychainvr.html">VR Supply Chain Vizualisation (WebVR, ThreeJS)</a> </li>
+                                <li> <a class="" href="/webvr/smoelenboek/index.html">Smoelenboek (WebVR, ThreeJS)</a> </li>
+                                <li> <a class="" href="/webvr/13mei/index.html">13 Mei, uitje (WebVR, ThreeJS)</a> </li>
+                                <li> <a class="" href="https://github.com/DyelKassaKoumba/sense_hat_weather_station">Raspberry Pi Weatherstation (IoT)</a> </li>
 
-                    </a-entity>
-            </script>
-            <script  id="polaroid" type="text/html">
+                                <li> <a class="" style=" text-decoration: line-through;" href="#">In progress</a> </li>
+                            </ul>
+                            <br>
+                            <a class="" href="#">See all ></a>
+                        </div>
+                        <div class="column">
+                            <h4><strong>Presentations</strong></h4>
+                            <p>This is what we know.</p>
+                            <ul class="description">
+                                <li> <a class="underline" href="logistics/">Logistiek & Data</a></li>
+                                <li> <a class="underline" href="iot/mmguide-iot.html">IoT</a></li>
+                                <li> <a class="underline" href="brainstorm/brainstorm.html">Brainstorm</a></li>
+                                <li>
+                                    <a class="underline" href="/template/template.html"></a>Template</li>
 
-                <a-entity lazy-load="delay: 1000;" mixin="card" 
-                          material=" ${image}" 
-                          transparent="true"
-                          scale=".5 .5 .5"
-                          geometry="width:1; height:1;"
-                          position="${position}"
-                          rotation="${rotation}"> 
-                            <a-plane  position="0 -.2 -.01"
-                                     rotation="0 0 0"
-                                     width="1.2"
-                                     height="1.6"
-                                     > <a-entity geometry="primitive: plane; 
-                                 shader: flat; 
-                                 width:1.7; 
-                                 height:2.2;" 
-                                   position="0 0 -.05"
-                                   material="src: url(images/shadow.png); transparent:true">  
-                     
-                        </a-entity></a-plane>
-                    
-                    <a-entity mixin="cardText" position="0 -.7 0" text="width: 1; color: black; wrapCount: 24; value: ${caption}"></a-entity>
-                </a-entity>
-               
-            </script>
-            
-            
-            <a-asset-item id="museum-obj" src="/webvr/13mei/3d/museum01.obj"></a-asset-item>
-            <a-asset-item id="ref-obj" src="/webvr/13mei/3d/refCube01.obj"></a-asset-item>
+                            </ul>
+                            <br>
+                            <a class="" href="#">See all ></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--end of slide2-->
 
-        </a-assets>
-        
-        <a-entity position="0 0 2.85" rotation="0 0 0" color="" scale=".01 .01 .01" roughness="1" metalness="1"  material="src: url(/webvr/13mei/3d/museumVRayCompleteMap.jpg)" obj-model="obj: #museum-obj;"></a-entity>
-                
-            <a-entity light="type: ambient; color: #fff;intensity: 1.2"></a-entity>
-           
-         <a-entity layout="type: box; column: 6; margin:0.1;" position="-5 .15 -4" rotation="90 0 0">
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-1.jpg" data-position="1 .5 0" data-rotation="-180 0 34" data-caption="You can do anything, but not everything."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-2.jpg" data-position="2 .5 0" data-rotation="-180 0 465" data-caption="Much wow, such fun!"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-3.jpg" data-position="3 .5 0" data-rotation="-180 0 324" data-caption="We artists are a different breed of people. We're a happy bunch"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-4.jpg" data-position="4 .5 0" data-rotation="-180 0 2435" data-caption="If I paint something, I don't want to have to explain what it is"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-5.jpg" data-position="5 .5 0" data-rotation="-180 0 2345" data-caption="Seas the day!"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-6.jpg" data-position="6 .5 0" data-rotation="-180 0 213" data-caption="Pier Pressure"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-7.jpg" data-position="7 .5 0" data-rotation="-180 0 123" data-caption="One time at the beach this guy was swimming in the ocean yelling Help! Shark! Help!. I just laughed, I knew that shark wasn't going to help them."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-8.jpg" data-position="8 .5 0" data-rotation="-180 0 23" data-caption="The Codfather"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-9.jpg" data-position="9 .5 0" data-rotation="-180 0 3452" data-caption="Moor often than knot"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-10.jpg" data-position="10 .5 0" data-rotation="-180 0 2345" data-caption="Usain Boat"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-11.jpg" data-position="1 .5 0" data-rotation="-180 0 43250" data-caption="Eggs-ta-sea"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-12.jpg" data-position="2 .5 0" data-rotation="-180 0 3450" data-caption="I just dropped my laptop off the boat.....It's a Dell, rolling in the deep."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-13.jpg" data-position="3 .5 0" data-rotation="-180 0 345" data-caption="Aboat Time!"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-14.jpg" data-position="4 .5 0" data-rotation="-180 0 25345" data-caption="Riders on the storm"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-15.jpg" data-position="5 .5 0" data-rotation="-180 0 22345" data-caption="Wood Too"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-16.jpg" data-position="6 .5 0" data-rotation="-180 0 2345" data-caption="Wood Not"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-17.jpg" data-position="7 .5 0" data-rotation="-180 0 2323145" data-caption="What do you do with a sick boat? Take it to the doc"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-18.jpg" data-position="8 .5 0" data-rotation="-180 0 234" data-caption="Oh Ship! "></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-19.jpg" data-position="9 .5 0" data-rotation="-180 0 432" data-caption="Whatever floats your goat."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-20.jpg" data-position="10 .5 0" data-rotation="-180 0 123" data-caption="I like big boats and I cannot lie."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-21.jpg" data-position="1 .5 0" data-rotation="-180 0 43" data-caption="Aquaholic"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-22.jpg" data-position="2 .5 0" data-rotation="-180 0 1234" data-caption="Fishizzle"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-23.jpg" data-position="3 .5 0" data-rotation="-180 0 43" data-caption="Bullship"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-24.jpg" data-position="4 .5 0" data-rotation="-180 0 2" data-caption="	I used to have a fear of boats, but that ship has sailed."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-25.jpg" data-position="5 .5 0" data-rotation="-180 0 34" data-caption="	He was arrested for throwing bombs from a boat, but they dropped the charges."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-26.jpg" data-position="6 .5 0" data-rotation="-180 0 465" data-caption="	Making a boat out of stone would be a hardship.	"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-27.jpg" data-position="7 .5 0" data-rotation="-180 0 324" data-caption="	Why did the admiral decide against buying a new hat? He was afraid of cap sizing."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-28.jpg" data-position="8 .5 0" data-rotation="-180 0 2435" data-caption="	In ancient times, seagoing vessels were much more fuel efficient. They got thousands of miles to the galleon."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-29.jpg" data-position="9 .5 0" data-rotation="-180 0 2345" data-caption="Did you hear about the submarine industry? It really took a dive."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-30.jpg" data-position="10 .5 0" data-rotation="-180 0 213" data-caption="	A ship's captain is a sails manager."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-31.jpg" data-position="1 .5 0" data-rotation="-180 0 123" data-caption="After eating the ship, the sea monster needed an Alka-Seltzer. He said, 'I can't believe I ate the hull thing.'"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-32.jpg" data-position="2 .5 0" data-rotation="-180 0 23" data-caption="Vincent van Goat"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-33.jpg" data-position="3 .5 0" data-rotation="-180 0 3452" data-caption="The artist was great, he could always draw a crowd."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-34.jpg" data-position="4 .5 0" data-rotation="-180 0 2345" data-caption="Manet made so little monet"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-35.jpg" data-position="5 .5 0" data-rotation="-180 0 43250" data-caption="2B or not 2B"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-36.jpg" data-position="6 .5 0" data-rotation="-180 0 3450" data-caption="Van Gogh, van Goghing, Van Gone."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-37.jpg" data-position="7 .5 0" data-rotation="-180 0 345" data-caption="Happy accident"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-38.jpg" data-position="8 .5 0" data-rotation="-180 0 25345" data-caption="Like a Ross"></a-entity>
-             
-             
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-39.jpg" data-position="9 .5 0" data-rotation="-180 0 22345" data-caption="Bob Ross doesn't have an afro because afros are cool, he just got tired of running out of brushes."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-40.jpg" data-position="10 .5 0" data-rotation="-180 0 2345" data-caption="This is happy place; little squirrels live here and play."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-41.jpg" data-position="1 .5 0" data-rotation="-180 0 2323145" data-caption="We don't really know where this goes -- and i'm not sure we really care..."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-42.jpg" data-position="2 .5 0" data-rotation="-180 0 234" data-caption="Just go out and talk to a tree. Make friends with it. "></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-43.jpg" data-position="3 .5 0" data-rotation="-180 0 432" data-caption="That's a crooked tree. We'll send him to Washington"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-44.jpg" data-position="4 .5 0" data-rotation="-180 0 123" data-caption="The only thing worse than yellow snow is green snow."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-45.jpg" data-position="5 .5 0" data-rotation="-180 0 43" data-caption="I like to beat the brush."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-46.jpg" data-position="6 .5 0" data-rotation="-180 0 1234" data-caption="In painting, you have unlimited power. You have the ability to move mountains. You can bend rivers. But when I get home, the only thing I have power over is the garbage."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-47.jpg" data-position="7 .5 0" data-rotation="-180 0 43" data-caption="You need the dark in order to show the light."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-48.jpg" data-position="8 .5 0" data-rotation="-180 0 2" data-caption="Look around. Look at what we have. Beauty is everywhere—you only have to look to see it."></a-entity>     <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-49.jpg" data-position="9 .5 0" data-rotation="-180 0 123" data-caption="Let it be"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-50.jpg" data-position="10 .5 0" data-rotation="-180 0 43" data-caption="Trees cover up a multitude of sins."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-51.jpg" data-position="1 .5 0" data-rotation="-180 0 1234" data-caption="They say everything looks better with odd numbers of things. But sometimes I put even numbers—just to upset the critics."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-52.jpg" data-position="2 .5 0" data-rotation="-180 0 43" data-caption="How do you make a round circle with a square knife? That’s your challenge for the day."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-53.jpg" data-position="3 .5 0" data-rotation="-180 0 2" data-caption="I remember when my Dad told me as a kid, ‘If you want to catch a rabbit, stand behind a tree and make a noise like a carrot. Then when the rabbit comes by you grab him.’ Works pretty good until you try to figure out what kind of noise a carrot makes…"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-54.jpg" data-position="4 .5 0" data-rotation="-180 0 43" data-caption="We tell people sometimes: we're like drug dealers, come into town and get everybody absolutely addicted to painting. It doesn't take much to get you addicted."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-55.jpg" data-position="5 .5 0" data-rotation="-180 0 1234" data-caption="Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things"></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-56.jpg" data-position="6 .5 0" data-rotation="-180 0 43" data-caption="Oooh, if you have never been to Alaska, go there while it is still wild. My favorite uncle asked me if I wanted to go there, Uncle Sam. He said if you don't go, you're going to jail. That is how Uncle Sam asks you."></a-entity>
-                <a-entity id="polaroid-1" template="src: #polaroid" data-image="src: images/polaroids/polaroid-img-57.jpg" data-position="7 .5 0" data-rotation="-180 0 2" data-caption="I really believe that if you practice enough you could paint the 'Mona Lisa' with a two-inch brush."></a-entity>
-        
-        </a-entity>
-        
-<!--          windowwall  -->
-        <a-entity layout="type: line; margin: 2" position="8 1.6 7.6" rotation="0 180 0">
 
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-1.jpg" 
-                      data-name="Martin" 
-                      data-title="Back to the \n Misty Mountains">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-2.jpg" 
-                      data-name="Ahmed " 
-                      data-title="Misty Mountains, \n Revenge of the fallen">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-3.jpg" 
-                      data-name="Ard " 
-                      data-title="Misty Mountains \n first blood">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-4.jpg" 
-                      data-name="Willem " 
-                      data-title="Misty Mountains \n, there and back again">
-            </a-entity> 
-            <a-entity geometry="primitive: plane; 
-                                 shader: flat; 
-                                 width:1; 
-                                 height:1;" 
-                      position="8 0 -5"
-                      material="src: url(images/bobross.png); transparent:true">  
-                        <a-animation attribute="position" from="8 0 -5" to="8 0 -6"></a-animation>
-                    <a-animation attribute="rotation"
-                                 dur="1000"
-                                 direction="alternate"
-                                 easing="ease"
-                                 from="0 0 45"
-                                 to="0 0 -45"
-                                 repeat="indefinite"></a-animation>
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-5.jpg" 
-                      data-name="Luis " 
-                      data-title="Misty Mountains, \n Modern Warfare II">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-6.jpg" 
-                      data-name="Bas " 
-                      data-title="Misty Mountains, \n x64 Service Pack 2">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-7.jpg" 
-                      data-name="Gina " 
-                      data-title="Misty Mountains:\n 28 weeks later">
-            </a-entity>
-        </a-entity>
-<!--        right wall-->
-        <a-entity layout="type: line; margin: 2" position="10.5 1.6 -5" rotation="180 90 180">
 
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-9.jpg" 
-                      data-name="Renda " 
-                      data-title="The return of the Misty Mountains">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-10.jpg" 
-                      data-name="Israel " 
-                      data-title="Misty Mountains: \n directors cut. ">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-11.jpg" 
-                      data-name="Lucas " 
-                      data-title="Misty Mountains \n From Mars ">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-12.jpg" 
-                      data-name="Penelope " 
-                      data-title="Misty Mountains: \n Impossible III">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-13.jpg" 
-                      data-name="Shen " 
-                      data-title="Miwu Shanmai\n, crouching tiger, \n hidden dragon. ">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-14.jpg" 
-                      data-name="Mieke " 
-                      data-title="Misty Mountains \n Ultimate Edition">
-            </a-entity>
-        </a-entity>   
-<!--        middelwal-->
-        <a-entity layout="type: line; margin: 2" position="-6 1.6 -7" rotation="0 0 0">
 
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-8.jpg" 
-                      data-name="Mariette" 
-                      data-title="Misty Mountains,\n Tokyo Drift">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-15.jpg" 
-                      data-name="Roel " 
-                      data-title="Misty Mountains, \n Breaking down">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-16.jpg" 
-                      data-name="Geertje " 
-                      data-title="Misty Mountains,\n age of Ultron">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-17.jpg" 
-                      data-name="Vytautas" 
-                      data-title="Misty Mountains \n Rises">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-18.jpg" 
-                      data-name="Hans " 
-                      data-title="Misty Mountains \n And The Last Crusade">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-19.jpg" 
-                      data-name="Johannes " 
-                      data-title="Misty Mountains \n Tournament 2004">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-20.jpg" 
-                      data-name="Bart " 
-                      data-title="Misty Mountains, \n Nitro">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-21.jpg" 
-                      data-name="Faranaaz" 
-                      data-title="Misty Mountains \n Days Of Future Past">
-            </a-entity>
-        </a-entity> 
-<!--      left walla-->
-        <a-entity layout="type: line; margin: 2" position="-8.8 1.6 5" rotation="-180 -90 180">
+        </article>
+    </main>
+    <!--main-->
 
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-22.jpg" 
-                      data-name="Erik " 
-                      data-title="Misty Mountains, \n A New Hope">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-23.jpg" 
-                      data-name="Iris " 
-                      data-title="Misty Mountains, \n And The Prisoner Of Azkaban">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-24.jpg" 
-                      data-name="Annette " 
-                      data-title="Misty Mountains \n 3D">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-25.jpg" 
-                      data-name="Ben " 
-                      data-title="The curse of the \n Misty Mountains">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-26.jpg" 
-                      data-name="Patrick " 
-                      data-title="Misty Mountains, \n Tomorrow never dies">
-            </a-entity>
-            <a-entity 
-                      id="painting-1" 
-                      template="src: #painting" 
-                      data-image="src: images/paintings/painting-27.jpg" 
-                      data-name="Klaas-Jan " 
-                      data-title="Misty Mountains, \n the Windwaker">
-            </a-entity>
-          
-        </a-entity>
-        
-            <a-camera fov="80" position="0 0 0" rotation="0 0 0" userheight="1.8;"  gamepad-controls look-controls wasd-controls lookEnabled="false">
-           
-                <a-cursor></a-cursor>
-            </a-camera>
-    </a-scene>
+    <!-- jQuery (required for slides to work) -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="./static/js/webslides.js"></script>
+
+    <script type="text/javascript">
+        var slide = jQuery('#webslides').webslides();
+
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="./static/js/svg-icons.js"></script>
+
 </body>
+
+</html>
